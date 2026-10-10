@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post #247 Archive — NewsCenter.lk (99 Comments)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fffaf0; --surf: #ffffff; --surf2: #fffbeb;
+            --acc: #ea580c; --acc2: #d97706;
+            --txt: #2c1507; --sub: #78350f;
+            --bdr: #fcd34d; --rbdr: #f59e0b; --grn: #b45309;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(180deg, #fffaf0 0%, #fff7ed 50%, #fef3c7 100%); background-attachment: fixed; color: var(--txt); padding: 28px 20px; line-height: 1.6; }
+        .wrap { max-width: 1100px; margin: 0 auto; }
+        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+        .back-link { color: #c2410c; text-decoration: none; font-weight: 700; font-size: 0.95rem; background: #fffbeb; border: 1.5px solid #fcd34d; padding: 8px 16px; border-radius: 10px; transition: all 0.15s; }
+        .back-link:hover { background: #fef3c7; border-color: var(--acc); }
+        .action-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.15s; border: 1.5px solid var(--bdr); background: var(--surf); color: #7c2d12; }
+        .btn:hover { border-color: var(--acc); background: #fef3c7; color: #7c2d12; }
+        .btn-csv { background: #fef3c7; border-color: #f59e0b; color: #9a3412; }
+        .btn-csv:hover { background: #f59e0b; color: #fff; }
+        .btn-fb { background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); border-color: #c2410c; color: #fff; }
+        .btn-fb:hover { background: linear-gradient(135deg, #c2410c 0%, #d97706 100%); color: #fff; }
+
+        .header-card { background: linear-gradient(135deg, #ffffff 0%, #fffbeb 70%, #ffedd5 100%); border: 1.5px solid var(--bdr); border-top: 6px solid var(--acc); border-radius: 16px; padding: 26px; margin-bottom: 24px; box-shadow: 0 6px 22px rgba(217, 119, 6, 0.1); }
+        .header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+        .header-card h1 { font-size: 1.6rem; color: #7c2d12; font-weight: 800; }
+        .header-card h1 a { color: #7c2d12; text-decoration: none; }
+        .header-card h1 a:hover { color: var(--acc); }
+        .type-pill { background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); color: #fff; border: 1px solid #c2410c; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+        .meta-line { color: var(--sub); font-size: 0.88rem; margin-bottom: 16px; word-break: break-all; }
+        .meta-line a { color: var(--acc); text-decoration: none; font-weight: 600; }
+        .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+        .badge { background: var(--surf2); border: 1px solid var(--bdr); padding: 5px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--sub); font-weight: 600; }
+        .badge strong { color: #7c2d12; }
+        .caption-box { background: #ffffff; border: 1px solid #fde68a; border-left: 4px solid var(--acc); padding: 16px 20px; font-size: 0.98rem; line-height: 1.65; white-space: pre-wrap; border-radius: 8px; color: #2c1507; word-break: break-word; }
+
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+        @media(max-width: 650px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+        .scard { background: #ffffff; border: 1.5px solid var(--bdr); border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 10px rgba(217, 119, 6, 0.06); }
+        .snum { font-size: 1.75rem; font-weight: 800; color: var(--acc); margin-bottom: 2px; }
+        .slbl { font-size: 0.74rem; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+
+        .media-container { background: var(--surf); border-radius: 16px; padding: 22px; border: 1.5px solid var(--bdr); margin-bottom: 24px; box-shadow: 0 4px 16px rgba(217, 119, 6, 0.07); }
+        .media-container h3 { margin-bottom: 14px; font-size: 1.1rem; color: #7c2d12; }
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+        .grid-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1.5px solid var(--bdr); transition: transform 0.2s; }
+        .grid-photo:hover { transform: scale(1.02); }
+
+        .sec-hdr { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+        .sec-hdr h2 { font-size: 1.25rem; color: #7c2d12; }
+        .sec-badge { background: #fef3c7; color: #9a3412; border: 1px solid #f59e0b; padding: 3px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
+
+        .toolbar { display: flex; gap: 12px; margin-bottom: 20px; align-items: center; flex-wrap: wrap; }
+        .search-wrap { position: relative; flex: 1; min-width: 220px; }
+        .search-inp { width: 100%; padding: 11px 16px 11px 42px; background: var(--surf); border: 1.5px solid var(--bdr); border-radius: 10px; color: var(--txt); font-size: 0.93rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+        .search-inp:focus { border-color: var(--acc); }
+        .search-inp::placeholder { color: var(--sub); opacity: 0.7; }
+        .si { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--sub); pointer-events: none; }
+        .toggle-all-btn { background: var(--surf2); border: 1.5px solid var(--bdr); color: #7c2d12; padding: 10px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; white-space: nowrap; transition: all 0.15s; }
+        .toggle-all-btn:hover { background: #fef3c7; border-color: var(--acc); }
+
+        .thread-card { background: var(--surf); border: 1.5px solid #fde68a; border-radius: 16px; margin-bottom: 16px; padding: 20px; box-shadow: 0 4px 16px rgba(180, 83, 9, 0.06); }
+        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .av-lg { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; font-weight: 700; color: #fff; flex-shrink: 0; border: 2px solid #fde68a; }
+        .av-lg-img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--bdr); }
+        .hdr-info { flex: 1; min-width: 0; }
+        .aname { font-size: 1.02rem; font-weight: 700; color: #7c2d12; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .author-link { color: #7c2d12; text-decoration: none; }
+        .author-link:hover { color: var(--acc); text-decoration: underline; }
+        .ameta { font-size: 0.76rem; color: var(--sub); margin-top: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .reply-count-badge { background: #fef3c7; color: #9a3412; border: 1px solid #f59e0b; padding: 1px 8px; border-radius: 10px; font-weight: 700; font-size: 0.72rem; }
+        .prof-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 4px; background: #fffbeb; color: #b45309; border: 1px solid #fcd34d; padding: 5px 12px; border-radius: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; transition: all 0.15s; white-space: nowrap; }
+        .prof-btn:hover { background: var(--acc); color: #fff; border-color: var(--acc); }
+        .prof-btn.sm { padding: 3px 9px; font-size: 0.72rem; }
+
+        .ctext { background: #fffbeb; padding: 12px 16px; border-radius: 10px; font-size: 0.96rem; color: #2c1507; border: 1px solid #fde68a; border-left: 3.5px solid var(--acc); word-break: break-word; }
+        .ctext.sm { font-size: 0.88rem; padding: 10px 14px; background: #ffffff; }
+
+        .replies-tree { margin-top: 14px; padding-left: 20px; border-left: 3px solid var(--rbdr); display: flex; flex-direction: column; gap: 10px; }
+        .replies-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+        .replies-title { font-size: 0.84rem; color: #c2410c; font-weight: 700; }
+        .toggle-btn { background: transparent; border: none; color: var(--sub); font-size: 0.75rem; font-weight: 600; cursor: pointer; padding: 2px 8px; border-radius: 4px; }
+        .toggle-btn:hover { color: var(--acc); text-decoration: underline; }
+        .replies-list { display: flex; flex-direction: column; gap: 10px; }
+        .reply-card { background: var(--surf2); border: 1px solid #fde68a; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .reply-header { display: flex; align-items: center; gap: 10px; }
+        .av-sm { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+        .av-sm-img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--bdr); }
+        .reply-meta { flex: 1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .rname { font-size: 0.92rem; font-weight: 700; color: #7c2d12; }
+        .reply-target { font-size: 0.74rem; color: #9a3412; background: #fef3c7; padding: 2px 8px; border-radius: 6px; border: 1px solid #fcd34d; font-weight: 600; }
+
+        #noResults { display: none; text-align: center; color: var(--sub); padding: 40px; font-size: 0.95rem; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--bdr); text-align: center; color: var(--sub); font-size: 0.82rem; }
+        .theme-btn { cursor: pointer; user-select: none; }
+
+        /* Dark Mode Overrides */
+        body.dark-mode {
+            --bg: #0f0c08; --surf: #1a140e; --surf2: #241c14;
+            --acc: #f97316; --acc2: #fbbf24;
+            --txt: #fffbeb; --sub: #fcd34d;
+            --bdr: #5c3515; --rbdr: #f97316; --grn: #fbbf24;
+            background: linear-gradient(180deg, #0f0c08 0%, #16110b 60%, #1c150d 100%);
+            color: var(--txt);
+        }
+        body.dark-mode .back-link { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .back-link:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .btn { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .btn:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .btn-csv { background: #2b1f11; border-color: #b45309; color: #fcd34d; }
+        body.dark-mode .btn-csv:hover { background: #f59e0b; color: #ffffff; }
+        body.dark-mode .header-card { background: linear-gradient(135deg, #1c140d 0%, #261b10 65%, #332211 100%); border-color: #78350f; border-top: 6px solid #f97316; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55); }
+        body.dark-mode .header-card h1, body.dark-mode .header-card h1 a { color: #fffbeb; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45); }
+        body.dark-mode .header-card h1 a:hover { color: #fbbf24; }
+        body.dark-mode .meta-line { color: #fde68a; }
+        body.dark-mode .meta-line strong { color: #ffffff; }
+        body.dark-mode .meta-line a { color: #fb923c; }
+        body.dark-mode .badge { background: #140f0a; border-color: #5c3515; color: #fde68a; }
+        body.dark-mode .badge strong { color: #fbbf24; }
+        body.dark-mode .caption-box { background: #120d08; border-color: #5c3515; border-left: 4px solid #f97316; color: #fffbeb; }
+        body.dark-mode .scard { background: #140f0a; border-color: #5c3515; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); }
+        body.dark-mode .snum { color: #fbbf24; }
+        body.dark-mode .slbl { color: #fde68a; }
+        body.dark-mode .media-container { background: #1a140e; border-color: #5c3515; }
+        body.dark-mode .media-container h3, body.dark-mode .sec-hdr h2 { color: #fffbeb; }
+        body.dark-mode .sec-badge { background: #2b1f11; color: #fbbf24; border-color: #d97706; }
+        body.dark-mode .search-inp { background: #120d08; border-color: #5c3515; color: #fffbeb; }
+        body.dark-mode .search-inp::placeholder { color: #b8976c; opacity: 1; }
+        body.dark-mode .search-inp:focus { border-color: #f97316; background: #1a140e; }
+        body.dark-mode .toggle-all-btn { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .toggle-all-btn:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .thread-card { background: #1a140e; border-color: #4a2c13; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+        body.dark-mode .aname, body.dark-mode .author-link, body.dark-mode .rname { color: #fffbeb; }
+        body.dark-mode .ameta { color: #d6b88a; }
+        body.dark-mode .reply-count-badge, body.dark-mode .reply-target { background: #2b1f11; color: #fbbf24; border-color: #b45309; }
+        body.dark-mode .prof-btn { background: #241c14; color: #fbbf24; border-color: #78350f; }
+        body.dark-mode .prof-btn:hover { background: #ea580c; color: #ffffff; border-color: #ea580c; }
+        body.dark-mode .ctext { background: #120d08; color: #fffbeb; border-color: #4a2c13; border-left: 3.5px solid #f97316; }
+        body.dark-mode .ctext.sm { background: #16100a; color: #fef3c7; }
+        body.dark-mode .reply-card { background: #221910; border-color: #5c3515; }
+        body.dark-mode .replies-title { color: #fb923c; }
+        body.dark-mode .toggle-btn { color: #fcd34d; }
+        .read-btn { cursor: pointer; user-select: none; }
+        .read-btn.is-read { background: #dcfce7; border-color: #16a34a; color: #166534; }
+        body.dark-mode .read-btn.is-read { background: #14532d; border-color: #22c55e; color: #bbf7d0; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-nav">
+        <a href="../index.html#post-247" id="backCatalogLink" class="back-link">← Back to Master Archive Catalog</a>
+        <div class="action-btns">
+            <button type="button" class="btn read-btn" id="readToggleBtn" onclick="toggleReadHere()">☐ Mark as Read</button>
+            <button type="button" class="btn theme-btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <a href="comments.csv" download="fb_comments_1642216670765198.csv" class="btn btn-csv">📥 Download CSV (99)</a>
+            <a href="threads_index.json" target="_blank" class="btn">📄 JSON Data</a>
+            <a href="https://www.facebook.com/reel/1642216670765198" target="_blank" rel="noopener" class="btn btn-fb">🔗 View on Facebook</a>
+        </div>
+    </div>
+
+    <div class="header-card">
+        <div class="header-top">
+            <h1>Post #247 — <a href="https://www.facebook.com/profile.php?id=100063694791941" target="_blank" rel="noopener">NewsCenter.lk</a></h1>
+            <span class="type-pill">Reel</span>
+        </div>
+        <div class="meta-line">
+            📅 Published: <strong>October 7, 2026 at 12:17 PM</strong> &nbsp;|&nbsp;
+            🔗 Source: <a href="https://www.facebook.com/reel/1642216670765198" target="_blank" rel="noopener">https://www.facebook.com/reel/1642216670765198</a>
+        </div>
+        
+        <div class="caption-box">&#x27;අපේ රට බේරගත්ත නායකයාගේ මැතිණිය ගන්න යනවා මේක වහන්න
+මේක එහෙම වහන්න බැහැ ජනාධිපතිතුමනි&#x27;
+පූජ්‍ය තිත්තගල්ලේ ආනන්දසිරි හිමි</div>
+
+        <div class="stats">
+            <div class="scard"><div class="snum">99</div><div class="slbl">Total Comments</div></div>
+            <div class="scard"><div class="snum">99</div><div class="slbl">Parent Threads</div></div>
+            <div class="scard"><div class="snum">0</div><div class="slbl">Nested Replies</div></div>
+            <div class="scard"><div class="snum">88</div><div class="slbl">Unique Users</div></div>
+        </div>
+    </div>
+
+    
+        <div class="media-container">
+            <h3>🎥 Attached Post Video</h3>
+            <video controls preload="metadata" style="max-width: 100%; max-height: 640px; border-radius: 12px; display: block; margin: 0 auto;">
+                <source src="post_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    <div class="sec-hdr">
+        <h2>💬 Full Comment Threads (99)</h2>
+        <span class="sec-badge">99 root threads</span>
+    </div>
+
+    <div class="toolbar">
+        <div class="search-wrap">
+            <span class="si">🔍</span>
+            <input class="search-inp" type="text" id="q" placeholder="Search comments or users…" oninput="filterComments()">
+        </div>
+        <button class="toggle-all-btn" onclick="toggleAllReplies()">Toggle All Replies</button>
+    </div>
+
+    <div id="list">
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_001_Gunathilaka Nandana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gunathilaka Nandana">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/gunathilaka.nandana.9" target="_blank" rel="noopener" class="author-link">Gunathilaka Nandana</a></div>
+                        <div class="ameta">#001 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/gunathilaka.nandana.9" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">තිත්ත ගල්ලේ හොරකම් කරපු මිනිස්සුන්ට දඬුවම් දෙන්න ඕනෑ ඒක උඹ තේරුම් ගත්තේ නැතුවට අපිට කරන්න දෙයක් නැහැ</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_002_Akila Priyashantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Akila Priyashantha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/akila.priyashantha.1" target="_blank" rel="noopener" class="author-link">Akila Priyashantha</a></div>
+                        <div class="ameta">#002 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/akila.priyashantha.1" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Kade ynnelu kata boru kiuwath dewa boru kiyan ne<div style="margin-top:10px;"><a href="Comments/comment_002_Akila Priyashantha_media.jpg" target="_blank"><img src="Comments/comment_002_Akila Priyashantha_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_003_Kumara Madugalla_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kumara Madugalla">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/salikak" target="_blank" rel="noopener" class="author-link">Kumara Madugalla</a></div>
+                        <div class="ameta">#003 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/salikak" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මෝඩයා කෑවා. සමාව ගන්න තිබුන අවස්ථාව</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_004_Sarath Wajira Balasuriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sarath Wajira Balasuriya">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sarath.wajira.balasuriya" target="_blank" rel="noopener" class="author-link">Sarath Wajira Balasuriya</a></div>
+                        <div class="ameta">#004 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sarath.wajira.balasuriya" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">උඹ ගිහින් __ හෝදපන්</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_005_Lohan Prasanna Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lohan Prasanna Bandara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/lonthapol.bandara" target="_blank" rel="noopener" class="author-link">Lohan Prasanna Bandara</a></div>
+                        <div class="ameta">#005 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/lonthapol.bandara" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මේ නිකාය මොකක්ද ?</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_006_NPS_avatar.jpg" loading="lazy" class="av-lg-img" alt="NPS">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/NPS/61582204965979" target="_blank" rel="noopener" class="author-link">NPS</a></div>
+                        <div class="ameta">#006 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/NPS/61582204965979" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">සංග පාතාලේ  යක්කු😅</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_007_Donyohan Perera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Donyohan Perera">
+                    <div class="hdr-info">
+                        <div class="aname">Donyohan Perera</div>
+                        <div class="ameta">#007 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_007_Donyohan Perera_media.jpg" target="_blank"><img src="Comments/comment_007_Donyohan Perera_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_008_Priyal Kularathna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Priyal Kularathna">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Priyal-Kularathna/pfbid0Dqa7C5yr2zu4QxSfXYVBkPnbqGwh3VUFTJGhw2zEPiBrJZWcQBdRPhxWPp6oaVaql" target="_blank" rel="noopener" class="author-link">Priyal Kularathna</a></div>
+                        <div class="ameta">#008 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Priyal-Kularathna/pfbid0Dqa7C5yr2zu4QxSfXYVBkPnbqGwh3VUFTJGhw2zEPiBrJZWcQBdRPhxWPp6oaVaql" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මේ සංඝා පාතාලය ගැන ටිකක් හෙව්වොත් හොඳයි</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_009_Sunanda Jayasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sunanda Jayasekara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sunajayasekara" target="_blank" rel="noopener" class="author-link">Sunanda Jayasekara</a></div>
+                        <div class="ameta">#009 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sunajayasekara" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අනේ අම්මේ... විශාල ආකාරතාබ්බක් වෙන්න යන්නේ...... දැන් සාසනේ බේරගන්න ඕනේ සුස්සිලා ගනයන්ගෙන් නොවේ ද</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_010_Sarada Manoj Swarnathilaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sarada Manoj Swarnathilaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sarada.manojswarnathilaka" target="_blank" rel="noopener" class="author-link">Sarada Manoj Swarnathilaka</a></div>
+                        <div class="ameta">#010 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sarada.manojswarnathilaka" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">ගන පොන්නයෙක්</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_011_Shantha Meheramba_avatar.jpg" loading="lazy" class="av-lg-img" alt="Shantha Meheramba">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/shantha.meheramba.2025" target="_blank" rel="noopener" class="author-link">Shantha Meheramba</a></div>
+                        <div class="ameta">#011 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/shantha.meheramba.2025" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මේ අනිත් .......</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_012_ලහිරු ලහිරු_avatar.jpg" loading="lazy" class="av-lg-img" alt="ලහිරු ලහිරු">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/%E0%B6%BD%E0%B7%84%E0%B7%92%E0%B6%BB%E0%B7%94-%E0%B6%BD%E0%B7%84%E0%B7%92%E0%B6%BB%E0%B7%94/pfbid02HCWYbPeHuDRLJgE8wEsYkj4YUyUirHjn8oh3ZY38eVykxPj8yDjaeCp6LDYZyqDLl" target="_blank" rel="noopener" class="author-link">ලහිරු ලහිරු</a></div>
+                        <div class="ameta">#012 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/%E0%B6%BD%E0%B7%84%E0%B7%92%E0%B6%BB%E0%B7%94-%E0%B6%BD%E0%B7%84%E0%B7%92%E0%B6%BB%E0%B7%94/pfbid02HCWYbPeHuDRLJgE8wEsYkj4YUyUirHjn8oh3ZY38eVykxPj8yDjaeCp6LDYZyqDLl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">කස්සපයා කෝ උට්ටෝ 🤭🤭🤭පම්කයා කට වහන් ඇත්තේ බඩු බනිස් වෙයි කියලා බයට 😁😁😁😁😁<div style="margin-top:10px;"><a href="Comments/comment_012_ලහිරු ලහිරු_media.jpg" target="_blank"><img src="Comments/comment_012_ලහිරු ලහිරු_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_013_Mohamed Masahir Mohamed Masahir_avatar.jpg" loading="lazy" class="av-lg-img" alt="Mohamed Masahir Mohamed Masahir">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/mohamedmasahir.mohamedmasahir.3" target="_blank" rel="noopener" class="author-link">Mohamed Masahir Mohamed Masahir</a></div>
+                        <div class="ameta">#013 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/mohamedmasahir.mohamedmasahir.3" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">උබලා ඔය හැසිරෙන විදිහ බලපුවම බුදු දහම කියලා ආගමක් තියෙනවද කියලා හිතනවා</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_014_Amila Prasad Rajapakse_avatar.jpg" loading="lazy" class="av-lg-img" alt="Amila Prasad Rajapakse">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/amila.1972" target="_blank" rel="noopener" class="author-link">Amila Prasad Rajapakse</a></div>
+                        <div class="ameta">#014 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/amila.1972" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">කෙදිරි ගාන්න එපා රටට ජනතාවට වංචා දූෂණ කරපු උන් වෙනුවෙන් ජනතාව අවදියෙන් උබල දේශපාලුවන්ගේ අබුඩ හෝදපන්  🤮🤮🤮🤮🤮<div style="margin-top:10px;"><a href="Comments/comment_014_Amila Prasad Rajapakse_media.jpg" target="_blank"><img src="Comments/comment_014_Amila Prasad Rajapakse_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_015_Shalika Manoj Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Shalika Manoj Kumara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/shalika.kumara.54" target="_blank" rel="noopener" class="author-link">Shalika Manoj Kumara</a></div>
+                        <div class="ameta">#015 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/shalika.kumara.54" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">කෙඳිරි ගෑම....</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_016_Pemarathna Hettiarachchi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Pemarathna Hettiarachchi">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/pemarathna.hettiarachchi.2025" target="_blank" rel="noopener" class="author-link">Pemarathna Hettiarachchi</a></div>
+                        <div class="ameta">#016 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/pemarathna.hettiarachchi.2025" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_017_Senadeera Priyantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Senadeera Priyantha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/senadeera.priyantha.7" target="_blank" rel="noopener" class="author-link">Senadeera Priyantha</a></div>
+                        <div class="ameta">#017 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/senadeera.priyantha.7" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">උබලට පන්සලේ වැඩක් නැද්ද 😂🤣🤣🤣</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_018_Kelum Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kelum Bandara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/kelumbandara123" target="_blank" rel="noopener" class="author-link">Kelum Bandara</a></div>
+                        <div class="ameta">#018 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/kelumbandara123" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මුගෙ කාලෙ ඉවරවේගෙන එන්නෙ</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_019_නෙත්ති  -  Edge_avatar.jpg" loading="lazy" class="av-lg-img" alt="නෙත්ති  -  Edge">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/%E0%B6%B1%E0%B7%99%E0%B6%AD%E0%B7%8A%E0%B6%AD%E0%B7%92-Edge/61591396545939" target="_blank" rel="noopener" class="author-link">නෙත්ති  -  Edge</a></div>
+                        <div class="ameta">#019 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/%E0%B6%B1%E0%B7%99%E0%B6%AD%E0%B7%8A%E0%B6%AD%E0%B7%92-Edge/61591396545939" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මින් ඉදිරියට බුද්ධ පූජාව ගෞතම බුදු රජාණන් වහන්සේට පූජාකර දානය පිලිකා රෝහලට දානය කරමි.</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_020_Upatissa Galpotthage Don_avatar.jpg" loading="lazy" class="av-lg-img" alt="Upatissa Galpotthage Don">
+                    <div class="hdr-info">
+                        <div class="aname">Upatissa Galpotthage Don</div>
+                        <div class="ameta">#020 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">මූව බයිට් කරන්න වෙලාව මේකයි මොකද හතර වටේටම නෙලනවා</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_021_Nihal K Samarasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nihal K Samarasinghe">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/nihal.k.samarasinghe.2025" target="_blank" rel="noopener" class="author-link">Nihal K Samarasinghe</a></div>
+                        <div class="ameta">#021 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/nihal.k.samarasinghe.2025" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මේකාගේ අදෝනාව ඉවර වෙන පාටන් නෑ වාගේ 😂😂😂😂</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_022_Wanigabaduge Chamith_avatar.jpg" loading="lazy" class="av-lg-img" alt="Wanigabaduge Chamith">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/wanigabaduge.chamith" target="_blank" rel="noopener" class="author-link">Wanigabaduge Chamith</a></div>
+                        <div class="ameta">#022 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/wanigabaduge.chamith" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">රාජපක්ෂ නිකාය</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_023_Ud Gihan Chathuranga_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ud Gihan Chathuranga">
+                    <div class="hdr-info">
+                        <div class="aname">Ud Gihan Chathuranga</div>
+                        <div class="ameta">#023 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">ශාසනේට කෙල වෙන්නේ ඉවක් බවක් නැතුව එක එක දේශපාලුවන්ට කඩේ ගිහින්..</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_024_Biju Billa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Biju Billa">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Biju-Billa/pfbid02Gsj6BmUA4ZkG5YkPM2w7htMZxJEbD8eadUZQaqamesq2Y22bbBxefexdr52LZL7Cl" target="_blank" rel="noopener" class="author-link">Biju Billa</a></div>
+                        <div class="ameta">#024 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Biju-Billa/pfbid02Gsj6BmUA4ZkG5YkPM2w7htMZxJEbD8eadUZQaqamesq2Y22bbBxefexdr52LZL7Cl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">සිද්ධිය වහන්න බැහැ හැබැයි ඇහැනම් වහගෙන හිටියා.. 😂😂</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_025_Pushpakumara Nadakandage_avatar.jpg" loading="lazy" class="av-lg-img" alt="Pushpakumara Nadakandage">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/pushpakumara.nadakandage" target="_blank" rel="noopener" class="author-link">Pushpakumara Nadakandage</a></div>
+                        <div class="ameta">#025 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/pushpakumara.nadakandage" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මූට පිස්සුද වැරදි කාරියක නීතියට යටත් කිරීම කහකඩයගෙන් අහන්න ඕනද</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_026_Gayashan Wimalagunasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gayashan Wimalagunasekara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/gayashan.wimalagunasekara" target="_blank" rel="noopener" class="author-link">Gayashan Wimalagunasekara</a></div>
+                        <div class="ameta">#026 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/gayashan.wimalagunasekara" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අනේ ගොනො..</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_027_Thushantha Wickramasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thushantha Wickramasinghe">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/thushantha.wickramasinghe" target="_blank" rel="noopener" class="author-link">Thushantha Wickramasinghe</a></div>
+                        <div class="ameta">#027 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/thushantha.wickramasinghe" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">හොටු පෙරාගෙන අඩනවා</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_028_Walter Wickramasuriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Walter Wickramasuriya">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/walter.wickramasuriya" target="_blank" rel="noopener" class="author-link">Walter Wickramasuriya</a></div>
+                        <div class="ameta">#028 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/walter.wickramasuriya" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">ඔහොම යං ඔහොම යං. ඔය ඇඩ්එක . ලගදීම චිත්‍රපටය බලමු.</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_029_අපේ මාලිමාව_avatar.jpg" loading="lazy" class="av-lg-img" alt="අපේ මාලිමාව">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/%E0%B6%85%E0%B6%B4%E0%B7%9A-%E0%B6%B8%E0%B7%8F%E0%B6%BD%E0%B7%92%E0%B6%B8%E0%B7%8F%E0%B7%80/61563237367717" target="_blank" rel="noopener" class="author-link">අපේ මාලිමාව</a></div>
+                        <div class="ameta">#029 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/%E0%B6%85%E0%B6%B4%E0%B7%9A-%E0%B6%B8%E0%B7%8F%E0%B6%BD%E0%B7%92%E0%B6%B8%E0%B7%8F%E0%B7%80/61563237367717" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">&quot;පාදඩ දේශපාලනයේ අවසාන නවාතැන ජාතිය හා ආගමයි /  දේශප්‍රේමයයි &quot;  <br><br>යනු දේශපාලනඥයන් තමන්ගේ පෞද්ගලික හෝ පටු දේශපාලන වාසි සහ වැරදි වසා ගැනීමට ජාතිකත්වය, දේශප්‍රේමය සහ ආගම ආයුධයක් කර ගන්නා ආකාරය විවේචනය කිරීමට ලොව පුරා භාවිත වන ප්‍රසිද්ධ දේශපාලන ප්‍රකාශනයකි.<br><br>මෙම සංකල්පය පිළිබඳ ප්‍රධාන කරුණු කිහිපයක් මෙසේය:<br><br>• ජනතාව උත්ප්‍රේරණය කිරීම:<br><br> සාමාන්‍ය ජනතාව තුළ ජාතිය සහ ආගම කෙරෙහි ඇති සංවේදී සහ හැඟීම්බර බැඳීම, දේශපාලනඥයන් විසින් තමන්ගේ බලය රැකගැනීමට හෝ ඡන්ද පදනම ශක්තිමත් කර ගැනීමට උපයෝගී කර ගැනීම මෙයින් අදහස් වේ.<br><br>• සැබෑ ප්‍රශ්න යටපත් කිරීම:<br><br> ආර්ථික බිඳවැටීම්, දූෂණය  අසාර්ථක පාලනය වැනි සැබෑ පොදු මහජන ප්‍රශ්න මතු වන විට, ජනතාවගේ අවධානය වෙනතකට යොමු කිරීම සඳහා ජාතිවාදී හෝ ආගමික මුහුණුවරක් ගත් මාතෘකා කරළියට පැමිණවීම මෙහි උපාය මාර්ගයයි.<br><br>• ඉතිහාසගත පසුබිම:<br><br> සුප්‍රසිද්ධ ඉංග්‍රීසි ලේඛක සැමුවෙල් ජොන්සන් (Samuel Johnson) විසින් 1775 දී ප්‍රකාශ කරන ලද &quot;Patriotism is the last refuge of a scoundrel&quot; (දේශප්‍රේමය යනු පාදඩයාගේ අවසාන නවාතැනයි) යන කියමන මෙයට සමාන දේශපාලන වටපිටාවන් විග්‍රහ කිරීමට අදටත් ලෝක දේශපාලනයේ බහුලව භාවිත වේ.<br><br>අයිතිය මුල් කතෘට</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_030_Asela Peiris_avatar.jpg" loading="lazy" class="av-lg-img" alt="Asela Peiris">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/asela.peiris.2025" target="_blank" rel="noopener" class="author-link">Asela Peiris</a></div>
+                        <div class="ameta">#030 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/asela.peiris.2025" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">උසාවියට කියන්න පුතේ</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_031_ĪňĚšh Ãňđ ŤhÅřů_avatar.jpg" loading="lazy" class="av-lg-img" alt="ĪňĚšh Ãňđ ŤhÅřů">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/inesh.tharu" target="_blank" rel="noopener" class="author-link">ĪňĚšh Ãňđ ŤhÅřů</a></div>
+                        <div class="ameta">#031 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/inesh.tharu" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Hamuduruwane sinhala therenne nthi aulak thiyenawada😂</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_032_Nissanka Nissanka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nissanka Nissanka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/nissanka.tilake" target="_blank" rel="noopener" class="author-link">Nissanka Nissanka</a></div>
+                        <div class="ameta">#032 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/nissanka.tilake" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Uba kiyana vidihatada yako nithiya keranna one ane pala pin batha yanna</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_033_Ashoka Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ashoka Bandara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/ashoka.bandara.352058" target="_blank" rel="noopener" class="author-link">Ashoka Bandara</a></div>
+                        <div class="ameta">#033 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/ashoka.bandara.352058" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">වහන්ට දෙයක් නැ සිරන්ති ඇහැක් වහගෙනම ඉන්නෙ දැන්</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_034_Aruna Santha Waduge_avatar.jpg" loading="lazy" class="av-lg-img" alt="Aruna Santha Waduge">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/profile.php?id=100006314080572" target="_blank" rel="noopener" class="author-link">Aruna Santha Waduge</a></div>
+                        <div class="ameta">#034 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=100006314080572" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Ganna yanawa newei.....Gaththa.... 🤣🤣</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_035_Uchitha Nalaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Uchitha Nalaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/profile.php?id=100001565038341" target="_blank" rel="noopener" class="author-link">Uchitha Nalaka</a></div>
+                        <div class="ameta">#035 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=100001565038341" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Oya gim yanna aga wadi</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_036_Rasika Gunawardana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Rasika Gunawardana">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/rasika.gunawardana.311614" target="_blank" rel="noopener" class="author-link">Rasika Gunawardana</a></div>
+                        <div class="ameta">#036 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/rasika.gunawardana.311614" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">🤣😂😂😂</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_037_Dunesh Ranga_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dunesh Ranga">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/dunesh.ranga" target="_blank" rel="noopener" class="author-link">Dunesh Ranga</a></div>
+                        <div class="ameta">#037 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/dunesh.ranga" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Golpes yannada mun rukada mahanayaka hamuduruwo ru nidida</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_038_Amila Peirise_avatar.jpg" loading="lazy" class="av-lg-img" alt="Amila Peirise">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/amila.peirise" target="_blank" rel="noopener" class="author-link">Amila Peirise</a></div>
+                        <div class="ameta">#038 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/amila.peirise" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">නීතියට ගරු කරපල්ලා..</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_039_Sarath Pramathilaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sarath Pramathilaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sarath.pramathilaka.18" target="_blank" rel="noopener" class="author-link">Sarath Pramathilaka</a></div>
+                        <div class="ameta">#039 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sarath.pramathilaka.18" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">රටේ නීතිය හැමකෙනාටම  සමානවියයුතුමයි  රට බේරගත්ත නායකයාද බිරිද ද ආදාල නෑ  ඇයි මෙ මිනිස්සු මේතරමටම  මෝඩ</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_040_Gayan Sanka Dissanayaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gayan Sanka Dissanayaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sanka.dissa.7" target="_blank" rel="noopener" class="author-link">Gayan Sanka Dissanayaka</a></div>
+                        <div class="ameta">#040 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sanka.dissa.7" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">PINATA KANADETAWATH SADARNAYA KARANNA<br>BUDU HAMUDURUWO MEHEMA PISSU BALLO WAGE HASIRENNADA EGANUYE.</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_041_Upali Ariyasena_avatar.jpg" loading="lazy" class="av-lg-img" alt="Upali Ariyasena">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Upali-Ariyasena/pfbid02hDA7Z3fSK4EnnwMoD9Jddx1j9wgEQVMrbP7ugW4G8rRsphPQtyZgVS63rT3AwZtml" target="_blank" rel="noopener" class="author-link">Upali Ariyasena</a></div>
+                        <div class="ameta">#041 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Upali-Ariyasena/pfbid02hDA7Z3fSK4EnnwMoD9Jddx1j9wgEQVMrbP7ugW4G8rRsphPQtyZgVS63rT3AwZtml" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Amanayo Tika anuradapura sddiyata  kata ariye neea</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_042_Gamini Gunawardana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gamini Gunawardana">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/gamini.gunawardana.3114" target="_blank" rel="noopener" class="author-link">Gamini Gunawardana</a></div>
+                        <div class="ameta">#042 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/gamini.gunawardana.3114" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">වහන්න බැරිනම් ඇරගෙන හිටපං හනුමා</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_043_Jayasoma Jagoda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Jayasoma Jagoda">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Jayasoma-Jagoda/pfbid028zMWzze23pYVCzRnuvKDpX4sAFNEwjva8MeXSYYwS2KgapEY6EpQ4omPZcfgbaqpl" target="_blank" rel="noopener" class="author-link">Jayasoma Jagoda</a></div>
+                        <div class="ameta">#043 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Jayasoma-Jagoda/pfbid028zMWzze23pYVCzRnuvKDpX4sAFNEwjva8MeXSYYwS2KgapEY6EpQ4omPZcfgbaqpl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">වරෙන් ලබිබ තියන්න</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_044_Gayan Prasanna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gayan Prasanna">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/gayan.prasanna.188" target="_blank" rel="noopener" class="author-link">Gayan Prasanna</a></div>
+                        <div class="ameta">#044 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/gayan.prasanna.188" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මූට පිස්සු😁😁😁😁</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_045_Thushar Hemantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thushar Hemantha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Thushar-Hemantha/pfbid0peYBfa8Gxv2UTFjaJMQ24ZvBM92h6bxq2vmGQs52gY4xDVJ5u8eERX4H48FFG3hWl" target="_blank" rel="noopener" class="author-link">Thushar Hemantha</a></div>
+                        <div class="ameta">#045 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Thushar-Hemantha/pfbid0peYBfa8Gxv2UTFjaJMQ24ZvBM92h6bxq2vmGQs52gY4xDVJ5u8eERX4H48FFG3hWl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අංගොඩට නිල් පාට බස් නැද්ද 😁</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_046_Siwantha Sanjeewa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Siwantha Sanjeewa">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Siwantha-Sanjeewa/pfbid033xsWprMNoJ5eVkd6F9XWE57waAJAPEV9KF73P6CNhuy73xQ4PZXh4EtSfNcF8pmil" target="_blank" rel="noopener" class="author-link">Siwantha Sanjeewa</a></div>
+                        <div class="ameta">#046 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Siwantha-Sanjeewa/pfbid033xsWprMNoJ5eVkd6F9XWE57waAJAPEV9KF73P6CNhuy73xQ4PZXh4EtSfNcF8pmil" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Thiththa gala oyaganath hoyanawa</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_047_Rasika Manjula_avatar.jpg" loading="lazy" class="av-lg-img" alt="Rasika Manjula">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/rasika.manjula.923" target="_blank" rel="noopener" class="author-link">Rasika Manjula</a></div>
+                        <div class="ameta">#047 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/rasika.manjula.923" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Muta hodatama pissu</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_048_Sena Rankothge_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sena Rankothge">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sena.rankothge" target="_blank" rel="noopener" class="author-link">Sena Rankothge</a></div>
+                        <div class="ameta">#048 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sena.rankothge" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_048_Sena Rankothge_media.jpg" target="_blank"><img src="Comments/comment_048_Sena Rankothge_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_049_Lasantha Manju_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lasantha Manju">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/lasantha.manju.79" target="_blank" rel="noopener" class="author-link">Lasantha Manju</a></div>
+                        <div class="ameta">#049 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/lasantha.manju.79" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Thopi wage ganayo</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_050_Aravinda Rathnayake_avatar.jpg" loading="lazy" class="av-lg-img" alt="Aravinda Rathnayake">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/aravinda.rathnayake.16" target="_blank" rel="noopener" class="author-link">Aravinda Rathnayake</a></div>
+                        <div class="ameta">#050 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/aravinda.rathnayake.16" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Sanga mafia<div style="margin-top:10px;"><a href="Comments/comment_050_Aravinda Rathnayake_media.jpg" target="_blank"><img src="Comments/comment_050_Aravinda Rathnayake_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_051_Shirley Rodrigo_avatar.jpg" loading="lazy" class="av-lg-img" alt="Shirley Rodrigo">
+                    <div class="hdr-info">
+                        <div class="aname">Shirley Rodrigo</div>
+                        <div class="ameta">#051 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">😂😂😂😂😂😂😂😂😂😂😂</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_052_Somaratne Guruwala Gedara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Somaratne Guruwala Gedara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Somaratne-Guruwala-Gedara/pfbid02WETnNFvG5QBuHSR4pMb7C6ycZMu4h8YBjKNq361pAD2eTsqpGyWdcQQq28bCAXJol" target="_blank" rel="noopener" class="author-link">Somaratne Guruwala Gedara</a></div>
+                        <div class="ameta">#052 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Somaratne-Guruwala-Gedara/pfbid02WETnNFvG5QBuHSR4pMb7C6ycZMu4h8YBjKNq361pAD2eTsqpGyWdcQQq28bCAXJol" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Hutto🖕🖕🖕ammattahukannahadanawada🖕hutto🖕🖕🖕😭😭</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_053_Upul Jayasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Upul Jayasinghe">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/upul.kumara.967" target="_blank" rel="noopener" class="author-link">Upul Jayasinghe</a></div>
+                        <div class="ameta">#053 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/upul.kumara.967" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">🤣😂😂😂</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_054_Sarath Nihal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sarath Nihal">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Sarath-Nihal/pfbid02mfDmgiTnD8di6YY4rrCcKUZTUyyS6yAKXqH8QvcwkRqLU734ot7UyezvWxpef7WGl" target="_blank" rel="noopener" class="author-link">Sarath Nihal</a></div>
+                        <div class="ameta">#054 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Sarath-Nihal/pfbid02mfDmgiTnD8di6YY4rrCcKUZTUyyS6yAKXqH8QvcwkRqLU734ot7UyezvWxpef7WGl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Sticker]<div style="margin-top:10px;"><a href="Comments/comment_054_Sarath Nihal_media.jpg" target="_blank"><img src="Comments/comment_054_Sarath Nihal_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_055_Gcp Ariyasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gcp Ariyasinghe">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/gcp.ariyasinghe" target="_blank" rel="noopener" class="author-link">Gcp Ariyasinghe</a></div>
+                        <div class="ameta">#055 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/gcp.ariyasinghe" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_055_Gcp Ariyasinghe_media.jpg" target="_blank"><img src="Comments/comment_055_Gcp Ariyasinghe_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_056_Chandragupta Gamini Kannangara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandragupta Gamini Kannangara">
+                    <div class="hdr-info">
+                        <div class="aname">Chandragupta Gamini Kannangara</div>
+                        <div class="ameta">#056 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_056_Chandragupta Gamini Kannangara_media.jpg" target="_blank"><img src="Comments/comment_056_Chandragupta Gamini Kannangara_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_057_Aaliyh Aaliyh_avatar.jpg" loading="lazy" class="av-lg-img" alt="Aaliyh Aaliyh">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/aaliyh.aaliyh.7" target="_blank" rel="noopener" class="author-link">Aaliyh Aaliyh</a></div>
+                        <div class="ameta">#057 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/aaliyh.aaliyh.7" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_057_Aaliyh Aaliyh_media.jpg" target="_blank"><img src="Comments/comment_057_Aaliyh Aaliyh_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_058_Lalith Prasanna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lalith Prasanna">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/lalith.prasanna.370" target="_blank" rel="noopener" class="author-link">Lalith Prasanna</a></div>
+                        <div class="ameta">#058 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/lalith.prasanna.370" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_058_Lalith Prasanna_media.jpg" target="_blank"><img src="Comments/comment_058_Lalith Prasanna_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_059_Tissa Rajaguru_avatar.jpg" loading="lazy" class="av-lg-img" alt="Tissa Rajaguru">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/tissa.rajaguru.56" target="_blank" rel="noopener" class="author-link">Tissa Rajaguru</a></div>
+                        <div class="ameta">#059 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/tissa.rajaguru.56" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_059_Tissa Rajaguru_media.jpg" target="_blank"><img src="Comments/comment_059_Tissa Rajaguru_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_060_Amila Suresh_avatar.jpg" loading="lazy" class="av-lg-img" alt="Amila Suresh">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/amila.suresh.9" target="_blank" rel="noopener" class="author-link">Amila Suresh</a></div>
+                        <div class="ameta">#060 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/amila.suresh.9" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">🖕🏽🖕🏽🖕🏽🖕🏽💩💩💩</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_061_Achintha Fernando_avatar.jpg" loading="lazy" class="av-lg-img" alt="Achintha Fernando">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Achintha-Fernando/100089251704651" target="_blank" rel="noopener" class="author-link">Achintha Fernando</a></div>
+                        <div class="ameta">#061 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Achintha-Fernando/100089251704651" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_061_Achintha Fernando_media.jpg" target="_blank"><img src="Comments/comment_061_Achintha Fernando_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_062_Charith Seneviratne_avatar.jpg" loading="lazy" class="av-lg-img" alt="Charith Seneviratne">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/nimalkarunaratne.karu" target="_blank" rel="noopener" class="author-link">Charith Seneviratne</a></div>
+                        <div class="ameta">#062 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/nimalkarunaratne.karu" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_062_Charith Seneviratne_media.jpg" target="_blank"><img src="Comments/comment_062_Charith Seneviratne_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_063_Jeewantha Weerasingha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Jeewantha Weerasingha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/jeewantha.weerasingha.35" target="_blank" rel="noopener" class="author-link">Jeewantha Weerasingha</a></div>
+                        <div class="ameta">#063 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/jeewantha.weerasingha.35" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_063_Jeewantha Weerasingha_media.jpg" target="_blank"><img src="Comments/comment_063_Jeewantha Weerasingha_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_064_Susantha Hettiyarachchi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Susantha Hettiyarachchi">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sahan.prabath.9081" target="_blank" rel="noopener" class="author-link">Susantha Hettiyarachchi</a></div>
+                        <div class="ameta">#064 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sahan.prabath.9081" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">චීවරයක් පොරෝ ගත්තු පම්කයෝ අර දරුවව කෙලෙසපූ තොපේ මහා එකා ගැන වචනයක් කතා කලාද😡😡😡 තෝ පාටි දාපුවා අපි දැක්කා 😡😡😡කාලකන්නි වැඩ කරන්න එපා පම්කයෝ😡😡😡</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_065_Upul Jayasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Upul Jayasinghe">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/upul.kumara.967" target="_blank" rel="noopener" class="author-link">Upul Jayasinghe</a></div>
+                        <div class="ameta">#065 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/upul.kumara.967" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">පගයා...දැන් ද තා ඇහැරුනෙ</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_066_Newton Jayasooriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Newton Jayasooriya">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Newton-Jayasooriya/pfbid029Dnd5vUJEs45rcq6LJZ1aNZMNfW7abK5vQuhk6BgBuhMTqrJXZLZJgJw9CtebiiFl" target="_blank" rel="noopener" class="author-link">Newton Jayasooriya</a></div>
+                        <div class="ameta">#066 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Newton-Jayasooriya/pfbid029Dnd5vUJEs45rcq6LJZ1aNZMNfW7abK5vQuhk6BgBuhMTqrJXZLZJgJw9CtebiiFl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">තිත්තයා තෝ සිරන්තිගෙ පුක ලෙවකාපන් පඩත්තර බල්ල</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_067_Pradeepaa Senaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Pradeepaa Senaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/pradeepa.senaka" target="_blank" rel="noopener" class="author-link">Pradeepaa Senaka</a></div>
+                        <div class="ameta">#067 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/pradeepa.senaka" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">තිත්‍තයෝ.. අර අත්සං වලට කරන්න දෙයක් කියන්නද...<br><br>😆 ඕනෙ නෑ. බත් ඩිංගිත්තක් කන්න නෙව මේ සේරම</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_068_Sajeewa Kariyawasam_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sajeewa Kariyawasam">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sajeewa.kariyawasam" target="_blank" rel="noopener" class="author-link">Sajeewa Kariyawasam</a></div>
+                        <div class="ameta">#068 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sajeewa.kariyawasam" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අනේ පල කහකඩයා<br>රාජපක්ෂ වලව්වෙ මහණ වෙච්ච එකෙක්</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_069_Saranga Kiridena_avatar.jpg" loading="lazy" class="av-lg-img" alt="Saranga Kiridena">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/saranga.kiridena.5" target="_blank" rel="noopener" class="author-link">Saranga Kiridena</a></div>
+                        <div class="ameta">#069 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/saranga.kiridena.5" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">තොපේ ඔය අමනසාරලා තෝ ඔය බුරන්නේ මොකද කියලාබං රටම දන්නවා. සිරිබැල්ලි ගත්තේ පාරට මාඉම අල්ලා පංසල් හදපුනිසා නෙමෙයි යකෝ, අහිංසක මිනිසුන්ගේ රීරිමංශ උරාබීලා.<div style="margin-top:10px;"><a href="Comments/comment_069_Saranga Kiridena_media.jpg" target="_blank"><img src="Comments/comment_069_Saranga Kiridena_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_070_Indika Chaminda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Indika Chaminda">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/indika.chaminda.558947" target="_blank" rel="noopener" class="author-link">Indika Chaminda</a></div>
+                        <div class="ameta">#070 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/indika.chaminda.558947" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">බුදු දහම තියෙන්නෙ හුත්තො රජ්පක්සලාගවද හුකන්නැතුව හිටපන් කැරි මොන්ගලයා</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_071_Gayan Sanka Dissanayaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gayan Sanka Dissanayaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sanka.dissa.7" target="_blank" rel="noopener" class="author-link">Gayan Sanka Dissanayaka</a></div>
+                        <div class="ameta">#071 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sanka.dissa.7" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">MEWAGE SUSSEELAYANWA  PANNANA ONI</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_072_Ransirinel Jayathilaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ransirinel Jayathilaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/profile.php?id=100001821830474" target="_blank" rel="noopener" class="author-link">Ransirinel Jayathilaka</a></div>
+                        <div class="ameta">#072 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=100001821830474" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_072_Ransirinel Jayathilaka_media.jpg" target="_blank"><img src="Comments/comment_072_Ransirinel Jayathilaka_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_073_Jeewantha Weerasingha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Jeewantha Weerasingha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/jeewantha.weerasingha.35" target="_blank" rel="noopener" class="author-link">Jeewantha Weerasingha</a></div>
+                        <div class="ameta">#073 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/jeewantha.weerasingha.35" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_073_Jeewantha Weerasingha_media.jpg" target="_blank"><img src="Comments/comment_073_Jeewantha Weerasingha_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_074_Jeewantha Weerasingha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Jeewantha Weerasingha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/jeewantha.weerasingha.35" target="_blank" rel="noopener" class="author-link">Jeewantha Weerasingha</a></div>
+                        <div class="ameta">#074 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/jeewantha.weerasingha.35" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Sticker]<div style="margin-top:10px;"><a href="Comments/comment_074_Jeewantha Weerasingha_media.jpg" target="_blank"><img src="Comments/comment_074_Jeewantha Weerasingha_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_075_Hk Image Image_avatar.jpg" loading="lazy" class="av-lg-img" alt="Hk Image Image">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Hk-Image-Image/pfbid02hyVnyL5wEB9H3y5D74KxGhQgzRXRUY9Shfk9XdNN5xiHkjoyakr1pkrnzq8ujA9gl" target="_blank" rel="noopener" class="author-link">Hk Image Image</a></div>
+                        <div class="ameta">#075 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Hk-Image-Image/pfbid02hyVnyL5wEB9H3y5D74KxGhQgzRXRUY9Shfk9XdNN5xiHkjoyakr1pkrnzq8ujA9gl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">තිත්තගල්ලට මක්ක උනාද , රහත් උන ගමන් අන් එනව නේ..🤣🤣🤣</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_076_Sisil Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sisil Kumara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Sisil-Kumara/61584852541257" target="_blank" rel="noopener" class="author-link">Sisil Kumara</a></div>
+                        <div class="ameta">#076 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Sisil-Kumara/61584852541257" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_076_Sisil Kumara_media.jpg" target="_blank"><img src="Comments/comment_076_Sisil Kumara_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_077_Geethan Jayasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Geethan Jayasekara">
+                    <div class="hdr-info">
+                        <div class="aname">Geethan Jayasekara</div>
+                        <div class="ameta">#077 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_077_Geethan Jayasekara_media.jpg" target="_blank"><img src="Comments/comment_077_Geethan Jayasekara_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_078_Geethan Jayasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Geethan Jayasekara">
+                    <div class="hdr-info">
+                        <div class="aname">Geethan Jayasekara</div>
+                        <div class="ameta">#078 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_078_Geethan Jayasekara_media.jpg" target="_blank"><img src="Comments/comment_078_Geethan Jayasekara_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_079_Ravindra Priyadarshana Silva_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ravindra Priyadarshana Silva">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/ravindrapriyadarshana.silva" target="_blank" rel="noopener" class="author-link">Ravindra Priyadarshana Silva</a></div>
+                        <div class="ameta">#079 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/ravindrapriyadarshana.silva" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">තිත්තගල්ලෙ බ්‍රො<div style="margin-top:10px;"><a href="Comments/comment_079_Ravindra Priyadarshana Silva_media.jpg" target="_blank"><img src="Comments/comment_079_Ravindra Priyadarshana Silva_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_080_Tissa Rajaguru_avatar.jpg" loading="lazy" class="av-lg-img" alt="Tissa Rajaguru">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/tissa.rajaguru.56" target="_blank" rel="noopener" class="author-link">Tissa Rajaguru</a></div>
+                        <div class="ameta">#080 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/tissa.rajaguru.56" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_080_Tissa Rajaguru_media.jpg" target="_blank"><img src="Comments/comment_080_Tissa Rajaguru_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t39.30808-1/345427493_1365075970703309_526254318800998829_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=6zOce0OYjR0Q7kNvwEJyptS&amp;_nc_oc=AdpL2_GhSMK60HpT_52rL8FqzKvizinCiX83EEFnD8gLpDX0GLhCC4hEIA4xF8RWANQ&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQN3ftfmratzQ8SPaDXihq9nbe9HX_7H2byq2A7PT0lWpA&amp;oe=6ACEF0D0" loading="lazy" class="av-lg-img" alt="Lalith Prasanna">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/lalith.prasanna.370" target="_blank" rel="noopener" class="author-link">Lalith Prasanna</a></div>
+                        <div class="ameta">#081 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/lalith.prasanna.370" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_081_Lalith Prasanna_media.jpg" target="_blank"><img src="Comments/comment_081_Lalith Prasanna_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/616269769_26101946926058262_2638224738670042955_n.jpg?stp=c0.0.721.721a_cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=Rh5pUqSfJHIQ7kNvwGBpbQB&amp;_nc_oc=AdpVDWoK-y7H36lLOXF4z8I_WaoyOQo4h-y9R5tqVSD_GmWpOGRFYFCaykow-BtIyDQ&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQPoJiPpsD_KlcoiuKG2MdTYpaY39_BkoVvq_Cek21OzXA&amp;oe=6ACEBBB5" loading="lazy" class="av-lg-img" alt="Nilmini Kaluarachchige">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/nilmini.kaluarachchige" target="_blank" rel="noopener" class="author-link">Nilmini Kaluarachchige</a></div>
+                        <div class="ameta">#082 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/nilmini.kaluarachchige" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මේක අහකඩයගේ සෝෂල් මීඩියා විතරක් නෙමෙයි තහනම් කරන්න ඕනේ. මූට කට අරින එකත් තහනම් කරන්න ඕන.  ඒ තරම් අප්පිරියාවක්</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t39.30808-1/795253112_122122098927043875_4821833877139427598_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=UZEtL_7dP10Q7kNvwHFmed-&amp;_nc_oc=AdpL4REdjk2McKRGHCO8NKTA7w7l7C9ciA2wf5pCP-aGfZYRIlUQS0yGig5siYeyM-o&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQOCKcDoDHa-LJ0yZXddT0SSd_Eu0bNNYlA7WCUyUiergw&amp;oe=6ACEC37F" loading="lazy" class="av-lg-img" alt="Nsb Herath">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Nsb-Herath/pfbid0234nAhQF3QGxvQUXwR8nRxnVMJ99gFSvUfzmEZC2DTqSocvAkvsqkJfx6XZKZ4oUUl" target="_blank" rel="noopener" class="author-link">Nsb Herath</a></div>
+                        <div class="ameta">#083 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Nsb-Herath/pfbid0234nAhQF3QGxvQUXwR8nRxnVMJ99gFSvUfzmEZC2DTqSocvAkvsqkJfx6XZKZ4oUUl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">සැගවුණු පාතාලය එලියට 😁</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.6435-1/42643239_294007051326650_9005723113136062464_n.jpg?stp=cp0_dst-jpg_p40x40_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=7pNNRkUcoWAQ7kNvwF964RW&amp;_nc_oc=Adqrk2Vh1L-zrX3dM0hbvU7Unybm-jUeY5JuMypZI0del7MaRG_BXFCoLI8y8X7wFzg&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-2.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQOQP8jbVjaL6pilLs4zQmMugkXlhQLcfIZNaO9x1sU4nA&amp;oe=6AF07460" loading="lazy" class="av-lg-img" alt="Punsiri Wettasinghe">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/liyaro.printers" target="_blank" rel="noopener" class="author-link">Punsiri Wettasinghe</a></div>
+                        <div class="ameta">#084 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/liyaro.printers" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_084_Punsiri Wettasinghe_media.jpg" target="_blank"><img src="Comments/comment_084_Punsiri Wettasinghe_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t39.30808-1/395433901_637570811901360_1402720017929596194_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=TjlTWNbGFXQQ7kNvwHC2Y8T&amp;_nc_oc=AdoRKpNUNaFyzZnvlX8pmCx3U8GeIEfBdBk2BQwvUZ4WqnaSkfTuuDhXSU6cR2PoOv4&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQNI9mPjanHQHsc7-6noUqHhJgRTkrJpy0_MTnLgfQoe2Q&amp;oe=6ACEC263" loading="lazy" class="av-lg-img" alt="Janaka Janaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Janaka-Janaka/pfbid0Nz1FUSjD8KBVZ1HvFNyC3LujSXRJ33ai6sPLFE4jJjTBCXu8kXir7KnQeDxbnjW9l" target="_blank" rel="noopener" class="author-link">Janaka Janaka</a></div>
+                        <div class="ameta">#085 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Janaka-Janaka/pfbid0Nz1FUSjD8KBVZ1HvFNyC3LujSXRJ33ai6sPLFE4jJjTBCXu8kXir7KnQeDxbnjW9l" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අමු කහකඩයො</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-1/838488081_27980295598315824_2526834559136575415_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=yzIbfbY77a4Q7kNvwFFGHZO&amp;_nc_oc=AdpAra94MvM8Yd_HqfdJd538g5KN4Y_Nra1-RZRxlUwQBTOG02Am4iVl4SPiikCY_NY&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-1.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQMF-TU8pb7lbmf-OYFwqvKCULSu9rEPRhs6fE9GMYrCmg&amp;oe=6ACEBA97" loading="lazy" class="av-lg-img" alt="Shehan Fernando">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Shehan-Fernando/100002862769111" target="_blank" rel="noopener" class="author-link">Shehan Fernando</a></div>
+                        <div class="ameta">#086 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Shehan-Fernando/100002862769111" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">දැන් තමයි හරියට එලියට ආවේ මෙයා 😅</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t1.6435-1/81811709_3248759325141515_6105945925715230720_n.jpg?stp=c0.0.302.302a_cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=udTVWglpdD0Q7kNvwGzXIff&amp;_nc_oc=Adqq4njLn5fF83ZcgWJKMDD0Bpvj3CBEcisazDqja61mwii0V7T28Ie1fK9BL_6_a4A&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQN2WC83fHb1kMGaRPtDP00cSv7-h-pYJTgzwKPAvOvMrw&amp;oe=6AF09038" loading="lazy" class="av-lg-img" alt="Prasanna Rajapaksa">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/prasanna.rajapaksa" target="_blank" rel="noopener" class="author-link">Prasanna Rajapaksa</a></div>
+                        <div class="ameta">#087 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/prasanna.rajapaksa" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මු$$$ගෙ කැත....🤣</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-1/613468691_2667603230279251_1154061572176273876_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=6keHR0uF--cQ7kNvwGEiz8R&amp;_nc_oc=AdojsTjpkJQUYFuB9Nv0GOW9VhEZBkgrEcAMTiwuHO8AzTe9JxSqfQN02Bw_gcCZCK8&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-1.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQN-kKG6tiBVAcLhAya4731x-F6AHxPPENjc9n0rBaPgyA&amp;oe=6ACEEADB" loading="lazy" class="av-lg-img" alt="Manjula Chandrapala">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/manjula.chandrapala.1" target="_blank" rel="noopener" class="author-link">Manjula Chandrapala</a></div>
+                        <div class="ameta">#088 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/manjula.chandrapala.1" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">නියම සංඝ පාතාලය</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/371890931_122105148896022176_4968377258772716691_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=6pMt449jlvsQ7kNvwF4KGJx&amp;_nc_oc=AdraCY-KZ06awDgsGzU9wQZlZ3v6IUyCy4Cg18XaBHtbypoXHmx2zUMK7I9gVKlsztU&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQOlpKgzBAxIYiAa1JlOjUjE9I3uxd--FeRhCeZYr9k62A&amp;oe=6ACEE56B" loading="lazy" class="av-lg-img" alt="Sandanayaka Senevirathna">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Sandanayaka-Senevirathna/pfbid0hbDgMD25Grt5A5ea6n6sfs8P9yB2kYowBKssqD2HpZ2QZSsFnZLxGWU63CHubv38l" target="_blank" rel="noopener" class="author-link">Sandanayaka Senevirathna</a></div>
+                        <div class="ameta">#089 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Sandanayaka-Senevirathna/pfbid0hbDgMD25Grt5A5ea6n6sfs8P9yB2kYowBKssqD2HpZ2QZSsFnZLxGWU63CHubv38l" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_089_Sandanayaka Senevirathna_media.jpg" target="_blank"><img src="Comments/comment_089_Sandanayaka Senevirathna_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t39.30808-1/546510284_122264168120239285_8717070494822295449_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=nW9SSvyLEXQQ7kNvwFp9qdc&amp;_nc_oc=Adp7xLWaQu584zyF4o6ngXpLKEdPrZ0sDqMCE8cKrcRPOWbYbCQwCoLZHUVb4-c5m2A&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=wSK3esZKnGlMbswINphyug&amp;_nc_ss=7b180&amp;oh=00_AQMRgJF23U2nFFcuHyJAzQ_jMrPC25EgZGvrm1tJsSb-VQ&amp;oe=6ACEC221" loading="lazy" class="av-lg-img" alt="Thiwen Kulathilaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/thiwen.kulathilaka.2025" target="_blank" rel="noopener" class="author-link">Thiwen Kulathilaka</a></div>
+                        <div class="ameta">#090 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/thiwen.kulathilaka.2025" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මේකට ගහල පන්නපියව් කරි හොර ගනයො</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/368194967_289815743639561_8423120159360454666_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=4MYDjDc-zCAQ7kNvwFKmhFc&amp;_nc_oc=AdrNPwOkI_30Sn0J41U7l_Frmd1uySURdmys9Jo4pJL4fW6lWMgni2xIQKgOmPIKO1c&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQNLjq_oTeyblgOtAt4pyAYsfmxgJP2a_iTPRFSer1U5eQ&amp;oe=6ACEE2DB" loading="lazy" class="av-lg-img" alt="Akash Nilupul">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="author-link">Akash Nilupul</a></div>
+                        <div class="ameta">#091 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_091_Akash Nilupul_media.jpg" target="_blank"><img src="Comments/comment_091_Akash Nilupul_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/368194967_289815743639561_8423120159360454666_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=4MYDjDc-zCAQ7kNvwFKmhFc&amp;_nc_oc=AdrNPwOkI_30Sn0J41U7l_Frmd1uySURdmys9Jo4pJL4fW6lWMgni2xIQKgOmPIKO1c&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQNLjq_oTeyblgOtAt4pyAYsfmxgJP2a_iTPRFSer1U5eQ&amp;oe=6ACEE2DB" loading="lazy" class="av-lg-img" alt="Akash Nilupul">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="author-link">Akash Nilupul</a></div>
+                        <div class="ameta">#092 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_092_Akash Nilupul_media.jpg" target="_blank"><img src="Comments/comment_092_Akash Nilupul_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/368194967_289815743639561_8423120159360454666_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=4MYDjDc-zCAQ7kNvwFKmhFc&amp;_nc_oc=AdrNPwOkI_30Sn0J41U7l_Frmd1uySURdmys9Jo4pJL4fW6lWMgni2xIQKgOmPIKO1c&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQNLjq_oTeyblgOtAt4pyAYsfmxgJP2a_iTPRFSer1U5eQ&amp;oe=6ACEE2DB" loading="lazy" class="av-lg-img" alt="Akash Nilupul">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="author-link">Akash Nilupul</a></div>
+                        <div class="ameta">#093 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_093_Akash Nilupul_media.jpg" target="_blank"><img src="Comments/comment_093_Akash Nilupul_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/368194967_289815743639561_8423120159360454666_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=4MYDjDc-zCAQ7kNvwFKmhFc&amp;_nc_oc=AdrNPwOkI_30Sn0J41U7l_Frmd1uySURdmys9Jo4pJL4fW6lWMgni2xIQKgOmPIKO1c&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQNLjq_oTeyblgOtAt4pyAYsfmxgJP2a_iTPRFSer1U5eQ&amp;oe=6ACEE2DB" loading="lazy" class="av-lg-img" alt="Akash Nilupul">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="author-link">Akash Nilupul</a></div>
+                        <div class="ameta">#094 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_094_Akash Nilupul_media.jpg" target="_blank"><img src="Comments/comment_094_Akash Nilupul_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-1/368194967_289815743639561_8423120159360454666_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=4MYDjDc-zCAQ7kNvwFKmhFc&amp;_nc_oc=AdrNPwOkI_30Sn0J41U7l_Frmd1uySURdmys9Jo4pJL4fW6lWMgni2xIQKgOmPIKO1c&amp;_nc_zt=24&amp;_nc_ht=scontent-sin6-3.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQNLjq_oTeyblgOtAt4pyAYsfmxgJP2a_iTPRFSer1U5eQ&amp;oe=6ACEE2DB" loading="lazy" class="av-lg-img" alt="Akash Nilupul">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="author-link">Akash Nilupul</a></div>
+                        <div class="ameta">#095 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/akash.nilupul.527470" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">[Image Attachment]<div style="margin-top:10px;"><a href="Comments/comment_095_Akash Nilupul_media.jpg" target="_blank"><img src="Comments/comment_095_Akash Nilupul_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin11-1.xx.fbcdn.net/v/t39.30808-1/831142398_1653594199431100_8322941458637361743_n.jpg?stp=cp0_dst-jpg_p40x40_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=wGZhDqqMz9sQ7kNvwH_xUTL&amp;_nc_oc=AdqiG5GiKz_jzST9zHsgWPwqalb4WHp1gYYfR7ErcGUoOFcTIQltXJwkPzmNdXkKfzA&amp;_nc_zt=24&amp;_nc_ht=scontent-sin11-1.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQNUDHVvCkvxNmaXqMC6rJoyIZLLqWX4qqxJCuq4C-PU6w&amp;oe=6ACEC3A7" loading="lazy" class="av-lg-img" alt="Maheshi Jayasekara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/maheshi.jayasekara.549" target="_blank" rel="noopener" class="author-link">Maheshi Jayasekara</a></div>
+                        <div class="ameta">#096 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/maheshi.jayasekara.549" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මූ මේ නිකායෙන් නෙරපපොපුෙක් මූ දැන් හාමුදුරු කෙනෙක් නෙමෙයි<div style="margin-top:10px;"><a href="Comments/comment_096_Maheshi Jayasekara_media.jpg" target="_blank"><img src="Comments/comment_096_Maheshi Jayasekara_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t1.6435-1/54524872_1019895078196161_2198708254060576768_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=3FszoPrY7QMQ7kNvwHwhkEY&amp;_nc_oc=AdrCZ67QjSUG3WuTY9AfvWOqfzgKdlnDwVLHA62SRh9WE4QeQnxhSQu-59z0bfZiPe0&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQPO7yoesIvXWntl95wGe7I3L6j2ku279vglQqH9Otnikg&amp;oe=6AF08D90" loading="lazy" class="av-lg-img" alt="Sarath Dassanayake">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/sarath.dassanayake.16" target="_blank" rel="noopener" class="author-link">Sarath Dassanayake</a></div>
+                        <div class="ameta">#097 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/sarath.dassanayake.16" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Nobody going to arrest Genaral Fonseka&#x27;s wife. Law enforcement authorities are arresting a scoundrel woman who mislead her sons, also involved in  certein murderers.</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-1/588046096_25158252443831159_4375303001035835260_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=1d2534&amp;_nc_ohc=nNSA3WPSpLMQ7kNvwHzYhQ8&amp;_nc_oc=AdoKARawpJSmxBIg0ZWJ8ltEeVLT3dbAAKZ9Cc5BZEB6Xl2SmsZOlP6fVxiDlApKycs&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-1.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQN4RLpeJBRvck14As24ptYv91mbVGTFHoA_2IPqs-uw3A&amp;oe=6ACED8ED" loading="lazy" class="av-lg-img" alt="Don C Janaka Kariyapperuma">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/dondubay" target="_blank" rel="noopener" class="author-link">Don C Janaka Kariyapperuma</a></div>
+                        <div class="ameta">#098 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/dondubay" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Fk off</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="https://scontent-sin2-2.xx.fbcdn.net/v/t39.30808-1/467251483_1616743899722739_730941969676286016_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=e99d92&amp;_nc_ohc=S6bwybU2BrsQ7kNvwEGK-3c&amp;_nc_oc=Ado_9FCFUiYu7Oe6rYXU9z5l0jFGkcCZdF1J8hRQ7d6vNHkn7jQJ6GxMecEs8voXVG0&amp;_nc_zt=24&amp;_nc_ht=scontent-sin2-2.xx&amp;_nc_gid=2ENHTcv9DTklZGFxNPOGew&amp;_nc_ss=7b180&amp;oh=00_AQMAHTMHI0LLqT1V5Y6qSUUbrDMFmWeDICmDAQ9OQ7Pv9g&amp;oe=6ACEF1E2" loading="lazy" class="av-lg-img" alt="Abdulla Abdulla">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/abdulla.abdulla.520881" target="_blank" rel="noopener" class="author-link">Abdulla Abdulla</a></div>
+                        <div class="ameta">#099 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/abdulla.abdulla.520881" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Pall pako</div>
+                
+            </div>
+        </div>
+    <div id="noResults">😕 No comments match your search.</div>
+
+    <footer>
+        <p>Facebook Post Offline Archive &bull; Post ID: <code>1642216670765198</code> &bull; CSV: <a href="comments.csv" style="color:var(--acc);">comments.csv</a></p>
+    </footer>
+</div>
+
+<script>
+var THEME_KEY = 'fb_archive_theme_v1';
+var READ_KEY = 'fb_archive_read_posts_v1';
+var POST_IDX = 247;
+
+function getStoredTheme() {
+    try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
+    } catch (e) {}
+    try {
+        if (window.name && window.name.charAt(0) === '{') {
+            var wn = JSON.parse(window.name);
+            if (wn && (wn.theme === 'dark' || wn.theme === 'light')) return wn.theme;
+        }
+    } catch (e) {}
+    try {
+        var ls = localStorage.getItem(THEME_KEY);
+        if (ls === 'dark' || ls === 'light') return ls;
+    } catch (e) {}
+    return 'light';
+}
+
+function persistTheme(theme) {
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    try {
+        var wn = {};
+        if (window.name && window.name.charAt(0) === '{') {
+            wn = JSON.parse(window.name) || {};
+        }
+        wn.theme = theme;
+        window.name = JSON.stringify(wn);
+    } catch (e) {}
+    try {
+        var backLink = document.getElementById('backCatalogLink');
+        if (backLink) {
+            backLink.setAttribute('href', '../index.html?theme=' + theme + '#post-' + POST_IDX);
+        }
+    } catch (e) {}
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.textContent = '☀️ Light Mode';
+    } else {
+        document.body.classList.remove('dark-mode');
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.textContent = '🌙 Dark Mode';
+    }
+    persistTheme(theme);
+}
+
+function toggleTheme() {
+    var isDark = document.body.classList.contains('dark-mode');
+    var next = isDark ? 'light' : 'dark';
+    applyTheme(next);
+}
+
+function loadReadMap() {
+    var lsObj = null, wnObj = null;
+    try {
+        var raw = localStorage.getItem(READ_KEY);
+        if (raw) lsObj = JSON.parse(raw);
+    } catch (e) {}
+    try {
+        if (window.name && window.name.charAt(0) === '{') {
+            var wn = JSON.parse(window.name);
+            if (wn && wn.readPosts) wnObj = wn.readPosts;
+        }
+    } catch (e) {}
+    var chosen = lsObj;
+    if (wnObj && (!chosen || (wnObj.updatedAt || 0) >= (chosen.updatedAt || 0))) {
+        chosen = wnObj;
+    }
+    var map = {};
+    if (chosen && Array.isArray(chosen.list)) {
+        chosen.list.forEach(function(id) { map[id] = true; });
+    }
+    return map;
+}
+
+function saveReadMap(map) {
+    var list = Object.keys(map).filter(function(k) { return map[k]; }).map(function(k) { return parseInt(k, 10); });
+    var payload = { list: list, updatedAt: Date.now() };
+    try { localStorage.setItem(READ_KEY, JSON.stringify(payload)); } catch (e) {}
+    try {
+        var wn = {};
+        if (window.name && window.name.charAt(0) === '{') {
+            wn = JSON.parse(window.name) || {};
+        }
+        wn.readPosts = payload;
+        window.name = JSON.stringify(wn);
+    } catch (e) {}
+}
+
+function renderReadHere() {
+    var map = loadReadMap();
+    var isRead = !!map[POST_IDX];
+    var btn = document.getElementById('readToggleBtn');
+    if (btn) {
+        if (isRead) {
+            btn.classList.add('is-read');
+            btn.textContent = '✅ Marked as Read';
+        } else {
+            btn.classList.remove('is-read');
+            btn.textContent = '☐ Mark as Read';
+        }
+    }
+}
+
+function toggleReadHere() {
+    var map = loadReadMap();
+    map[POST_IDX] = !map[POST_IDX];
+    saveReadMap(map);
+    renderReadHere();
+}
+
+(function() {
+    applyTheme(getStoredTheme());
+    renderReadHere();
+})();
+
+function filterComments() {
+    var q = document.getElementById('q').value.toLowerCase();
+    var cards = document.querySelectorAll('#list .thread-card');
+    var visible = 0;
+    cards.forEach(function(c) {
+        var show = !q || c.textContent.toLowerCase().includes(q);
+        c.style.display = show ? '' : 'none';
+        if (show) visible++;
+    });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+}
+
+function toggleReplies(id, btn) {
+    var el = document.getElementById('rlist-' + id);
+    if (!el) return;
+    if (el.style.display === 'none') {
+        el.style.display = 'flex';
+        btn.textContent = 'Hide Replies';
+    } else {
+        el.style.display = 'none';
+        btn.textContent = 'Show Replies';
+    }
+}
+
+var allExpanded = true;
+function toggleAllReplies() {
+    allExpanded = !allExpanded;
+    document.querySelectorAll('.replies-list').forEach(function(el) {
+        el.style.display = allExpanded ? 'flex' : 'none';
+    });
+    document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+        btn.textContent = allExpanded ? 'Hide Replies' : 'Show Replies';
+    });
+}
+</script>
+</body>
+</html>

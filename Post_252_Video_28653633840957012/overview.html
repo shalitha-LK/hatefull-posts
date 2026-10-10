@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post #252 Archive — Koshi Bodimaluwa (35 Comments)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fffaf0; --surf: #ffffff; --surf2: #fffbeb;
+            --acc: #ea580c; --acc2: #d97706;
+            --txt: #2c1507; --sub: #78350f;
+            --bdr: #fcd34d; --rbdr: #f59e0b; --grn: #b45309;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(180deg, #fffaf0 0%, #fff7ed 50%, #fef3c7 100%); background-attachment: fixed; color: var(--txt); padding: 28px 20px; line-height: 1.6; }
+        .wrap { max-width: 1100px; margin: 0 auto; }
+        .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+        .back-link { color: #c2410c; text-decoration: none; font-weight: 700; font-size: 0.95rem; background: #fffbeb; border: 1.5px solid #fcd34d; padding: 8px 16px; border-radius: 10px; transition: all 0.15s; }
+        .back-link:hover { background: #fef3c7; border-color: var(--acc); }
+        .action-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.15s; border: 1.5px solid var(--bdr); background: var(--surf); color: #7c2d12; }
+        .btn:hover { border-color: var(--acc); background: #fef3c7; color: #7c2d12; }
+        .btn-csv { background: #fef3c7; border-color: #f59e0b; color: #9a3412; }
+        .btn-csv:hover { background: #f59e0b; color: #fff; }
+        .btn-fb { background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); border-color: #c2410c; color: #fff; }
+        .btn-fb:hover { background: linear-gradient(135deg, #c2410c 0%, #d97706 100%); color: #fff; }
+
+        .header-card { background: linear-gradient(135deg, #ffffff 0%, #fffbeb 70%, #ffedd5 100%); border: 1.5px solid var(--bdr); border-top: 6px solid var(--acc); border-radius: 16px; padding: 26px; margin-bottom: 24px; box-shadow: 0 6px 22px rgba(217, 119, 6, 0.1); }
+        .header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+        .header-card h1 { font-size: 1.6rem; color: #7c2d12; font-weight: 800; }
+        .header-card h1 a { color: #7c2d12; text-decoration: none; }
+        .header-card h1 a:hover { color: var(--acc); }
+        .type-pill { background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); color: #fff; border: 1px solid #c2410c; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+        .meta-line { color: var(--sub); font-size: 0.88rem; margin-bottom: 16px; word-break: break-all; }
+        .meta-line a { color: var(--acc); text-decoration: none; font-weight: 600; }
+        .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+        .badge { background: var(--surf2); border: 1px solid var(--bdr); padding: 5px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--sub); font-weight: 600; }
+        .badge strong { color: #7c2d12; }
+        .caption-box { background: #ffffff; border: 1px solid #fde68a; border-left: 4px solid var(--acc); padding: 16px 20px; font-size: 0.98rem; line-height: 1.65; white-space: pre-wrap; border-radius: 8px; color: #2c1507; word-break: break-word; }
+
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+        @media(max-width: 650px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+        .scard { background: #ffffff; border: 1.5px solid var(--bdr); border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 10px rgba(217, 119, 6, 0.06); }
+        .snum { font-size: 1.75rem; font-weight: 800; color: var(--acc); margin-bottom: 2px; }
+        .slbl { font-size: 0.74rem; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+
+        .media-container { background: var(--surf); border-radius: 16px; padding: 22px; border: 1.5px solid var(--bdr); margin-bottom: 24px; box-shadow: 0 4px 16px rgba(217, 119, 6, 0.07); }
+        .media-container h3 { margin-bottom: 14px; font-size: 1.1rem; color: #7c2d12; }
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+        .grid-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1.5px solid var(--bdr); transition: transform 0.2s; }
+        .grid-photo:hover { transform: scale(1.02); }
+
+        .sec-hdr { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+        .sec-hdr h2 { font-size: 1.25rem; color: #7c2d12; }
+        .sec-badge { background: #fef3c7; color: #9a3412; border: 1px solid #f59e0b; padding: 3px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
+
+        .toolbar { display: flex; gap: 12px; margin-bottom: 20px; align-items: center; flex-wrap: wrap; }
+        .search-wrap { position: relative; flex: 1; min-width: 220px; }
+        .search-inp { width: 100%; padding: 11px 16px 11px 42px; background: var(--surf); border: 1.5px solid var(--bdr); border-radius: 10px; color: var(--txt); font-size: 0.93rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+        .search-inp:focus { border-color: var(--acc); }
+        .search-inp::placeholder { color: var(--sub); opacity: 0.7; }
+        .si { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--sub); pointer-events: none; }
+        .toggle-all-btn { background: var(--surf2); border: 1.5px solid var(--bdr); color: #7c2d12; padding: 10px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; white-space: nowrap; transition: all 0.15s; }
+        .toggle-all-btn:hover { background: #fef3c7; border-color: var(--acc); }
+
+        .thread-card { background: var(--surf); border: 1.5px solid #fde68a; border-radius: 16px; margin-bottom: 16px; padding: 20px; box-shadow: 0 4px 16px rgba(180, 83, 9, 0.06); }
+        .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .av-lg { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; font-weight: 700; color: #fff; flex-shrink: 0; border: 2px solid #fde68a; }
+        .av-lg-img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--bdr); }
+        .hdr-info { flex: 1; min-width: 0; }
+        .aname { font-size: 1.02rem; font-weight: 700; color: #7c2d12; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .author-link { color: #7c2d12; text-decoration: none; }
+        .author-link:hover { color: var(--acc); text-decoration: underline; }
+        .ameta { font-size: 0.76rem; color: var(--sub); margin-top: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .reply-count-badge { background: #fef3c7; color: #9a3412; border: 1px solid #f59e0b; padding: 1px 8px; border-radius: 10px; font-weight: 700; font-size: 0.72rem; }
+        .prof-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 4px; background: #fffbeb; color: #b45309; border: 1px solid #fcd34d; padding: 5px 12px; border-radius: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; transition: all 0.15s; white-space: nowrap; }
+        .prof-btn:hover { background: var(--acc); color: #fff; border-color: var(--acc); }
+        .prof-btn.sm { padding: 3px 9px; font-size: 0.72rem; }
+
+        .ctext { background: #fffbeb; padding: 12px 16px; border-radius: 10px; font-size: 0.96rem; color: #2c1507; border: 1px solid #fde68a; border-left: 3.5px solid var(--acc); word-break: break-word; }
+        .ctext.sm { font-size: 0.88rem; padding: 10px 14px; background: #ffffff; }
+
+        .replies-tree { margin-top: 14px; padding-left: 20px; border-left: 3px solid var(--rbdr); display: flex; flex-direction: column; gap: 10px; }
+        .replies-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+        .replies-title { font-size: 0.84rem; color: #c2410c; font-weight: 700; }
+        .toggle-btn { background: transparent; border: none; color: var(--sub); font-size: 0.75rem; font-weight: 600; cursor: pointer; padding: 2px 8px; border-radius: 4px; }
+        .toggle-btn:hover { color: var(--acc); text-decoration: underline; }
+        .replies-list { display: flex; flex-direction: column; gap: 10px; }
+        .reply-card { background: var(--surf2); border: 1px solid #fde68a; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .reply-header { display: flex; align-items: center; gap: 10px; }
+        .av-sm { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+        .av-sm-img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--bdr); }
+        .reply-meta { flex: 1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .rname { font-size: 0.92rem; font-weight: 700; color: #7c2d12; }
+        .reply-target { font-size: 0.74rem; color: #9a3412; background: #fef3c7; padding: 2px 8px; border-radius: 6px; border: 1px solid #fcd34d; font-weight: 600; }
+
+        #noResults { display: none; text-align: center; color: var(--sub); padding: 40px; font-size: 0.95rem; }
+        footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--bdr); text-align: center; color: var(--sub); font-size: 0.82rem; }
+        .theme-btn { cursor: pointer; user-select: none; }
+
+        /* Dark Mode Overrides */
+        body.dark-mode {
+            --bg: #0f0c08; --surf: #1a140e; --surf2: #241c14;
+            --acc: #f97316; --acc2: #fbbf24;
+            --txt: #fffbeb; --sub: #fcd34d;
+            --bdr: #5c3515; --rbdr: #f97316; --grn: #fbbf24;
+            background: linear-gradient(180deg, #0f0c08 0%, #16110b 60%, #1c150d 100%);
+            color: var(--txt);
+        }
+        body.dark-mode .back-link { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .back-link:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .btn { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .btn:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .btn-csv { background: #2b1f11; border-color: #b45309; color: #fcd34d; }
+        body.dark-mode .btn-csv:hover { background: #f59e0b; color: #ffffff; }
+        body.dark-mode .header-card { background: linear-gradient(135deg, #1c140d 0%, #261b10 65%, #332211 100%); border-color: #78350f; border-top: 6px solid #f97316; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55); }
+        body.dark-mode .header-card h1, body.dark-mode .header-card h1 a { color: #fffbeb; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45); }
+        body.dark-mode .header-card h1 a:hover { color: #fbbf24; }
+        body.dark-mode .meta-line { color: #fde68a; }
+        body.dark-mode .meta-line strong { color: #ffffff; }
+        body.dark-mode .meta-line a { color: #fb923c; }
+        body.dark-mode .badge { background: #140f0a; border-color: #5c3515; color: #fde68a; }
+        body.dark-mode .badge strong { color: #fbbf24; }
+        body.dark-mode .caption-box { background: #120d08; border-color: #5c3515; border-left: 4px solid #f97316; color: #fffbeb; }
+        body.dark-mode .scard { background: #140f0a; border-color: #5c3515; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); }
+        body.dark-mode .snum { color: #fbbf24; }
+        body.dark-mode .slbl { color: #fde68a; }
+        body.dark-mode .media-container { background: #1a140e; border-color: #5c3515; }
+        body.dark-mode .media-container h3, body.dark-mode .sec-hdr h2 { color: #fffbeb; }
+        body.dark-mode .sec-badge { background: #2b1f11; color: #fbbf24; border-color: #d97706; }
+        body.dark-mode .search-inp { background: #120d08; border-color: #5c3515; color: #fffbeb; }
+        body.dark-mode .search-inp::placeholder { color: #b8976c; opacity: 1; }
+        body.dark-mode .search-inp:focus { border-color: #f97316; background: #1a140e; }
+        body.dark-mode .toggle-all-btn { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .toggle-all-btn:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .thread-card { background: #1a140e; border-color: #4a2c13; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+        body.dark-mode .aname, body.dark-mode .author-link, body.dark-mode .rname { color: #fffbeb; }
+        body.dark-mode .ameta { color: #d6b88a; }
+        body.dark-mode .reply-count-badge, body.dark-mode .reply-target { background: #2b1f11; color: #fbbf24; border-color: #b45309; }
+        body.dark-mode .prof-btn { background: #241c14; color: #fbbf24; border-color: #78350f; }
+        body.dark-mode .prof-btn:hover { background: #ea580c; color: #ffffff; border-color: #ea580c; }
+        body.dark-mode .ctext { background: #120d08; color: #fffbeb; border-color: #4a2c13; border-left: 3.5px solid #f97316; }
+        body.dark-mode .ctext.sm { background: #16100a; color: #fef3c7; }
+        body.dark-mode .reply-card { background: #221910; border-color: #5c3515; }
+        body.dark-mode .replies-title { color: #fb923c; }
+        body.dark-mode .toggle-btn { color: #fcd34d; }
+        .read-btn { cursor: pointer; user-select: none; }
+        .read-btn.is-read { background: #dcfce7; border-color: #16a34a; color: #166534; }
+        body.dark-mode .read-btn.is-read { background: #14532d; border-color: #22c55e; color: #bbf7d0; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-nav">
+        <a href="../index.html#post-252" id="backCatalogLink" class="back-link">← Back to Master Archive Catalog</a>
+        <div class="action-btns">
+            <button type="button" class="btn read-btn" id="readToggleBtn" onclick="toggleReadHere()">☐ Mark as Read</button>
+            <button type="button" class="btn theme-btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <a href="comments.csv" download="fb_comments_28653633840957012.csv" class="btn btn-csv">📥 Download CSV (35)</a>
+            <a href="threads_index.json" target="_blank" class="btn">📄 JSON Data</a>
+            <a href="https://www.facebook.com/reel/28653633840957012" target="_blank" rel="noopener" class="btn btn-fb">🔗 View on Facebook</a>
+        </div>
+    </div>
+
+    <div class="header-card">
+        <div class="header-top">
+            <h1>Post #252 — <a href="https://www.facebook.com/profile.php?id=100092726023737" target="_blank" rel="noopener">Koshi Bodimaluwa</a></h1>
+            <span class="type-pill">Reel</span>
+        </div>
+        <div class="meta-line">
+            📅 Published: <strong>October 7, 2026 at 02:38 PM</strong> &nbsp;|&nbsp;
+            🔗 Source: <a href="https://www.facebook.com/reel/28653633840957012" target="_blank" rel="noopener">https://www.facebook.com/reel/28653633840957012</a>
+        </div>
+        
+        <div class="caption-box">මට නාමල්ව අරහත්වය දක්වා අරන් යන්න පුළුවන්
+
+​#SriLanka #PodcastSriLanka #TrendingSriLanka #ViralVideo #SriLankanReels #TalkShow #Interview #Namal #DeepThoughts #Philosophy #SocialMediaLK #ExploreLK #LankaCreators #ViralReels #ForYou</div>
+
+        <div class="stats">
+            <div class="scard"><div class="snum">35</div><div class="slbl">Total Comments</div></div>
+            <div class="scard"><div class="snum">25</div><div class="slbl">Parent Threads</div></div>
+            <div class="scard"><div class="snum">10</div><div class="slbl">Nested Replies</div></div>
+            <div class="scard"><div class="snum">24</div><div class="slbl">Unique Users</div></div>
+        </div>
+    </div>
+
+    
+        <div class="media-container">
+            <h3>🎥 Attached Post Video</h3>
+            <video controls preload="metadata" style="max-width: 100%; max-height: 640px; border-radius: 12px; display: block; margin: 0 auto;">
+                <source src="post_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    <div class="sec-hdr">
+        <h2>💬 Full Comment Threads (35)</h2>
+        <span class="sec-badge">25 root threads</span>
+    </div>
+
+    <div class="toolbar">
+        <div class="search-wrap">
+            <span class="si">🔍</span>
+            <input class="search-inp" type="text" id="q" placeholder="Search comments or users…" oninput="filterComments()">
+        </div>
+        <button class="toggle-all-btn" onclick="toggleAllReplies()">Toggle All Replies</button>
+    </div>
+
+    <div id="list">
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_001_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Koshi Bodimaluwa">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></div>
+                        <div class="ameta">#001 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">@followers</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_002_Dilrukshi Jayamaha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dilrukshi Jayamaha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/profile.php?id=100011951539385" target="_blank" rel="noopener" class="author-link">Dilrukshi Jayamaha</a></div>
+                        <div class="ameta">#002 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=100011951539385" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">පයින්ද දන්නෙ නෑ...😂😂</div>
+                
+            <div class="replies-tree" id="tree-2">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(2, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-2">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_002_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Dilrukshi Jayamaha</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Dilrukshi Jayamaha<div style="margin-top:8px;"><a href="Comments/comment_002_reply_01_Koshi Bodimaluwa_media.jpg" target="_blank"><img src="Comments/comment_002_reply_01_Koshi Bodimaluwa_media.jpg" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid var(--bdr);" alt="Reply Attachment"></a></div></div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_003_Jayalath Kumara Ganegoda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Jayalath Kumara Ganegoda">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/jayalath.kumara.ganegoda" target="_blank" rel="noopener" class="author-link">Jayalath Kumara Ganegoda</a></div>
+                        <div class="ameta">#003 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/jayalath.kumara.ganegoda" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මුන් පිස්සු හැදිල බුදු හාමුදුරුවොත් ඉවරයි</div>
+                
+            <div class="replies-tree" id="tree-3">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(3, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-3">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_003_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Jayalath Kumara Ganegoda</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Jayalath Kumara Ganegoda</div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_004_Anddru Lal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Anddru Lal">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/anddru.lal" target="_blank" rel="noopener" class="author-link">Anddru Lal</a></div>
+                        <div class="ameta">#004 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/anddru.lal" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අනේ පකෝ පවු නොදී ඉධහම්</div>
+                
+            <div class="replies-tree" id="tree-4">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(4, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-4">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_004_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Anddru Lal</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Anddru Lal</div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_005_Chandana Pushpakantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandana Pushpakantha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/chandana.pushpakantha" target="_blank" rel="noopener" class="author-link">Chandana Pushpakantha</a></div>
+                        <div class="ameta">#005 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/chandana.pushpakantha" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">@ta deka thamai 🤣😂</div>
+                
+            <div class="replies-tree" id="tree-5">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(5, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-5">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_005_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Chandana Pushpakantha</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Chandana Pushpakantha<div style="margin-top:8px;"><a href="Comments/comment_005_reply_01_Koshi Bodimaluwa_media.jpg" target="_blank"><img src="Comments/comment_005_reply_01_Koshi Bodimaluwa_media.jpg" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid var(--bdr);" alt="Reply Attachment"></a></div></div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_006_Chandana Pushpakantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandana Pushpakantha">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/chandana.pushpakantha" target="_blank" rel="noopener" class="author-link">Chandana Pushpakantha</a></div>
+                        <div class="ameta">#006 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/chandana.pushpakantha" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">🤣🤣🤣🤣😂</div>
+                
+            <div class="replies-tree" id="tree-6">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(6, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-6">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_006_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Chandana Pushpakantha</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Chandana Pushpakantha<div style="margin-top:8px;"><a href="Comments/comment_006_reply_01_Koshi Bodimaluwa_media.jpg" target="_blank"><img src="Comments/comment_006_reply_01_Koshi Bodimaluwa_media.jpg" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid var(--bdr);" alt="Reply Attachment"></a></div></div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_007_Ruwan Sudassana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ruwan Sudassana">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/ruwan.sudassana" target="_blank" rel="noopener" class="author-link">Ruwan Sudassana</a></div>
+                        <div class="ameta">#007 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/ruwan.sudassana" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">හු...ං</div>
+                
+            <div class="replies-tree" id="tree-7">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(7, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-7">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_007_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Ruwan Sudassana</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Ruwan Sudassana</div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_008_Anton Fernando_avatar.jpg" loading="lazy" class="av-lg-img" alt="Anton Fernando">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Anton-Fernando/pfbid028q94WJYDY81KYDMK2Q4Lm7ZzmvzF6s4ZMGCzwYfRLy56dB9Gbapqxhn1gVHw2AUl" target="_blank" rel="noopener" class="author-link">Anton Fernando</a></div>
+                        <div class="ameta">#008 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Anton-Fernando/pfbid028q94WJYDY81KYDMK2Q4Lm7ZzmvzF6s4ZMGCzwYfRLy56dB9Gbapqxhn1gVHw2AUl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">M<br>A<br>D<div style="margin-top:10px;"><a href="Comments/comment_008_Anton Fernando_media.jpg" target="_blank"><img src="Comments/comment_008_Anton Fernando_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            <div class="replies-tree" id="tree-8">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(8, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-8">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_008_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Anton Fernando</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Anton Fernando<div style="margin-top:8px;"><a href="Comments/comment_008_reply_01_Koshi Bodimaluwa_media.jpg" target="_blank"><img src="Comments/comment_008_reply_01_Koshi Bodimaluwa_media.jpg" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid var(--bdr);" alt="Reply Attachment"></a></div></div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_009_Nishantha Gallage_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nishantha Gallage">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/profile.php?id=100013820409928" target="_blank" rel="noopener" class="author-link">Nishantha Gallage</a></div>
+                        <div class="ameta">#009 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=100013820409928" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">@ka tamai</div>
+                
+            <div class="replies-tree" id="tree-9">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(9, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-9">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_009_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Nishantha Gallage</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Nishantha Gallage<div style="margin-top:8px;"><a href="Comments/comment_009_reply_01_Koshi Bodimaluwa_media.jpg" target="_blank"><img src="Comments/comment_009_reply_01_Koshi Bodimaluwa_media.jpg" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid var(--bdr);" alt="Reply Attachment"></a></div></div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_010_Saliya Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Saliya Bandara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/saliya.bandara.58173" target="_blank" rel="noopener" class="author-link">Saliya Bandara</a></div>
+                        <div class="ameta">#010 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/saliya.bandara.58173" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">🤣🤣<div style="margin-top:10px;"><a href="Comments/comment_010_Saliya Bandara_media.jpg" target="_blank"><img src="Comments/comment_010_Saliya Bandara_media.jpg" style="max-width:260px;max-height:260px;border-radius:10px;border:1px solid var(--bdr);" alt="Comment Attachment"></a></div></div>
+                
+            <div class="replies-tree" id="tree-10">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(10, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-10">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_010_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Saliya Bandara</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Saliya Bandara<div style="margin-top:8px;"><a href="Comments/comment_010_reply_01_Koshi Bodimaluwa_media.jpg" target="_blank"><img src="Comments/comment_010_reply_01_Koshi Bodimaluwa_media.jpg" style="max-width:220px;max-height:220px;border-radius:8px;border:1px solid var(--bdr);" alt="Reply Attachment"></a></div></div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_011_Vijitha Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Vijitha Bandara">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/vijitha.bandara.7" target="_blank" rel="noopener" class="author-link">Vijitha Bandara</a></div>
+                        <div class="ameta">#011 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/vijitha.bandara.7" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Kauda ane me siuru porawagath eun<br>Munwane sasanen ain karanna one</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_012_Tharindu Sachinthana Muthunayaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Tharindu Sachinthana Muthunayaka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/tharindu.muthunayaka" target="_blank" rel="noopener" class="author-link">Tharindu Sachinthana Muthunayaka</a></div>
+                        <div class="ameta">#012 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/tharindu.muthunayaka" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">කවුද බං පෙබාකරන් කියන්නෙ...🤣</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_013_Jude Malinga_avatar.jpg" loading="lazy" class="av-lg-img" alt="Jude Malinga">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/jude.malinga" target="_blank" rel="noopener" class="author-link">Jude Malinga</a></div>
+                        <div class="ameta">#013 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/jude.malinga" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">යකෝ ඔය මහ නායකල අනුනායකල දොයිද, මේ කවටයො සිවුරැදාන් පිස්සු කෙලිනව</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_014_Malinda Madushnka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Malinda Madushnka">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/malinda.madushnka.31" target="_blank" rel="noopener" class="author-link">Malinda Madushnka</a></div>
+                        <div class="ameta">#014 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/malinda.madushnka.31" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Mu guli kala inne</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_015_Chandana Indunil_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandana Indunil">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/chandana.indunil.393" target="_blank" rel="noopener" class="author-link">Chandana Indunil</a></div>
+                        <div class="ameta">#015 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/chandana.indunil.393" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">පිස්සු පකයෙක්</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_016_Dinesh Dinesh_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dinesh Dinesh">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/dinesh.dinesh.223468" target="_blank" rel="noopener" class="author-link">Dinesh Dinesh</a></div>
+                        <div class="ameta">#016 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/dinesh.dinesh.223468" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Ane kari ballo</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_017_Saman Gla_avatar.jpg" loading="lazy" class="av-lg-img" alt="Saman Gla">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/saman.gla.2025" target="_blank" rel="noopener" class="author-link">Saman Gla</a></div>
+                        <div class="ameta">#017 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/saman.gla.2025" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Ube ammawa thaththawa sawodarayanwa aran palayan issella wasalayo uba issella kudu ice nathi karapan wasalayo</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_018_Hamdan Muhammad Raju_avatar.jpg" loading="lazy" class="av-lg-img" alt="Hamdan Muhammad Raju">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Hamdan-Muhammad-Raju/pfbid035fAHMFcYLJcuuKwahJpznC8pYt6rXgasr9Cu39412VtgUt7gmDSdG88x7KzPPNwul" target="_blank" rel="noopener" class="author-link">Hamdan Muhammad Raju</a></div>
+                        <div class="ameta">#018 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Hamdan-Muhammad-Raju/pfbid035fAHMFcYLJcuuKwahJpznC8pYt6rXgasr9Cu39412VtgUt7gmDSdG88x7KzPPNwul" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">ANE THO WAGE GONG HARAKEK</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_019_Kosala Wikerama_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kosala Wikerama">
+                    <div class="hdr-info">
+                        <div class="aname">Kosala Wikerama</div>
+                        <div class="ameta">#019 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">ඔන්න ඔකයි තත්වය දුක්සීලයන් බුද්ධාගම අපිට නැතිකරනවා</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_020_Chandana Chandana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandana Chandana">
+                    <div class="hdr-info">
+                        <div class="aname">Chandana Chandana</div>
+                        <div class="ameta">#020 &bull; Parent Comment</div>
+                    </div>
+                    
+                </div>
+                <div class="ctext">Ane chiware</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_021_Indika Sumudu_avatar.jpg" loading="lazy" class="av-lg-img" alt="Indika Sumudu">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Indika-Sumudu/pfbid02q2AKRiJbBoHTFzjRK4QQExbC89WTh4MnubQSCER1nt9KkSXuhXpVDny9yRRqngkXl" target="_blank" rel="noopener" class="author-link">Indika Sumudu</a></div>
+                        <div class="ameta">#021 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Indika-Sumudu/pfbid02q2AKRiJbBoHTFzjRK4QQExbC89WTh4MnubQSCER1nt9KkSXuhXpVDny9yRRqngkXl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Gahapu brand eka mokakda danna</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_022_Suni Gameh_avatar.jpg" loading="lazy" class="av-lg-img" alt="Suni Gameh">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/people/Suni-Gameh/pfbid02Wfgyo5GCXeupo5k6CrtDqWdDSfNcaMz62Nz1gc8eAkCYytfjRSfSsgKZSD5LGXKTl" target="_blank" rel="noopener" class="author-link">Suni Gameh</a></div>
+                        <div class="ameta">#022 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/people/Suni-Gameh/pfbid02Wfgyo5GCXeupo5k6CrtDqWdDSfNcaMz62Nz1gc8eAkCYytfjRSfSsgKZSD5LGXKTl" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">අනේ හුත්තෝ</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_023_Duminda Dissanayake_avatar.jpg" loading="lazy" class="av-lg-img" alt="Duminda Dissanayake">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/chamild.dissanayake" target="_blank" rel="noopener" class="author-link">Duminda Dissanayake</a></div>
+                        <div class="ameta">#023 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
+                    </div>
+                    <a href="https://www.facebook.com/chamild.dissanayake" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මෙන්න මේ කව හොයාගෙන යමල්ලා ...<br>යකෝ ඔක්කොටම කලින් ඔය සංඝ සභාවද මොකක්ද කියන එක පොඩ්ඩක් හොයලා බලපියව්ව මේ සිවුරු පොරවන් ඉන්නේ මොක්කුද කියලා</div>
+                
+            <div class="replies-tree" id="tree-23">
+                <div class="replies-bar">
+                    <div class="replies-title">↳ 1 Reply in Thread</div>
+                    <button class="toggle-btn" onclick="toggleReplies(23, this)">Hide Replies</button>
+                </div>
+                <div class="replies-list" id="rlist-23">
+                    
+                <div class="reply-card">
+                    <div class="reply-header">
+                        <img src="Comments/comment_023_reply_01_Koshi Bodimaluwa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Koshi Bodimaluwa">
+                        <div class="reply-meta">
+                            <span class="rname"><a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="author-link">Koshi Bodimaluwa</a></span>
+                            <span class="reply-target">↳ Replying to <strong>Duminda Dissanayake</strong></span>
+                            <a href="https://www.facebook.com/koshi.bodimaluwa" target="_blank" rel="noopener" class="prof-btn sm">↗ Profile</a>
+                        </div>
+                    </div>
+                    <div class="ctext sm">Duminda Dissanayake 👍</div>
+                </div>
+            
+                </div>
+            </div>
+            
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_024_Wasantha Kodikara Arachchi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Wasantha Kodikara Arachchi">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/wasantha.kodikaraarachchi.5" target="_blank" rel="noopener" class="author-link">Wasantha Kodikara Arachchi</a></div>
+                        <div class="ameta">#024 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/wasantha.kodikaraarachchi.5" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">මු අයිෂ් ගහන එකෙක් වගෙයි</div>
+                
+            </div>
+        
+            <div class="thread-card">
+                <div class="card-header">
+                    <img src="Comments/comment_025_Lalith Senarathna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lalith Senarathna">
+                    <div class="hdr-info">
+                        <div class="aname"><a href="https://www.facebook.com/lalith.senarathna.90" target="_blank" rel="noopener" class="author-link">Lalith Senarathna</a></div>
+                        <div class="ameta">#025 &bull; Parent Comment</div>
+                    </div>
+                    <a href="https://www.facebook.com/lalith.senarathna.90" target="_blank" rel="noopener" class="prof-btn">↗ Profile</a>
+                </div>
+                <div class="ctext">Kathawa eththa..hamuduru waru  88/89 unp karyoi,sakkili jvp karayoi  degolloma  beragena thiyanawa.</div>
+                
+            </div>
+        </div>
+    <div id="noResults">😕 No comments match your search.</div>
+
+    <footer>
+        <p>Facebook Post Offline Archive &bull; Post ID: <code>28653633840957012</code> &bull; CSV: <a href="comments.csv" style="color:var(--acc);">comments.csv</a></p>
+    </footer>
+</div>
+
+<script>
+var THEME_KEY = 'fb_archive_theme_v1';
+var READ_KEY = 'fb_archive_read_posts_v1';
+var POST_IDX = 252;
+
+function getStoredTheme() {
+    try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
+    } catch (e) {}
+    try {
+        if (window.name && window.name.charAt(0) === '{') {
+            var wn = JSON.parse(window.name);
+            if (wn && (wn.theme === 'dark' || wn.theme === 'light')) return wn.theme;
+        }
+    } catch (e) {}
+    try {
+        var ls = localStorage.getItem(THEME_KEY);
+        if (ls === 'dark' || ls === 'light') return ls;
+    } catch (e) {}
+    return 'light';
+}
+
+function persistTheme(theme) {
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    try {
+        var wn = {};
+        if (window.name && window.name.charAt(0) === '{') {
+            wn = JSON.parse(window.name) || {};
+        }
+        wn.theme = theme;
+        window.name = JSON.stringify(wn);
+    } catch (e) {}
+    try {
+        var backLink = document.getElementById('backCatalogLink');
+        if (backLink) {
+            backLink.setAttribute('href', '../index.html?theme=' + theme + '#post-' + POST_IDX);
+        }
+    } catch (e) {}
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.textContent = '☀️ Light Mode';
+    } else {
+        document.body.classList.remove('dark-mode');
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.textContent = '🌙 Dark Mode';
+    }
+    persistTheme(theme);
+}
+
+function toggleTheme() {
+    var isDark = document.body.classList.contains('dark-mode');
+    var next = isDark ? 'light' : 'dark';
+    applyTheme(next);
+}
+
+function loadReadMap() {
+    var lsObj = null, wnObj = null;
+    try {
+        var raw = localStorage.getItem(READ_KEY);
+        if (raw) lsObj = JSON.parse(raw);
+    } catch (e) {}
+    try {
+        if (window.name && window.name.charAt(0) === '{') {
+            var wn = JSON.parse(window.name);
+            if (wn && wn.readPosts) wnObj = wn.readPosts;
+        }
+    } catch (e) {}
+    var chosen = lsObj;
+    if (wnObj && (!chosen || (wnObj.updatedAt || 0) >= (chosen.updatedAt || 0))) {
+        chosen = wnObj;
+    }
+    var map = {};
+    if (chosen && Array.isArray(chosen.list)) {
+        chosen.list.forEach(function(id) { map[id] = true; });
+    }
+    return map;
+}
+
+function saveReadMap(map) {
+    var list = Object.keys(map).filter(function(k) { return map[k]; }).map(function(k) { return parseInt(k, 10); });
+    var payload = { list: list, updatedAt: Date.now() };
+    try { localStorage.setItem(READ_KEY, JSON.stringify(payload)); } catch (e) {}
+    try {
+        var wn = {};
+        if (window.name && window.name.charAt(0) === '{') {
+            wn = JSON.parse(window.name) || {};
+        }
+        wn.readPosts = payload;
+        window.name = JSON.stringify(wn);
+    } catch (e) {}
+}
+
+function renderReadHere() {
+    var map = loadReadMap();
+    var isRead = !!map[POST_IDX];
+    var btn = document.getElementById('readToggleBtn');
+    if (btn) {
+        if (isRead) {
+            btn.classList.add('is-read');
+            btn.textContent = '✅ Marked as Read';
+        } else {
+            btn.classList.remove('is-read');
+            btn.textContent = '☐ Mark as Read';
+        }
+    }
+}
+
+function toggleReadHere() {
+    var map = loadReadMap();
+    map[POST_IDX] = !map[POST_IDX];
+    saveReadMap(map);
+    renderReadHere();
+}
+
+(function() {
+    applyTheme(getStoredTheme());
+    renderReadHere();
+})();
+
+function filterComments() {
+    var q = document.getElementById('q').value.toLowerCase();
+    var cards = document.querySelectorAll('#list .thread-card');
+    var visible = 0;
+    cards.forEach(function(c) {
+        var show = !q || c.textContent.toLowerCase().includes(q);
+        c.style.display = show ? '' : 'none';
+        if (show) visible++;
+    });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+}
+
+function toggleReplies(id, btn) {
+    var el = document.getElementById('rlist-' + id);
+    if (!el) return;
+    if (el.style.display === 'none') {
+        el.style.display = 'flex';
+        btn.textContent = 'Hide Replies';
+    } else {
+        el.style.display = 'none';
+        btn.textContent = 'Show Replies';
+    }
+}
+
+var allExpanded = true;
+function toggleAllReplies() {
+    allExpanded = !allExpanded;
+    document.querySelectorAll('.replies-list').forEach(function(el) {
+        el.style.display = allExpanded ? 'flex' : 'none';
+    });
+    document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+        btn.textContent = allExpanded ? 'Hide Replies' : 'Show Replies';
+    });
+}
+</script>
+</body>
+</html>

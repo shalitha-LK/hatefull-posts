@@ -7,103 +7,156 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0f17; --surf: #141d2b; --surf2: #1a2536;
-            --acc: #2e89ff; --acc2: #7c3aed;
-            --txt: #f1f5f9; --sub: #94a3b8;
-            --bdr: #243447; --rbdr: #3b82f6; --grn: #22c55e;
+            --bg: #fffaf0; --surf: #ffffff; --surf2: #fffbeb;
+            --acc: #ea580c; --acc2: #d97706;
+            --txt: #2c1507; --sub: #78350f;
+            --bdr: #fcd34d; --rbdr: #f59e0b; --grn: #b45309;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--txt); padding: 28px 20px; line-height: 1.6; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(180deg, #fffaf0 0%, #fff7ed 50%, #fef3c7 100%); background-attachment: fixed; color: var(--txt); padding: 28px 20px; line-height: 1.6; }
         .wrap { max-width: 1100px; margin: 0 auto; }
         .top-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
-        .back-link { color: var(--acc); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-        .back-link:hover { text-decoration: underline; }
+        .back-link { color: #c2410c; text-decoration: none; font-weight: 700; font-size: 0.95rem; background: #fffbeb; border: 1.5px solid #fcd34d; padding: 8px 16px; border-radius: 10px; transition: all 0.15s; }
+        .back-link:hover { background: #fef3c7; border-color: var(--acc); }
         .action-btns { display: flex; gap: 10px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.15s; border: 1px solid var(--bdr); background: var(--surf); color: var(--txt); }
-        .btn:hover { border-color: var(--acc); color: #fff; }
-        .btn-csv { background: rgba(34, 197, 94, 0.15); border-color: rgba(34, 197, 94, 0.4); color: var(--grn); }
-        .btn-csv:hover { background: var(--grn); color: #fff; }
-        .btn-fb { background: rgba(46, 137, 255, 0.15); border-color: rgba(46, 137, 255, 0.4); color: var(--acc); }
-        .btn-fb:hover { background: var(--acc); color: #fff; }
+        .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.15s; border: 1.5px solid var(--bdr); background: var(--surf); color: #7c2d12; }
+        .btn:hover { border-color: var(--acc); background: #fef3c7; color: #7c2d12; }
+        .btn-csv { background: #fef3c7; border-color: #f59e0b; color: #9a3412; }
+        .btn-csv:hover { background: #f59e0b; color: #fff; }
+        .btn-fb { background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); border-color: #c2410c; color: #fff; }
+        .btn-fb:hover { background: linear-gradient(135deg, #c2410c 0%, #d97706 100%); color: #fff; }
 
-        .header-card { background: var(--surf); border: 1px solid var(--bdr); border-radius: 16px; padding: 26px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+        .header-card { background: linear-gradient(135deg, #ffffff 0%, #fffbeb 70%, #ffedd5 100%); border: 1.5px solid var(--bdr); border-top: 6px solid var(--acc); border-radius: 16px; padding: 26px; margin-bottom: 24px; box-shadow: 0 6px 22px rgba(217, 119, 6, 0.1); }
         .header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-        .header-card h1 { font-size: 1.6rem; color: #fff; }
-        .header-card h1 a { color: #fff; text-decoration: none; }
+        .header-card h1 { font-size: 1.6rem; color: #7c2d12; font-weight: 800; }
+        .header-card h1 a { color: #7c2d12; text-decoration: none; }
         .header-card h1 a:hover { color: var(--acc); }
-        .type-pill { background: rgba(46, 137, 255, 0.18); color: var(--acc); border: 1px solid rgba(46, 137, 255, 0.35); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .type-pill { background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%); color: #fff; border: 1px solid #c2410c; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
         .meta-line { color: var(--sub); font-size: 0.88rem; margin-bottom: 16px; word-break: break-all; }
-        .meta-line a { color: var(--acc); text-decoration: none; }
+        .meta-line a { color: var(--acc); text-decoration: none; font-weight: 600; }
         .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
-        .badge { background: var(--surf2); border: 1px solid var(--bdr); padding: 5px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--sub); }
-        .badge strong { color: var(--txt); }
-        .caption-box { background: rgba(0, 0, 0, 0.3); border-left: 4px solid var(--acc); padding: 16px 20px; font-size: 0.98rem; line-height: 1.65; white-space: pre-wrap; border-radius: 8px; color: #e2e8f0; word-break: break-word; }
+        .badge { background: var(--surf2); border: 1px solid var(--bdr); padding: 5px 14px; border-radius: 20px; font-size: 0.82rem; color: var(--sub); font-weight: 600; }
+        .badge strong { color: #7c2d12; }
+        .caption-box { background: #ffffff; border: 1px solid #fde68a; border-left: 4px solid var(--acc); padding: 16px 20px; font-size: 0.98rem; line-height: 1.65; white-space: pre-wrap; border-radius: 8px; color: #2c1507; word-break: break-word; }
 
         .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
         @media(max-width: 650px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-        .scard { background: rgba(0,0,0,0.25); border: 1px solid var(--bdr); border-radius: 12px; padding: 16px; text-align: center; }
-        .snum { font-size: 1.75rem; font-weight: 700; color: var(--acc); margin-bottom: 2px; }
-        .slbl { font-size: 0.74rem; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; }
+        .scard { background: #ffffff; border: 1.5px solid var(--bdr); border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 10px rgba(217, 119, 6, 0.06); }
+        .snum { font-size: 1.75rem; font-weight: 800; color: var(--acc); margin-bottom: 2px; }
+        .slbl { font-size: 0.74rem; color: var(--sub); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
 
-        .media-container { background: var(--surf); border-radius: 16px; padding: 22px; border: 1px solid var(--bdr); margin-bottom: 24px; }
-        .media-container h3 { margin-bottom: 14px; font-size: 1.1rem; color: #fff; }
+        .media-container { background: var(--surf); border-radius: 16px; padding: 22px; border: 1.5px solid var(--bdr); margin-bottom: 24px; box-shadow: 0 4px 16px rgba(217, 119, 6, 0.07); }
+        .media-container h3 { margin-bottom: 14px; font-size: 1.1rem; color: #7c2d12; }
         .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-        .grid-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--bdr); transition: transform 0.2s; }
+        .grid-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1.5px solid var(--bdr); transition: transform 0.2s; }
         .grid-photo:hover { transform: scale(1.02); }
 
         .sec-hdr { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
-        .sec-hdr h2 { font-size: 1.25rem; }
-        .sec-badge { background: rgba(46, 137, 255, 0.15); color: var(--acc); border: 1px solid var(--acc); padding: 3px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .sec-hdr h2 { font-size: 1.25rem; color: #7c2d12; }
+        .sec-badge { background: #fef3c7; color: #9a3412; border: 1px solid #f59e0b; padding: 3px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
 
         .toolbar { display: flex; gap: 12px; margin-bottom: 20px; align-items: center; flex-wrap: wrap; }
         .search-wrap { position: relative; flex: 1; min-width: 220px; }
-        .search-inp { width: 100%; padding: 11px 16px 11px 42px; background: var(--surf); border: 1px solid var(--bdr); border-radius: 10px; color: var(--txt); font-size: 0.93rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+        .search-inp { width: 100%; padding: 11px 16px 11px 42px; background: var(--surf); border: 1.5px solid var(--bdr); border-radius: 10px; color: var(--txt); font-size: 0.93rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
         .search-inp:focus { border-color: var(--acc); }
-        .search-inp::placeholder { color: var(--sub); }
+        .search-inp::placeholder { color: var(--sub); opacity: 0.7; }
         .si { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--sub); pointer-events: none; }
-        .toggle-all-btn { background: var(--surf); border: 1px solid var(--bdr); color: var(--sub); padding: 10px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.15s; }
-        .toggle-all-btn:hover { color: var(--txt); border-color: var(--acc); }
+        .toggle-all-btn { background: var(--surf2); border: 1.5px solid var(--bdr); color: #7c2d12; padding: 10px 16px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; white-space: nowrap; transition: all 0.15s; }
+        .toggle-all-btn:hover { background: #fef3c7; border-color: var(--acc); }
 
-        .thread-card { background: var(--surf); border: 1px solid var(--bdr); border-radius: 16px; margin-bottom: 16px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.22); }
+        .thread-card { background: var(--surf); border: 1.5px solid #fde68a; border-radius: 16px; margin-bottom: 16px; padding: 20px; box-shadow: 0 4px 16px rgba(180, 83, 9, 0.06); }
         .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-        .av-lg { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; font-weight: 700; color: #fff; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.08); }
+        .av-lg { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; font-weight: 700; color: #fff; flex-shrink: 0; border: 2px solid #fde68a; }
         .av-lg-img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--bdr); }
         .hdr-info { flex: 1; min-width: 0; }
-        .aname { font-size: 1.02rem; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .author-link { color: #fff; text-decoration: none; }
+        .aname { font-size: 1.02rem; font-weight: 700; color: #7c2d12; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .author-link { color: #7c2d12; text-decoration: none; }
         .author-link:hover { color: var(--acc); text-decoration: underline; }
         .ameta { font-size: 0.76rem; color: var(--sub); margin-top: 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-        .reply-count-badge { background: rgba(46,137,255,0.15); color: var(--acc); border: 1px solid rgba(46,137,255,0.3); padding: 1px 8px; border-radius: 10px; font-weight: 600; font-size: 0.72rem; }
-        .prof-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 4px; background: rgba(34,197,94,0.12); color: var(--grn); border: 1px solid rgba(34,197,94,0.3); padding: 5px 12px; border-radius: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 600; transition: all 0.15s; white-space: nowrap; }
-        .prof-btn:hover { background: var(--grn); color: #fff; border-color: var(--grn); }
+        .reply-count-badge { background: #fef3c7; color: #9a3412; border: 1px solid #f59e0b; padding: 1px 8px; border-radius: 10px; font-weight: 700; font-size: 0.72rem; }
+        .prof-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 4px; background: #fffbeb; color: #b45309; border: 1px solid #fcd34d; padding: 5px 12px; border-radius: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 700; transition: all 0.15s; white-space: nowrap; }
+        .prof-btn:hover { background: var(--acc); color: #fff; border-color: var(--acc); }
         .prof-btn.sm { padding: 3px 9px; font-size: 0.72rem; }
 
-        .ctext { background: rgba(0,0,0,0.28); padding: 12px 16px; border-radius: 10px; font-size: 0.96rem; color: #e2e8f0; border-left: 3px solid var(--bdr); word-break: break-word; }
-        .ctext.sm { font-size: 0.88rem; padding: 10px 14px; }
+        .ctext { background: #fffbeb; padding: 12px 16px; border-radius: 10px; font-size: 0.96rem; color: #2c1507; border: 1px solid #fde68a; border-left: 3.5px solid var(--acc); word-break: break-word; }
+        .ctext.sm { font-size: 0.88rem; padding: 10px 14px; background: #ffffff; }
 
         .replies-tree { margin-top: 14px; padding-left: 20px; border-left: 3px solid var(--rbdr); display: flex; flex-direction: column; gap: 10px; }
         .replies-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
-        .replies-title { font-size: 0.84rem; color: var(--acc); font-weight: 600; }
-        .toggle-btn { background: transparent; border: none; color: var(--sub); font-size: 0.75rem; cursor: pointer; padding: 2px 8px; border-radius: 4px; }
-        .toggle-btn:hover { color: var(--txt); text-decoration: underline; }
+        .replies-title { font-size: 0.84rem; color: #c2410c; font-weight: 700; }
+        .toggle-btn { background: transparent; border: none; color: var(--sub); font-size: 0.75rem; font-weight: 600; cursor: pointer; padding: 2px 8px; border-radius: 4px; }
+        .toggle-btn:hover { color: var(--acc); text-decoration: underline; }
         .replies-list { display: flex; flex-direction: column; gap: 10px; }
-        .reply-card { background: var(--surf2); border: 1px solid var(--bdr); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .reply-card { background: var(--surf2); border: 1px solid #fde68a; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
         .reply-header { display: flex; align-items: center; gap: 10px; }
         .av-sm { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #fff; flex-shrink: 0; }
         .av-sm-img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--bdr); }
         .reply-meta { flex: 1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .rname { font-size: 0.92rem; font-weight: 600; color: #fff; }
-        .reply-target { font-size: 0.74rem; color: var(--acc); background: rgba(46,137,255,0.1); padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(46,137,255,0.2); }
+        .rname { font-size: 0.92rem; font-weight: 700; color: #7c2d12; }
+        .reply-target { font-size: 0.74rem; color: #9a3412; background: #fef3c7; padding: 2px 8px; border-radius: 6px; border: 1px solid #fcd34d; font-weight: 600; }
 
         #noResults { display: none; text-align: center; color: var(--sub); padding: 40px; font-size: 0.95rem; }
         footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--bdr); text-align: center; color: var(--sub); font-size: 0.82rem; }
+        .theme-btn { cursor: pointer; user-select: none; }
+
+        /* Dark Mode Overrides */
+        body.dark-mode {
+            --bg: #0f0c08; --surf: #1a140e; --surf2: #241c14;
+            --acc: #f97316; --acc2: #fbbf24;
+            --txt: #fffbeb; --sub: #fcd34d;
+            --bdr: #5c3515; --rbdr: #f97316; --grn: #fbbf24;
+            background: linear-gradient(180deg, #0f0c08 0%, #16110b 60%, #1c150d 100%);
+            color: var(--txt);
+        }
+        body.dark-mode .back-link { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .back-link:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .btn { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .btn:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .btn-csv { background: #2b1f11; border-color: #b45309; color: #fcd34d; }
+        body.dark-mode .btn-csv:hover { background: #f59e0b; color: #ffffff; }
+        body.dark-mode .header-card { background: linear-gradient(135deg, #1c140d 0%, #261b10 65%, #332211 100%); border-color: #78350f; border-top: 6px solid #f97316; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55); }
+        body.dark-mode .header-card h1, body.dark-mode .header-card h1 a { color: #fffbeb; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45); }
+        body.dark-mode .header-card h1 a:hover { color: #fbbf24; }
+        body.dark-mode .meta-line { color: #fde68a; }
+        body.dark-mode .meta-line strong { color: #ffffff; }
+        body.dark-mode .meta-line a { color: #fb923c; }
+        body.dark-mode .badge { background: #140f0a; border-color: #5c3515; color: #fde68a; }
+        body.dark-mode .badge strong { color: #fbbf24; }
+        body.dark-mode .caption-box { background: #120d08; border-color: #5c3515; border-left: 4px solid #f97316; color: #fffbeb; }
+        body.dark-mode .scard { background: #140f0a; border-color: #5c3515; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); }
+        body.dark-mode .snum { color: #fbbf24; }
+        body.dark-mode .slbl { color: #fde68a; }
+        body.dark-mode .media-container { background: #1a140e; border-color: #5c3515; }
+        body.dark-mode .media-container h3, body.dark-mode .sec-hdr h2 { color: #fffbeb; }
+        body.dark-mode .sec-badge { background: #2b1f11; color: #fbbf24; border-color: #d97706; }
+        body.dark-mode .search-inp { background: #120d08; border-color: #5c3515; color: #fffbeb; }
+        body.dark-mode .search-inp::placeholder { color: #b8976c; opacity: 1; }
+        body.dark-mode .search-inp:focus { border-color: #f97316; background: #1a140e; }
+        body.dark-mode .toggle-all-btn { background: #241c14; border-color: #78350f; color: #fde68a; }
+        body.dark-mode .toggle-all-btn:hover { background: #332415; border-color: #f59e0b; color: #ffffff; }
+        body.dark-mode .thread-card { background: #1a140e; border-color: #4a2c13; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+        body.dark-mode .aname, body.dark-mode .author-link, body.dark-mode .rname { color: #fffbeb; }
+        body.dark-mode .ameta { color: #d6b88a; }
+        body.dark-mode .reply-count-badge, body.dark-mode .reply-target { background: #2b1f11; color: #fbbf24; border-color: #b45309; }
+        body.dark-mode .prof-btn { background: #241c14; color: #fbbf24; border-color: #78350f; }
+        body.dark-mode .prof-btn:hover { background: #ea580c; color: #ffffff; border-color: #ea580c; }
+        body.dark-mode .ctext { background: #120d08; color: #fffbeb; border-color: #4a2c13; border-left: 3.5px solid #f97316; }
+        body.dark-mode .ctext.sm { background: #16100a; color: #fef3c7; }
+        body.dark-mode .reply-card { background: #221910; border-color: #5c3515; }
+        body.dark-mode .replies-title { color: #fb923c; }
+        body.dark-mode .toggle-btn { color: #fcd34d; }
+        .read-btn { cursor: pointer; user-select: none; }
+        .read-btn.is-read { background: #dcfce7; border-color: #16a34a; color: #166534; }
+        body.dark-mode .read-btn.is-read { background: #14532d; border-color: #22c55e; color: #bbf7d0; }
     </style>
 </head>
 <body>
 <div class="wrap">
     <div class="top-nav">
-        <a href="../index.html#post-21" class="back-link">← Back to Master Archive Catalog</a>
+        <a href="../index.html#post-21" id="backCatalogLink" class="back-link">← Back to Master Archive Catalog</a>
         <div class="action-btns">
+            <button type="button" class="btn read-btn" id="readToggleBtn" onclick="toggleReadHere()">☐ Mark as Read</button>
+            <button type="button" class="btn theme-btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
             <a href="comments.csv" download="fb_comments_1645905183991197.csv" class="btn btn-csv">📥 Download CSV (161)</a>
             <a href="threads_index.json" target="_blank" class="btn">📄 JSON Data</a>
             <a href="https://www.facebook.com/reel/1645905183991197" target="_blank" rel="noopener" class="btn btn-fb">🔗 View on Facebook</a>
@@ -159,7 +212,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
     <div id="list">
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_001_Sri Laxman_avatar.jpg" class="av-lg-img" alt="Sri Laxman">
+                    <img src="Comments/comment_001_Sri Laxman_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sri Laxman">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/amarasiri3939" target="_blank" rel="noopener" class="author-link">Sri Laxman</a></div>
                         <div class="ameta">#001 &bull; Parent Comment</div>
@@ -172,7 +225,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_002_Thamija Nawod_avatar.jpg" class="av-lg-img" alt="Thamija Nawod">
+                    <img src="Comments/comment_002_Thamija Nawod_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thamija Nawod">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/thamija.nawod.3" target="_blank" rel="noopener" class="author-link">Thamija Nawod</a></div>
                         <div class="ameta">#002 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
@@ -190,7 +243,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
                     
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_002_reply_01_NexReports_avatar.jpg" class="av-sm-img" alt="NexReports">
+                        <img src="Comments/comment_002_reply_01_NexReports_avatar.jpg" loading="lazy" class="av-sm-img" alt="NexReports">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/nexreports" target="_blank" rel="noopener" class="author-link">NexReports</a></span>
                             <span class="reply-target">↳ Replying to <strong>Thamija Nawod</strong></span>
@@ -207,7 +260,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_003_Lalith Niroshana_avatar.jpg" class="av-lg-img" alt="Lalith Niroshana">
+                    <img src="Comments/comment_003_Lalith Niroshana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lalith Niroshana">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/lalith.niroshana" target="_blank" rel="noopener" class="author-link">Lalith Niroshana</a></div>
                         <div class="ameta">#003 &bull; Parent Comment</div>
@@ -220,7 +273,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_004_Ajith Darmasiri_avatar.jpg" class="av-lg-img" alt="Ajith Darmasiri">
+                    <img src="Comments/comment_004_Ajith Darmasiri_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ajith Darmasiri">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ajith.darmasiri.277336" target="_blank" rel="noopener" class="author-link">Ajith Darmasiri</a></div>
                         <div class="ameta">#004 &bull; Parent Comment</div>
@@ -233,7 +286,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_005_Shandra Shandra_avatar.jpg" class="av-lg-img" alt="Shandra Shandra">
+                    <img src="Comments/comment_005_Shandra Shandra_avatar.jpg" loading="lazy" class="av-lg-img" alt="Shandra Shandra">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/shandra.shandra.762689" target="_blank" rel="noopener" class="author-link">Shandra Shandra</a></div>
                         <div class="ameta">#005 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
@@ -251,7 +304,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
                     
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_005_reply_01_Roland Kumara_avatar.jpg" class="av-sm-img" alt="Roland Kumara">
+                        <img src="Comments/comment_005_reply_01_Roland Kumara_avatar.jpg" loading="lazy" class="av-sm-img" alt="Roland Kumara">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/people/Roland-Kumara/pfbid0afeoUHwU93zgLtAH2vU9KebAJLG7pqMyDsuKdYop3tdy5V8Us4eN3H4xRg7FXp98l" target="_blank" rel="noopener" class="author-link">Roland Kumara</a></span>
                             <span class="reply-target">↳ Replying to <strong>Shandra Shandra</strong></span>
@@ -268,7 +321,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_006_Mohamed Minhaj_avatar.jpg" class="av-lg-img" alt="Mohamed Minhaj">
+                    <img src="Comments/comment_006_Mohamed Minhaj_avatar.jpg" loading="lazy" class="av-lg-img" alt="Mohamed Minhaj">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/mohamed.minhaj.14203544" target="_blank" rel="noopener" class="author-link">Mohamed Minhaj</a></div>
                         <div class="ameta">#006 &bull; Parent Comment</div>
@@ -281,7 +334,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_007_Chathu Hirusha_avatar.jpg" class="av-lg-img" alt="Chathu Hirusha">
+                    <img src="Comments/comment_007_Chathu Hirusha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chathu Hirusha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/chathu.hirusha.2025" target="_blank" rel="noopener" class="author-link">Chathu Hirusha</a></div>
                         <div class="ameta">#007 &bull; Parent Comment</div>
@@ -294,7 +347,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_008_Manju Nish Jayawardene_avatar.jpg" class="av-lg-img" alt="Manju Nish Jayawardene">
+                    <img src="Comments/comment_008_Manju Nish Jayawardene_avatar.jpg" loading="lazy" class="av-lg-img" alt="Manju Nish Jayawardene">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/manju.jayawardene" target="_blank" rel="noopener" class="author-link">Manju Nish Jayawardene</a></div>
                         <div class="ameta">#008 &bull; Parent Comment</div>
@@ -307,7 +360,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_009_Imtiaz Mohamed_avatar.jpg" class="av-lg-img" alt="Imtiaz Mohamed">
+                    <img src="Comments/comment_009_Imtiaz Mohamed_avatar.jpg" loading="lazy" class="av-lg-img" alt="Imtiaz Mohamed">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/imtiaz.mohamed.7503" target="_blank" rel="noopener" class="author-link">Imtiaz Mohamed</a></div>
                         <div class="ameta">#009 &bull; Parent Comment</div>
@@ -320,7 +373,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_010_Shan Mc_avatar.jpg" class="av-lg-img" alt="Shan Mc">
+                    <img src="Comments/comment_010_Shan Mc_avatar.jpg" loading="lazy" class="av-lg-img" alt="Shan Mc">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/krish.shankar.148" target="_blank" rel="noopener" class="author-link">Shan Mc</a></div>
                         <div class="ameta">#010 &bull; Parent Comment</div>
@@ -333,7 +386,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_011_Sunil Narangoda_avatar.jpg" class="av-lg-img" alt="Sunil Narangoda">
+                    <img src="Comments/comment_011_Sunil Narangoda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sunil Narangoda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sunil.narangoda.90" target="_blank" rel="noopener" class="author-link">Sunil Narangoda</a></div>
                         <div class="ameta">#011 &bull; Parent Comment</div>
@@ -346,7 +399,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_012_Nushan Dilanka_avatar.jpg" class="av-lg-img" alt="Nushan Dilanka">
+                    <img src="Comments/comment_012_Nushan Dilanka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nushan Dilanka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/nushan.dilanka.3" target="_blank" rel="noopener" class="author-link">Nushan Dilanka</a></div>
                         <div class="ameta">#012 &bull; Parent Comment</div>
@@ -359,7 +412,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_013_Nilantha Roshan_avatar.jpg" class="av-lg-img" alt="Nilantha Roshan">
+                    <img src="Comments/comment_013_Nilantha Roshan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nilantha Roshan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Nilantha-Roshan/pfbid0mnkqhTAC25V5UUSJi26uJkX27zGE4DziT3V4W9kduxQ6vY9FrexkxMYpjoPajFUel" target="_blank" rel="noopener" class="author-link">Nilantha Roshan</a></div>
                         <div class="ameta">#013 &bull; Parent Comment</div>
@@ -372,7 +425,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_014_Wmp Lakshman Senevirathne_avatar.jpg" class="av-lg-img" alt="Wmp Lakshman Senevirathne">
+                    <img src="Comments/comment_014_Wmp Lakshman Senevirathne_avatar.jpg" loading="lazy" class="av-lg-img" alt="Wmp Lakshman Senevirathne">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/wmplakshman.senevirathne" target="_blank" rel="noopener" class="author-link">Wmp Lakshman Senevirathne</a></div>
                         <div class="ameta">#014 &bull; Parent Comment</div>
@@ -385,7 +438,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_015_Subatomic Jayasekara_avatar.jpg" class="av-lg-img" alt="Subatomic Jayasekara">
+                    <img src="Comments/comment_015_Subatomic Jayasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Subatomic Jayasekara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/angampodige.roshan.samera" target="_blank" rel="noopener" class="author-link">Subatomic Jayasekara</a></div>
                         <div class="ameta">#015 &bull; Parent Comment</div>
@@ -398,7 +451,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_016_Sirimal Karunatilaka_avatar.jpg" class="av-lg-img" alt="Sirimal Karunatilaka">
+                    <img src="Comments/comment_016_Sirimal Karunatilaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sirimal Karunatilaka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sirimal.karunatilaka.3" target="_blank" rel="noopener" class="author-link">Sirimal Karunatilaka</a></div>
                         <div class="ameta">#016 &bull; Parent Comment</div>
@@ -411,7 +464,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_017_Melan Sankalpa_avatar.jpg" class="av-lg-img" alt="Melan Sankalpa">
+                    <img src="Comments/comment_017_Melan Sankalpa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Melan Sankalpa">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Melan-Sankalpa/pfbid033fqJoXhETQAtEQx7K3XPcy5aKvqch4PreRngBfe4tiiH3Lt4hnkmTXtsrhJUjR5Hl" target="_blank" rel="noopener" class="author-link">Melan Sankalpa</a></div>
                         <div class="ameta">#017 &bull; Parent Comment</div>
@@ -424,7 +477,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_018_Sampath Dadallage_avatar.jpg" class="av-lg-img" alt="Sampath Dadallage">
+                    <img src="Comments/comment_018_Sampath Dadallage_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sampath Dadallage">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sagara.ruwan.357" target="_blank" rel="noopener" class="author-link">Sampath Dadallage</a></div>
                         <div class="ameta">#018 &bull; Parent Comment</div>
@@ -437,7 +490,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_019_Kavishka Lakmal_avatar.jpg" class="av-lg-img" alt="Kavishka Lakmal">
+                    <img src="Comments/comment_019_Kavishka Lakmal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kavishka Lakmal">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/kavishka.lakmal.142" target="_blank" rel="noopener" class="author-link">Kavishka Lakmal</a></div>
                         <div class="ameta">#019 &bull; Parent Comment</div>
@@ -450,7 +503,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_020_Upul Sampath_avatar.jpg" class="av-lg-img" alt="Upul Sampath">
+                    <img src="Comments/comment_020_Upul Sampath_avatar.jpg" loading="lazy" class="av-lg-img" alt="Upul Sampath">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/upul.sampath.545" target="_blank" rel="noopener" class="author-link">Upul Sampath</a></div>
                         <div class="ameta">#020 &bull; Parent Comment</div>
@@ -463,7 +516,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_021_Dinesh Jayasingha_avatar.jpg" class="av-lg-img" alt="Dinesh Jayasingha">
+                    <img src="Comments/comment_021_Dinesh Jayasingha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dinesh Jayasingha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dinesh.jayasingha.792" target="_blank" rel="noopener" class="author-link">Dinesh Jayasingha</a></div>
                         <div class="ameta">#021 &bull; Parent Comment</div>
@@ -476,7 +529,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_022_Krishan Srilal_avatar.jpg" class="av-lg-img" alt="Krishan Srilal">
+                    <img src="Comments/comment_022_Krishan Srilal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Krishan Srilal">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Krishan-Srilal/61588971179374" target="_blank" rel="noopener" class="author-link">Krishan Srilal</a></div>
                         <div class="ameta">#022 &bull; Parent Comment</div>
@@ -489,7 +542,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_023_Lalith Rathnasiri_avatar.jpg" class="av-lg-img" alt="Lalith Rathnasiri">
+                    <img src="Comments/comment_023_Lalith Rathnasiri_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lalith Rathnasiri">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/lalith.ranathunga.16" target="_blank" rel="noopener" class="author-link">Lalith Rathnasiri</a></div>
                         <div class="ameta">#023 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
@@ -507,7 +560,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
                     
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_023_reply_01_NexReports_avatar.jpg" class="av-sm-img" alt="NexReports">
+                        <img src="Comments/comment_023_reply_01_NexReports_avatar.jpg" loading="lazy" class="av-sm-img" alt="NexReports">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/nexreports" target="_blank" rel="noopener" class="author-link">NexReports</a></span>
                             <span class="reply-target">↳ Replying to <strong>Lalith Rathnasiri</strong></span>
@@ -524,7 +577,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_024_ජානක මොටර්ස්_avatar.jpg" class="av-lg-img" alt="ජානක මොටර්ස්">
+                    <img src="Comments/comment_024_ජානක මොටර්ස්_avatar.jpg" loading="lazy" class="av-lg-img" alt="ජානක මොටර්ස්">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/janaka.motas" target="_blank" rel="noopener" class="author-link">ජානක මොටර්ස්</a></div>
                         <div class="ameta">#024 &bull; Parent Comment</div>
@@ -537,7 +590,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_025_Sadaruwan Bandara_avatar.jpg" class="av-lg-img" alt="Sadaruwan Bandara">
+                    <img src="Comments/comment_025_Sadaruwan Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sadaruwan Bandara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Sadaruwan-Bandara/100007662109141" target="_blank" rel="noopener" class="author-link">Sadaruwan Bandara</a></div>
                         <div class="ameta">#025 &bull; Parent Comment</div>
@@ -550,7 +603,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_026_Lakshika Thenuwara_avatar.jpg" class="av-lg-img" alt="Lakshika Thenuwara">
+                    <img src="Comments/comment_026_Lakshika Thenuwara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lakshika Thenuwara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/lakshika.thenuwara.9" target="_blank" rel="noopener" class="author-link">Lakshika Thenuwara</a></div>
                         <div class="ameta">#026 &bull; Parent Comment</div>
@@ -563,7 +616,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_027_Mahesh Karunarathna_avatar.jpg" class="av-lg-img" alt="Mahesh Karunarathna">
+                    <img src="Comments/comment_027_Mahesh Karunarathna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Mahesh Karunarathna">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Mahesh-Karunarathna/pfbid02Lmu7fnc7CJUU9gcFsssA6v49NtedTKHgxdAH5k1bSF97qEj1bdahLDMfgMMfLMMTl" target="_blank" rel="noopener" class="author-link">Mahesh Karunarathna</a></div>
                         <div class="ameta">#027 &bull; Parent Comment</div>
@@ -576,7 +629,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_028_Nandana Munasingha_avatar.jpg" class="av-lg-img" alt="Nandana Munasingha">
+                    <img src="Comments/comment_028_Nandana Munasingha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nandana Munasingha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Nandana-Munasingha/61569005128125" target="_blank" rel="noopener" class="author-link">Nandana Munasingha</a></div>
                         <div class="ameta">#028 &bull; Parent Comment</div>
@@ -589,7 +642,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_029_Amila Samarasighe_avatar.jpg" class="av-lg-img" alt="Amila Samarasighe">
+                    <img src="Comments/comment_029_Amila Samarasighe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Amila Samarasighe">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Amila-Samarasighe/pfbid0utgpUJ9JxNrR7rctsDKqVmQmUtex2phVXuT5FzPoE79EcmiZkqe3eN2XZ7whiSWjl" target="_blank" rel="noopener" class="author-link">Amila Samarasighe</a></div>
                         <div class="ameta">#029 &bull; Parent Comment</div>
@@ -602,7 +655,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_030_Chandrasiri Andara Manage_avatar.jpg" class="av-lg-img" alt="Chandrasiri Andara Manage">
+                    <img src="Comments/comment_030_Chandrasiri Andara Manage_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandrasiri Andara Manage">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/chandrasiri.andara.manage.2025" target="_blank" rel="noopener" class="author-link">Chandrasiri Andara Manage</a></div>
                         <div class="ameta">#030 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
@@ -620,7 +673,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
                     
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_030_reply_01_Shanti Shanti_avatar.jpg" class="av-sm-img" alt="Shanti Shanti">
+                        <img src="Comments/comment_030_reply_01_Shanti Shanti_avatar.jpg" loading="lazy" class="av-sm-img" alt="Shanti Shanti">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/shanti.shanti.67148" target="_blank" rel="noopener" class="author-link">Shanti Shanti</a></span>
                             <span class="reply-target">↳ Replying to <strong>Chandrasiri Andara Manage</strong></span>
@@ -637,7 +690,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_031_Amith Priyantha_avatar.jpg" class="av-lg-img" alt="Amith Priyantha">
+                    <img src="Comments/comment_031_Amith Priyantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Amith Priyantha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/amith.priyantha.980635" target="_blank" rel="noopener" class="author-link">Amith Priyantha</a></div>
                         <div class="ameta">#031 &bull; Parent Comment</div>
@@ -650,7 +703,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_032_Nalinda Sirilal_avatar.jpg" class="av-lg-img" alt="Nalinda Sirilal">
+                    <img src="Comments/comment_032_Nalinda Sirilal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nalinda Sirilal">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/nalinda.sirilal.5" target="_blank" rel="noopener" class="author-link">Nalinda Sirilal</a></div>
                         <div class="ameta">#032 &bull; Parent Comment</div>
@@ -663,7 +716,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_033_Chanaka Jayasinghe_avatar.jpg" class="av-lg-img" alt="Chanaka Jayasinghe">
+                    <img src="Comments/comment_033_Chanaka Jayasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chanaka Jayasinghe">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/manoj.chanaka.3" target="_blank" rel="noopener" class="author-link">Chanaka Jayasinghe</a></div>
                         <div class="ameta">#033 &bull; Parent Comment</div>
@@ -676,7 +729,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_034_Chamara Madushanka_avatar.jpg" class="av-lg-img" alt="Chamara Madushanka">
+                    <img src="Comments/comment_034_Chamara Madushanka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chamara Madushanka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/chamara.madushanka.965622" target="_blank" rel="noopener" class="author-link">Chamara Madushanka</a></div>
                         <div class="ameta">#034 &bull; Parent Comment</div>
@@ -689,7 +742,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_035_Tharanga Prasanna_avatar.jpg" class="av-lg-img" alt="Tharanga Prasanna">
+                    <img src="Comments/comment_035_Tharanga Prasanna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Tharanga Prasanna">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/tharanga.prasanna.50" target="_blank" rel="noopener" class="author-link">Tharanga Prasanna</a></div>
                         <div class="ameta">#035 &bull; Parent Comment</div>
@@ -702,7 +755,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_036_Kelum Priyadarshana_avatar.jpg" class="av-lg-img" alt="Kelum Priyadarshana">
+                    <img src="Comments/comment_036_Kelum Priyadarshana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kelum Priyadarshana">
                     <div class="hdr-info">
                         <div class="aname">Kelum Priyadarshana</div>
                         <div class="ameta">#036 &bull; Parent Comment</div>
@@ -715,7 +768,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_037_Prabath Ravinda_avatar.jpg" class="av-lg-img" alt="Prabath Ravinda">
+                    <img src="Comments/comment_037_Prabath Ravinda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Prabath Ravinda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Prabath-Ravinda/pfbid02hKARJVFjrTsHey1ttNov4e8SB1SuXJ9RKTDTX32FqE5VngrQ1QXzqjnii7gVvkCql" target="_blank" rel="noopener" class="author-link">Prabath Ravinda</a></div>
                         <div class="ameta">#037 &bull; Parent Comment</div>
@@ -728,7 +781,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_038_Janath Kuruppu_avatar.jpg" class="av-lg-img" alt="Janath Kuruppu">
+                    <img src="Comments/comment_038_Janath Kuruppu_avatar.jpg" loading="lazy" class="av-lg-img" alt="Janath Kuruppu">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/janath.kuruppu.79" target="_blank" rel="noopener" class="author-link">Janath Kuruppu</a></div>
                         <div class="ameta">#038 &bull; Parent Comment</div>
@@ -741,7 +794,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_039_Rasika Prabash_avatar.jpg" class="av-lg-img" alt="Rasika Prabash">
+                    <img src="Comments/comment_039_Rasika Prabash_avatar.jpg" loading="lazy" class="av-lg-img" alt="Rasika Prabash">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/rasika.prabash.754" target="_blank" rel="noopener" class="author-link">Rasika Prabash</a></div>
                         <div class="ameta">#039 &bull; Parent Comment</div>
@@ -754,7 +807,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_040_Sadun Sankalpa_avatar.jpg" class="av-lg-img" alt="Sadun Sankalpa">
+                    <img src="Comments/comment_040_Sadun Sankalpa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sadun Sankalpa">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Sadun-Sankalpa/pfbid02awhsGrzBBM9r7H1ie32vZftC3KXbsrP6xmvwsRHrbePFWE2jwCDJTDerdHs9a19Nl" target="_blank" rel="noopener" class="author-link">Sadun Sankalpa</a></div>
                         <div class="ameta">#040 &bull; Parent Comment</div>
@@ -767,7 +820,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_041_Wanigabandara Rajapaksha_avatar.jpg" class="av-lg-img" alt="Wanigabandara Rajapaksha">
+                    <img src="Comments/comment_041_Wanigabandara Rajapaksha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Wanigabandara Rajapaksha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/u7zddy2zjb" target="_blank" rel="noopener" class="author-link">Wanigabandara Rajapaksha</a></div>
                         <div class="ameta">#041 &bull; Parent Comment</div>
@@ -780,7 +833,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_042_Prasanna Dayaratne_avatar.jpg" class="av-lg-img" alt="Prasanna Dayaratne">
+                    <img src="Comments/comment_042_Prasanna Dayaratne_avatar.jpg" loading="lazy" class="av-lg-img" alt="Prasanna Dayaratne">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/prasanna.dayaratne" target="_blank" rel="noopener" class="author-link">Prasanna Dayaratne</a></div>
                         <div class="ameta">#042 &bull; Parent Comment</div>
@@ -793,7 +846,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_043_Chaminda Hanthi_avatar.jpg" class="av-lg-img" alt="Chaminda Hanthi">
+                    <img src="Comments/comment_043_Chaminda Hanthi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chaminda Hanthi">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/chaminda.hanthi.5" target="_blank" rel="noopener" class="author-link">Chaminda Hanthi</a></div>
                         <div class="ameta">#043 &bull; Parent Comment</div>
@@ -806,7 +859,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_044_Thushara Chaminda_avatar.jpg" class="av-lg-img" alt="Thushara Chaminda">
+                    <img src="Comments/comment_044_Thushara Chaminda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thushara Chaminda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/thusharawh" target="_blank" rel="noopener" class="author-link">Thushara Chaminda</a></div>
                         <div class="ameta">#044 &bull; Parent Comment</div>
@@ -819,7 +872,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_045_Danushka Dissanayaka_avatar.jpg" class="av-lg-img" alt="Danushka Dissanayaka">
+                    <img src="Comments/comment_045_Danushka Dissanayaka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Danushka Dissanayaka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/danushka.dissanayaka.3" target="_blank" rel="noopener" class="author-link">Danushka Dissanayaka</a></div>
                         <div class="ameta">#045 &bull; Parent Comment</div>
@@ -832,7 +885,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_046_Ranjith Nishanta_avatar.jpg" class="av-lg-img" alt="Ranjith Nishanta">
+                    <img src="Comments/comment_046_Ranjith Nishanta_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ranjith Nishanta">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ranjith.nishanta" target="_blank" rel="noopener" class="author-link">Ranjith Nishanta</a></div>
                         <div class="ameta">#046 &bull; Parent Comment</div>
@@ -845,7 +898,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_047_Salinda Ruwan_avatar.jpg" class="av-lg-img" alt="Salinda Ruwan">
+                    <img src="Comments/comment_047_Salinda Ruwan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Salinda Ruwan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/salinda.ruwan.7330" target="_blank" rel="noopener" class="author-link">Salinda Ruwan</a></div>
                         <div class="ameta">#047 &bull; Parent Comment</div>
@@ -858,7 +911,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_048_Bushitha Iranga_avatar.jpg" class="av-lg-img" alt="Bushitha Iranga">
+                    <img src="Comments/comment_048_Bushitha Iranga_avatar.jpg" loading="lazy" class="av-lg-img" alt="Bushitha Iranga">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/bushitha.iranga" target="_blank" rel="noopener" class="author-link">Bushitha Iranga</a></div>
                         <div class="ameta">#048 &bull; Parent Comment</div>
@@ -871,7 +924,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_049_Sanjaya Tennakoon_avatar.jpg" class="av-lg-img" alt="Sanjaya Tennakoon">
+                    <img src="Comments/comment_049_Sanjaya Tennakoon_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sanjaya Tennakoon">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sanjaya.tennakoon.16" target="_blank" rel="noopener" class="author-link">Sanjaya Tennakoon</a></div>
                         <div class="ameta">#049 &bull; Parent Comment</div>
@@ -884,7 +937,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_050_Agr Mawella_avatar.jpg" class="av-lg-img" alt="Agr Mawella">
+                    <img src="Comments/comment_050_Agr Mawella_avatar.jpg" loading="lazy" class="av-lg-img" alt="Agr Mawella">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Agr-Mawella/61586196357842" target="_blank" rel="noopener" class="author-link">Agr Mawella</a></div>
                         <div class="ameta">#050 &bull; Parent Comment</div>
@@ -897,7 +950,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_051_Ajith Priyantha_avatar.jpg" class="av-lg-img" alt="Ajith Priyantha">
+                    <img src="Comments/comment_051_Ajith Priyantha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ajith Priyantha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ajith.priyantha.7923030" target="_blank" rel="noopener" class="author-link">Ajith Priyantha</a></div>
                         <div class="ameta">#051 &bull; Parent Comment</div>
@@ -910,7 +963,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_052_Srinatha Malalasekera_avatar.jpg" class="av-lg-img" alt="Srinatha Malalasekera">
+                    <img src="Comments/comment_052_Srinatha Malalasekera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Srinatha Malalasekera">
                     <div class="hdr-info">
                         <div class="aname">Srinatha Malalasekera</div>
                         <div class="ameta">#052 &bull; Parent Comment</div>
@@ -923,7 +976,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_053_Thusitha Jayasekara_avatar.jpg" class="av-lg-img" alt="Thusitha Jayasekara">
+                    <img src="Comments/comment_053_Thusitha Jayasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thusitha Jayasekara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/thusitha.jayasekara.73" target="_blank" rel="noopener" class="author-link">Thusitha Jayasekara</a></div>
                         <div class="ameta">#053 &bull; Parent Comment</div>
@@ -936,7 +989,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_054_CP Kalinga_avatar.jpg" class="av-lg-img" alt="CP Kalinga">
+                    <img src="Comments/comment_054_CP Kalinga_avatar.jpg" loading="lazy" class="av-lg-img" alt="CP Kalinga">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/cp.kalinga" target="_blank" rel="noopener" class="author-link">CP Kalinga</a></div>
                         <div class="ameta">#054 &bull; Parent Comment</div>
@@ -949,7 +1002,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_055_Sameera Deerasekara_avatar.jpg" class="av-lg-img" alt="Sameera Deerasekara">
+                    <img src="Comments/comment_055_Sameera Deerasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sameera Deerasekara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Sameera-Deerasekara/pfbid0HEFst9hYfuLRzz1yeZXURBpAbT41eMfxF3prPH7LQxpXHbqFytumifM6Zz1ZNsb7l" target="_blank" rel="noopener" class="author-link">Sameera Deerasekara</a></div>
                         <div class="ameta">#055 &bull; Parent Comment</div>
@@ -962,7 +1015,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_056_Aravinda Wanniarachchi_avatar.jpg" class="av-lg-img" alt="Aravinda Wanniarachchi">
+                    <img src="Comments/comment_056_Aravinda Wanniarachchi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Aravinda Wanniarachchi">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/aravinda.wanniarachchi.1" target="_blank" rel="noopener" class="author-link">Aravinda Wanniarachchi</a></div>
                         <div class="ameta">#056 &bull; Parent Comment</div>
@@ -975,7 +1028,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_057_Yokeshwaran Abinayan_avatar.jpg" class="av-lg-img" alt="Yokeshwaran Abinayan">
+                    <img src="Comments/comment_057_Yokeshwaran Abinayan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Yokeshwaran Abinayan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Yokeshwaran-Abinayan/pfbid02ex71t94akUFLpsXsWjbXKrKtMkhGJg8mUP3rN1KK1L7Mmt3F8vF4aC7VrpZq9XnDl" target="_blank" rel="noopener" class="author-link">Yokeshwaran Abinayan</a></div>
                         <div class="ameta">#057 &bull; Parent Comment</div>
@@ -988,7 +1041,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_058_Ronishka Fernando_avatar.jpg" class="av-lg-img" alt="Ronishka Fernando">
+                    <img src="Comments/comment_058_Ronishka Fernando_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ronishka Fernando">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ronishka.fernando" target="_blank" rel="noopener" class="author-link">Ronishka Fernando</a></div>
                         <div class="ameta">#058 &bull; Parent Comment</div>
@@ -1001,7 +1054,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_059_Selvin Manawadu_avatar.jpg" class="av-lg-img" alt="Selvin Manawadu">
+                    <img src="Comments/comment_059_Selvin Manawadu_avatar.jpg" loading="lazy" class="av-lg-img" alt="Selvin Manawadu">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/selvin.manawadu" target="_blank" rel="noopener" class="author-link">Selvin Manawadu</a></div>
                         <div class="ameta">#059 &bull; Parent Comment</div>
@@ -1014,7 +1067,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_060_Danushka De Silva_avatar.jpg" class="av-lg-img" alt="Danushka De Silva">
+                    <img src="Comments/comment_060_Danushka De Silva_avatar.jpg" loading="lazy" class="av-lg-img" alt="Danushka De Silva">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/danushka.silva.10" target="_blank" rel="noopener" class="author-link">Danushka De Silva</a></div>
                         <div class="ameta">#060 &bull; Parent Comment</div>
@@ -1027,7 +1080,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_061_YasiTh MaleEsha_avatar.jpg" class="av-lg-img" alt="YasiTh MaleEsha">
+                    <img src="Comments/comment_061_YasiTh MaleEsha_avatar.jpg" loading="lazy" class="av-lg-img" alt="YasiTh MaleEsha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/yasith.maleesha.92" target="_blank" rel="noopener" class="author-link">YasiTh MaleEsha</a></div>
                         <div class="ameta">#061 &bull; Parent Comment</div>
@@ -1040,7 +1093,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_062_Heshan Kalpa_avatar.jpg" class="av-lg-img" alt="Heshan Kalpa">
+                    <img src="Comments/comment_062_Heshan Kalpa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Heshan Kalpa">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/kalpa.heshan.5" target="_blank" rel="noopener" class="author-link">Heshan Kalpa</a></div>
                         <div class="ameta">#062 &bull; Parent Comment</div>
@@ -1053,7 +1106,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_063_Hathurusinghe Devage Wijesinghe_avatar.jpg" class="av-lg-img" alt="Hathurusinghe Devage Wijesinghe">
+                    <img src="Comments/comment_063_Hathurusinghe Devage Wijesinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Hathurusinghe Devage Wijesinghe">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/hathurusinghe.devage.wijesinghe" target="_blank" rel="noopener" class="author-link">Hathurusinghe Devage Wijesinghe</a></div>
                         <div class="ameta">#063 &bull; Parent Comment</div>
@@ -1066,7 +1119,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_064_Himash Aluthgama Guruge_avatar.jpg" class="av-lg-img" alt="Himash Aluthgama Guruge">
+                    <img src="Comments/comment_064_Himash Aluthgama Guruge_avatar.jpg" loading="lazy" class="av-lg-img" alt="Himash Aluthgama Guruge">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Himash-Aluthgama-Guruge/pfbid0r1pjH19MSUAULC9sridxqxsTAYFYWfxs4Ed8W8Mz1MfavxdBADUkFnZFrmi5PY9rl" target="_blank" rel="noopener" class="author-link">Himash Aluthgama Guruge</a></div>
                         <div class="ameta">#064 &bull; Parent Comment</div>
@@ -1079,7 +1132,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_065_Duminda Chamara_avatar.jpg" class="av-lg-img" alt="Duminda Chamara">
+                    <img src="Comments/comment_065_Duminda Chamara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Duminda Chamara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Duminda-Chamara/pfbid0LQ4LaUZLxLRTuFrZKnDQiSiUfXKx2jucswpfvcR9WhKKe5WBwbUSiivDFZ6tNZcul" target="_blank" rel="noopener" class="author-link">Duminda Chamara</a></div>
                         <div class="ameta">#065 &bull; Parent Comment</div>
@@ -1092,7 +1145,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_066_Dilanka Wanniarachchi_avatar.jpg" class="av-lg-img" alt="Dilanka Wanniarachchi">
+                    <img src="Comments/comment_066_Dilanka Wanniarachchi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dilanka Wanniarachchi">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dilanka.wanniarachchi.7" target="_blank" rel="noopener" class="author-link">Dilanka Wanniarachchi</a></div>
                         <div class="ameta">#066 &bull; Parent Comment</div>
@@ -1105,7 +1158,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_067_Dinesh HD_avatar.jpg" class="av-lg-img" alt="Dinesh HD">
+                    <img src="Comments/comment_067_Dinesh HD_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dinesh HD">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Dinesh-HD/100076465605548" target="_blank" rel="noopener" class="author-link">Dinesh HD</a></div>
                         <div class="ameta">#067 &bull; Parent Comment</div>
@@ -1118,7 +1171,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_068_เนินเขาสิงโต_avatar.jpg" class="av-lg-img" alt="เนินเขาสิงโต">
+                    <img src="Comments/comment_068_เนินเขาสิงโต_avatar.jpg" loading="lazy" class="av-lg-img" alt="เนินเขาสิงโต">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/profile.php?id=61551431260670" target="_blank" rel="noopener" class="author-link">เนินเขาสิงโต</a></div>
                         <div class="ameta">#068 &bull; Parent Comment</div>
@@ -1131,7 +1184,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_069_Prageeth Dharmasiri_avatar.jpg" class="av-lg-img" alt="Prageeth Dharmasiri">
+                    <img src="Comments/comment_069_Prageeth Dharmasiri_avatar.jpg" loading="lazy" class="av-lg-img" alt="Prageeth Dharmasiri">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/prageeth.dharmasiri" target="_blank" rel="noopener" class="author-link">Prageeth Dharmasiri</a></div>
                         <div class="ameta">#069 &bull; Parent Comment</div>
@@ -1144,7 +1197,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_070_Aruna Lasantha Nawalage_avatar.jpg" class="av-lg-img" alt="Aruna Lasantha Nawalage">
+                    <img src="Comments/comment_070_Aruna Lasantha Nawalage_avatar.jpg" loading="lazy" class="av-lg-img" alt="Aruna Lasantha Nawalage">
                     <div class="hdr-info">
                         <div class="aname">Aruna Lasantha Nawalage</div>
                         <div class="ameta">#070 &bull; Parent Comment</div>
@@ -1157,7 +1210,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_071_Melani Perera_avatar.jpg" class="av-lg-img" alt="Melani Perera">
+                    <img src="Comments/comment_071_Melani Perera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Melani Perera">
                     <div class="hdr-info">
                         <div class="aname">Melani Perera</div>
                         <div class="ameta">#071 &bull; Parent Comment</div>
@@ -1170,7 +1223,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_072_Chamani Weerasuriya_avatar.jpg" class="av-lg-img" alt="Chamani Weerasuriya">
+                    <img src="Comments/comment_072_Chamani Weerasuriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chamani Weerasuriya">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/chamani.weerasuriya.5" target="_blank" rel="noopener" class="author-link">Chamani Weerasuriya</a></div>
                         <div class="ameta">#072 &bull; Parent Comment</div>
@@ -1183,7 +1236,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_073_Asoka Gunasekara_avatar.jpg" class="av-lg-img" alt="Asoka Gunasekara">
+                    <img src="Comments/comment_073_Asoka Gunasekara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Asoka Gunasekara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/asoka.gunasekara.73" target="_blank" rel="noopener" class="author-link">Asoka Gunasekara</a></div>
                         <div class="ameta">#073 &bull; Parent Comment</div>
@@ -1196,7 +1249,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_074_Steewan Edirisooriya_avatar.jpg" class="av-lg-img" alt="Steewan Edirisooriya">
+                    <img src="Comments/comment_074_Steewan Edirisooriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Steewan Edirisooriya">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Steewan-Edirisooriya/pfbid02ZNJ9sEGp8hwpx6eeowJueJstSNA3zFWzRoh9oUPTTvwLHuq6AaPUEs9AMbVrfdPHl" target="_blank" rel="noopener" class="author-link">Steewan Edirisooriya</a></div>
                         <div class="ameta">#074 &bull; Parent Comment</div>
@@ -1209,7 +1262,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_075_Rasika Alahakoon_avatar.jpg" class="av-lg-img" alt="Rasika Alahakoon">
+                    <img src="Comments/comment_075_Rasika Alahakoon_avatar.jpg" loading="lazy" class="av-lg-img" alt="Rasika Alahakoon">
                     <div class="hdr-info">
                         <div class="aname">Rasika Alahakoon</div>
                         <div class="ameta">#075 &bull; Parent Comment</div>
@@ -1222,7 +1275,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_076_Thushara Ponnamperuma_avatar.jpg" class="av-lg-img" alt="Thushara Ponnamperuma">
+                    <img src="Comments/comment_076_Thushara Ponnamperuma_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thushara Ponnamperuma">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/thushara.ponnamperuma.2025" target="_blank" rel="noopener" class="author-link">Thushara Ponnamperuma</a></div>
                         <div class="ameta">#076 &bull; Parent Comment</div>
@@ -1235,7 +1288,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_077_Logan Selladurai_avatar.jpg" class="av-lg-img" alt="Logan Selladurai">
+                    <img src="Comments/comment_077_Logan Selladurai_avatar.jpg" loading="lazy" class="av-lg-img" alt="Logan Selladurai">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/logan.selladurai.12" target="_blank" rel="noopener" class="author-link">Logan Selladurai</a></div>
                         <div class="ameta">#077 &bull; Parent Comment</div>
@@ -1248,7 +1301,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_078_Rupasena Abayesingha_avatar.jpg" class="av-lg-img" alt="Rupasena Abayesingha">
+                    <img src="Comments/comment_078_Rupasena Abayesingha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Rupasena Abayesingha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Rupasena-Abayesingha/pfbid0js2y684kJBjhiS2oz3gvnimFYZw9kHEa7KKxHn2XyNryRCRmwysraRQBDp4Euh3gl" target="_blank" rel="noopener" class="author-link">Rupasena Abayesingha</a></div>
                         <div class="ameta">#078 &bull; Parent Comment &bull; <span class="reply-count-badge">3 Replies</span></div>
@@ -1266,7 +1319,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
                     
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_078_reply_01_Roland Kumara_avatar.jpg" class="av-sm-img" alt="Roland Kumara">
+                        <img src="Comments/comment_078_reply_01_Roland Kumara_avatar.jpg" loading="lazy" class="av-sm-img" alt="Roland Kumara">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/people/Roland-Kumara/pfbid0afeoUHwU93zgLtAH2vU9KebAJLG7pqMyDsuKdYop3tdy5V8Us4eN3H4xRg7FXp98l" target="_blank" rel="noopener" class="author-link">Roland Kumara</a></span>
                             <span class="reply-target">↳ Replying to <strong>Rupasena Abayesingha</strong></span>
@@ -1278,7 +1331,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
             
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_078_reply_02_Sadun Sankalpa_avatar.jpg" class="av-sm-img" alt="Sadun Sankalpa">
+                        <img src="Comments/comment_078_reply_02_Sadun Sankalpa_avatar.jpg" loading="lazy" class="av-sm-img" alt="Sadun Sankalpa">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/people/Sadun-Sankalpa/pfbid02awhsGrzBBM9r7H1ie32vZftC3KXbsrP6xmvwsRHrbePFWE2jwCDJTDerdHs9a19Nl" target="_blank" rel="noopener" class="author-link">Sadun Sankalpa</a></span>
                             <span class="reply-target">↳ Replying to <strong>Rupasena Abayesingha</strong></span>
@@ -1290,7 +1343,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
             
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_078_reply_03_Seetha Kariyawasam_avatar.jpg" class="av-sm-img" alt="Seetha Kariyawasam">
+                        <img src="Comments/comment_078_reply_03_Seetha Kariyawasam_avatar.jpg" loading="lazy" class="av-sm-img" alt="Seetha Kariyawasam">
                         <div class="reply-meta">
                             <span class="rname"><a href="https://www.facebook.com/seetha.kariyawasam.738789" target="_blank" rel="noopener" class="author-link">Seetha Kariyawasam</a></span>
                             <span class="reply-target">↳ Replying to <strong>Rupasena Abayesingha</strong></span>
@@ -1307,7 +1360,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_079_Rohitha Chaminda_avatar.jpg" class="av-lg-img" alt="Rohitha Chaminda">
+                    <img src="Comments/comment_079_Rohitha Chaminda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Rohitha Chaminda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/rohitha.chaminda.5" target="_blank" rel="noopener" class="author-link">Rohitha Chaminda</a></div>
                         <div class="ameta">#079 &bull; Parent Comment</div>
@@ -1320,7 +1373,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_080_Thilan Peiris_avatar.jpg" class="av-lg-img" alt="Thilan Peiris">
+                    <img src="Comments/comment_080_Thilan Peiris_avatar.jpg" loading="lazy" class="av-lg-img" alt="Thilan Peiris">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/thilan.peiris.779" target="_blank" rel="noopener" class="author-link">Thilan Peiris</a></div>
                         <div class="ameta">#080 &bull; Parent Comment</div>
@@ -1333,7 +1386,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_081_Pathum Lakruwan_avatar.jpg" class="av-lg-img" alt="Pathum Lakruwan">
+                    <img src="Comments/comment_081_Pathum Lakruwan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Pathum Lakruwan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Pathum-Lakruwan/pfbid0EqtVJc6CGLkaH4uTgK9EcscFzcR3bTbYm3umA8qqkRkv2NSHZ4K7wM5mTbA77Hhyl" target="_blank" rel="noopener" class="author-link">Pathum Lakruwan</a></div>
                         <div class="ameta">#081 &bull; Parent Comment</div>
@@ -1346,7 +1399,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_082_Anura Wijesiri_avatar.jpg" class="av-lg-img" alt="Anura Wijesiri">
+                    <img src="Comments/comment_082_Anura Wijesiri_avatar.jpg" loading="lazy" class="av-lg-img" alt="Anura Wijesiri">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Anura-Wijesiri/61581753480641" target="_blank" rel="noopener" class="author-link">Anura Wijesiri</a></div>
                         <div class="ameta">#082 &bull; Parent Comment</div>
@@ -1359,7 +1412,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_083_Prabhath Jayarathne_avatar.jpg" class="av-lg-img" alt="Prabhath Jayarathne">
+                    <img src="Comments/comment_083_Prabhath Jayarathne_avatar.jpg" loading="lazy" class="av-lg-img" alt="Prabhath Jayarathne">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Prabhath-Jayarathne/pfbid028m91NmPzCXe7aZJgY8M1dZ8aUGyCjDi531jezV3enjuqcTmoFL7ZQxdPPVszzHzql" target="_blank" rel="noopener" class="author-link">Prabhath Jayarathne</a></div>
                         <div class="ameta">#083 &bull; Parent Comment</div>
@@ -1372,7 +1425,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_084_Kolitha Jayasinghe_avatar.jpg" class="av-lg-img" alt="Kolitha Jayasinghe">
+                    <img src="Comments/comment_084_Kolitha Jayasinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kolitha Jayasinghe">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Kolitha-Jayasinghe/pfbid02QZXAVMNt9VkeVy4XsLoneMeoenNQettt9nJZWDH7tdKgvzsz5XowtzbhQCYECC99l" target="_blank" rel="noopener" class="author-link">Kolitha Jayasinghe</a></div>
                         <div class="ameta">#084 &bull; Parent Comment</div>
@@ -1385,7 +1438,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_085_Sisira Kumara_avatar.jpg" class="av-lg-img" alt="Sisira Kumara">
+                    <img src="Comments/comment_085_Sisira Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sisira Kumara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sisira.kumara.701504" target="_blank" rel="noopener" class="author-link">Sisira Kumara</a></div>
                         <div class="ameta">#085 &bull; Parent Comment</div>
@@ -1398,7 +1451,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_086_Dinesh Madushanka_avatar.jpg" class="av-lg-img" alt="Dinesh Madushanka">
+                    <img src="Comments/comment_086_Dinesh Madushanka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dinesh Madushanka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dinesh.madushanka.543512" target="_blank" rel="noopener" class="author-link">Dinesh Madushanka</a></div>
                         <div class="ameta">#086 &bull; Parent Comment</div>
@@ -1411,7 +1464,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_087_Charindu Praneeth_avatar.jpg" class="av-lg-img" alt="Charindu Praneeth">
+                    <img src="Comments/comment_087_Charindu Praneeth_avatar.jpg" loading="lazy" class="av-lg-img" alt="Charindu Praneeth">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/charindu.praneeth" target="_blank" rel="noopener" class="author-link">Charindu Praneeth</a></div>
                         <div class="ameta">#087 &bull; Parent Comment</div>
@@ -1424,7 +1477,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_088_Sumudu Sudu_avatar.jpg" class="av-lg-img" alt="Sumudu Sudu">
+                    <img src="Comments/comment_088_Sumudu Sudu_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sumudu Sudu">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/iresha.harshani.240017" target="_blank" rel="noopener" class="author-link">Sumudu Sudu</a></div>
                         <div class="ameta">#088 &bull; Parent Comment</div>
@@ -1437,7 +1490,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_089_Samphath D Hewaarachchi_avatar.jpg" class="av-lg-img" alt="Samphath D Hewaarachchi">
+                    <img src="Comments/comment_089_Samphath D Hewaarachchi_avatar.jpg" loading="lazy" class="av-lg-img" alt="Samphath D Hewaarachchi">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/samphath.d.hewaarachchi" target="_blank" rel="noopener" class="author-link">Samphath D Hewaarachchi</a></div>
                         <div class="ameta">#089 &bull; Parent Comment</div>
@@ -1450,7 +1503,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_090_Janakantha Suriyawarna_avatar.jpg" class="av-lg-img" alt="Janakantha Suriyawarna">
+                    <img src="Comments/comment_090_Janakantha Suriyawarna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Janakantha Suriyawarna">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/janakantha.suriyawarna" target="_blank" rel="noopener" class="author-link">Janakantha Suriyawarna</a></div>
                         <div class="ameta">#090 &bull; Parent Comment</div>
@@ -1463,7 +1516,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_091_Samitha Randeni_avatar.jpg" class="av-lg-img" alt="Samitha Randeni">
+                    <img src="Comments/comment_091_Samitha Randeni_avatar.jpg" loading="lazy" class="av-lg-img" alt="Samitha Randeni">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/samitha.randeninsammi" target="_blank" rel="noopener" class="author-link">Samitha Randeni</a></div>
                         <div class="ameta">#091 &bull; Parent Comment</div>
@@ -1476,7 +1529,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_092_Suranga Jayamal_avatar.jpg" class="av-lg-img" alt="Suranga Jayamal">
+                    <img src="Comments/comment_092_Suranga Jayamal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Suranga Jayamal">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Suranga-Jayamal/pfbid0wxbnE4Ux9LLmcUXhebfhYxbqzaHwLMZuon7Mb4GcotnvxvMu4BYgkhAeQp4fJ3sul" target="_blank" rel="noopener" class="author-link">Suranga Jayamal</a></div>
                         <div class="ameta">#092 &bull; Parent Comment</div>
@@ -1489,7 +1542,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_093_S Ravi Chandran_avatar.jpg" class="av-lg-img" alt="S Ravi Chandran">
+                    <img src="Comments/comment_093_S Ravi Chandran_avatar.jpg" loading="lazy" class="av-lg-img" alt="S Ravi Chandran">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/S-Ravi-Chandran/pfbid02Le347CGLMaCUgkNoq2WohYheiySMbkYkNMNgLrtS9ASHC9TPm54ENy4KPMJJnvCjl" target="_blank" rel="noopener" class="author-link">S Ravi Chandran</a></div>
                         <div class="ameta">#093 &bull; Parent Comment</div>
@@ -1502,7 +1555,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_094_Nadula Abeysinghe_avatar.jpg" class="av-lg-img" alt="Nadula Abeysinghe">
+                    <img src="Comments/comment_094_Nadula Abeysinghe_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nadula Abeysinghe">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/nadula.abeysinghe" target="_blank" rel="noopener" class="author-link">Nadula Abeysinghe</a></div>
                         <div class="ameta">#094 &bull; Parent Comment</div>
@@ -1515,7 +1568,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_095_Amila Fernando_avatar.jpg" class="av-lg-img" alt="Amila Fernando">
+                    <img src="Comments/comment_095_Amila Fernando_avatar.jpg" loading="lazy" class="av-lg-img" alt="Amila Fernando">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/amila.fernando" target="_blank" rel="noopener" class="author-link">Amila Fernando</a></div>
                         <div class="ameta">#095 &bull; Parent Comment</div>
@@ -1528,7 +1581,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_096_Nuwan Lakshitha_avatar.jpg" class="av-lg-img" alt="Nuwan Lakshitha">
+                    <img src="Comments/comment_096_Nuwan Lakshitha_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nuwan Lakshitha">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Nuwan-Lakshitha/pfbid0sqYFGRNHwYiL9vDkqiXPsXSEEjP2DCscBQ9UequX63y8WCNcUNtSpRGLUSULdguZl" target="_blank" rel="noopener" class="author-link">Nuwan Lakshitha</a></div>
                         <div class="ameta">#096 &bull; Parent Comment</div>
@@ -1541,7 +1594,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_097_Sahan J Dewanarayana_avatar.jpg" class="av-lg-img" alt="Sahan J Dewanarayana">
+                    <img src="Comments/comment_097_Sahan J Dewanarayana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sahan J Dewanarayana">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Sahan-J-Dewanarayana/pfbid02jnECmyxW22JwdSFGRZuTB2HhiPq1ge9GQVmjsRizdwBoykqdfoFLNGKhUrUXDVGdl" target="_blank" rel="noopener" class="author-link">Sahan J Dewanarayana</a></div>
                         <div class="ameta">#097 &bull; Parent Comment</div>
@@ -1554,7 +1607,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_098_Premakeerthi Sinhabahu_avatar.jpg" class="av-lg-img" alt="Premakeerthi Sinhabahu">
+                    <img src="Comments/comment_098_Premakeerthi Sinhabahu_avatar.jpg" loading="lazy" class="av-lg-img" alt="Premakeerthi Sinhabahu">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/premakeerthi.sinhabahu" target="_blank" rel="noopener" class="author-link">Premakeerthi Sinhabahu</a></div>
                         <div class="ameta">#098 &bull; Parent Comment</div>
@@ -1567,7 +1620,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_099_Indika Wijerathna_avatar.jpg" class="av-lg-img" alt="Indika Wijerathna">
+                    <img src="Comments/comment_099_Indika Wijerathna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Indika Wijerathna">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/wijerathnaindika" target="_blank" rel="noopener" class="author-link">Indika Wijerathna</a></div>
                         <div class="ameta">#099 &bull; Parent Comment</div>
@@ -1580,7 +1633,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_100_Dimuthu Tharanga_avatar.jpg" class="av-lg-img" alt="Dimuthu Tharanga">
+                    <img src="Comments/comment_100_Dimuthu Tharanga_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dimuthu Tharanga">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dimuthu.tharanga.77" target="_blank" rel="noopener" class="author-link">Dimuthu Tharanga</a></div>
                         <div class="ameta">#100 &bull; Parent Comment</div>
@@ -1593,7 +1646,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_101_Raja Raja_avatar.jpg" class="av-lg-img" alt="Raja Raja">
+                    <img src="Comments/comment_101_Raja Raja_avatar.jpg" loading="lazy" class="av-lg-img" alt="Raja Raja">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/raja.raja.5412" target="_blank" rel="noopener" class="author-link">Raja Raja</a></div>
                         <div class="ameta">#101 &bull; Parent Comment</div>
@@ -1606,7 +1659,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_102_Sujeewa Niran Fonseka_avatar.jpg" class="av-lg-img" alt="Sujeewa Niran Fonseka">
+                    <img src="Comments/comment_102_Sujeewa Niran Fonseka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sujeewa Niran Fonseka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sujeewa.niran" target="_blank" rel="noopener" class="author-link">Sujeewa Niran Fonseka</a></div>
                         <div class="ameta">#102 &bull; Parent Comment</div>
@@ -1619,7 +1672,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_103_Nuwan Pushpakumara_avatar.jpg" class="av-lg-img" alt="Nuwan Pushpakumara">
+                    <img src="Comments/comment_103_Nuwan Pushpakumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nuwan Pushpakumara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/nuwan.pushpakumara.716" target="_blank" rel="noopener" class="author-link">Nuwan Pushpakumara</a></div>
                         <div class="ameta">#103 &bull; Parent Comment</div>
@@ -1632,7 +1685,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_104_Hasanda Jayaweera_avatar.jpg" class="av-lg-img" alt="Hasanda Jayaweera">
+                    <img src="Comments/comment_104_Hasanda Jayaweera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Hasanda Jayaweera">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/hasanda.jayaweera.3" target="_blank" rel="noopener" class="author-link">Hasanda Jayaweera</a></div>
                         <div class="ameta">#104 &bull; Parent Comment</div>
@@ -1645,7 +1698,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_105_Riyal Ali Rifai_avatar.jpg" class="av-lg-img" alt="Riyal Ali Rifai">
+                    <img src="Comments/comment_105_Riyal Ali Rifai_avatar.jpg" loading="lazy" class="av-lg-img" alt="Riyal Ali Rifai">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/riyal.ali.rifai" target="_blank" rel="noopener" class="author-link">Riyal Ali Rifai</a></div>
                         <div class="ameta">#105 &bull; Parent Comment</div>
@@ -1658,7 +1711,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_106_අසංග යාපා මුදියන්සේලාගේ_avatar.jpg" class="av-lg-img" alt="අසංග යාපා මුදියන්සේලාගේ">
+                    <img src="Comments/comment_106_අසංග යාපා මුදියන්සේලාගේ_avatar.jpg" loading="lazy" class="av-lg-img" alt="අසංග යාපා මුදියන්සේලාගේ">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/profile.php?id=100003724382262" target="_blank" rel="noopener" class="author-link">අසංග යාපා මුදියන්සේලාගේ</a></div>
                         <div class="ameta">#106 &bull; Parent Comment</div>
@@ -1671,7 +1724,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_107_Melaka Thilakarathna_avatar.jpg" class="av-lg-img" alt="Melaka Thilakarathna">
+                    <img src="Comments/comment_107_Melaka Thilakarathna_avatar.jpg" loading="lazy" class="av-lg-img" alt="Melaka Thilakarathna">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dalissa.mugalassa" target="_blank" rel="noopener" class="author-link">Melaka Thilakarathna</a></div>
                         <div class="ameta">#107 &bull; Parent Comment</div>
@@ -1684,7 +1737,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_108_Gayan N Inoka_avatar.jpg" class="av-lg-img" alt="Gayan N Inoka">
+                    <img src="Comments/comment_108_Gayan N Inoka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gayan N Inoka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/gaiyan.ino" target="_blank" rel="noopener" class="author-link">Gayan N Inoka</a></div>
                         <div class="ameta">#108 &bull; Parent Comment</div>
@@ -1697,7 +1750,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_109_Cristy Dias_avatar.jpg" class="av-lg-img" alt="Cristy Dias">
+                    <img src="Comments/comment_109_Cristy Dias_avatar.jpg" loading="lazy" class="av-lg-img" alt="Cristy Dias">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/cristy.dias.263131" target="_blank" rel="noopener" class="author-link">Cristy Dias</a></div>
                         <div class="ameta">#109 &bull; Parent Comment</div>
@@ -1710,7 +1763,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_110_Doulas Wasantha Kumara_avatar.jpg" class="av-lg-img" alt="Doulas Wasantha Kumara">
+                    <img src="Comments/comment_110_Doulas Wasantha Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Doulas Wasantha Kumara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/doulas.wasanthakumara" target="_blank" rel="noopener" class="author-link">Doulas Wasantha Kumara</a></div>
                         <div class="ameta">#110 &bull; Parent Comment</div>
@@ -1723,7 +1776,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_111_Lara Fernando Sehas Disigns_avatar.jpg" class="av-lg-img" alt="Lara Fernando Sehas Disigns">
+                    <img src="Comments/comment_111_Lara Fernando Sehas Disigns_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lara Fernando Sehas Disigns">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/lahirusampath.fernandolara" target="_blank" rel="noopener" class="author-link">Lara Fernando Sehas Disigns</a></div>
                         <div class="ameta">#111 &bull; Parent Comment</div>
@@ -1736,7 +1789,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_112_Nuwan Gunarathna Nuwan_avatar.jpg" class="av-lg-img" alt="Nuwan Gunarathna Nuwan">
+                    <img src="Comments/comment_112_Nuwan Gunarathna Nuwan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nuwan Gunarathna Nuwan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Nuwan-Gunarathna-Nuwan/pfbid02W3sKN8RvM3pm6gjFhbGcjASrPX9g53TwzzQEQydSovPaFdkFNDhNMTvspGrrYmQyl" target="_blank" rel="noopener" class="author-link">Nuwan Gunarathna Nuwan</a></div>
                         <div class="ameta">#112 &bull; Parent Comment</div>
@@ -1749,7 +1802,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_113_Isuri Omalka_avatar.jpg" class="av-lg-img" alt="Isuri Omalka">
+                    <img src="Comments/comment_113_Isuri Omalka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Isuri Omalka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/isuri.omalka.2025" target="_blank" rel="noopener" class="author-link">Isuri Omalka</a></div>
                         <div class="ameta">#113 &bull; Parent Comment</div>
@@ -1762,7 +1815,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_114_Ruwan Sanjaya Kumara_avatar.jpg" class="av-lg-img" alt="Ruwan Sanjaya Kumara">
+                    <img src="Comments/comment_114_Ruwan Sanjaya Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ruwan Sanjaya Kumara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ruwansanjaya.kumara" target="_blank" rel="noopener" class="author-link">Ruwan Sanjaya Kumara</a></div>
                         <div class="ameta">#114 &bull; Parent Comment</div>
@@ -1775,7 +1828,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_115_Sathyajith Dharmapriya Buthpitiya_avatar.jpg" class="av-lg-img" alt="Sathyajith Dharmapriya Buthpitiya">
+                    <img src="Comments/comment_115_Sathyajith Dharmapriya Buthpitiya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sathyajith Dharmapriya Buthpitiya">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sathyajithdharmapriya.buthpitiya" target="_blank" rel="noopener" class="author-link">Sathyajith Dharmapriya Buthpitiya</a></div>
                         <div class="ameta">#115 &bull; Parent Comment</div>
@@ -1788,7 +1841,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_116_Sadun Sankalpa_avatar.jpg" class="av-lg-img" alt="Sadun Sankalpa">
+                    <img src="Comments/comment_116_Sadun Sankalpa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sadun Sankalpa">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Sadun-Sankalpa/pfbid02awhsGrzBBM9r7H1ie32vZftC3KXbsrP6xmvwsRHrbePFWE2jwCDJTDerdHs9a19Nl" target="_blank" rel="noopener" class="author-link">Sadun Sankalpa</a></div>
                         <div class="ameta">#116 &bull; Parent Comment</div>
@@ -1801,7 +1854,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_117_Pradeepa Dharmasena_avatar.jpg" class="av-lg-img" alt="Pradeepa Dharmasena">
+                    <img src="Comments/comment_117_Pradeepa Dharmasena_avatar.jpg" loading="lazy" class="av-lg-img" alt="Pradeepa Dharmasena">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/pradeepa.dharmasena.2025" target="_blank" rel="noopener" class="author-link">Pradeepa Dharmasena</a></div>
                         <div class="ameta">#117 &bull; Parent Comment</div>
@@ -1814,7 +1867,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_118_Dissa Dissa_avatar.jpg" class="av-lg-img" alt="Dissa Dissa">
+                    <img src="Comments/comment_118_Dissa Dissa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dissa Dissa">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dissa.dissa.923" target="_blank" rel="noopener" class="author-link">Dissa Dissa</a></div>
                         <div class="ameta">#118 &bull; Parent Comment</div>
@@ -1827,7 +1880,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_119_Riz MB_avatar.jpg" class="av-lg-img" alt="Riz MB">
+                    <img src="Comments/comment_119_Riz MB_avatar.jpg" loading="lazy" class="av-lg-img" alt="Riz MB">
                     <div class="hdr-info">
                         <div class="aname">Riz MB</div>
                         <div class="ameta">#119 &bull; Parent Comment</div>
@@ -1840,7 +1893,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_120_Roland Kumara_avatar.jpg" class="av-lg-img" alt="Roland Kumara">
+                    <img src="Comments/comment_120_Roland Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Roland Kumara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Roland-Kumara/pfbid0afeoUHwU93zgLtAH2vU9KebAJLG7pqMyDsuKdYop3tdy5V8Us4eN3H4xRg7FXp98l" target="_blank" rel="noopener" class="author-link">Roland Kumara</a></div>
                         <div class="ameta">#120 &bull; Parent Comment &bull; <span class="reply-count-badge">1 Reply</span></div>
@@ -1858,7 +1911,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
                     
                 <div class="reply-card">
                     <div class="reply-header">
-                        <img src="Comments/comment_120_reply_01_Asanka Sooriyagoda_avatar.jpg" class="av-sm-img" alt="Asanka Sooriyagoda">
+                        <img src="Comments/comment_120_reply_01_Asanka Sooriyagoda_avatar.jpg" loading="lazy" class="av-sm-img" alt="Asanka Sooriyagoda">
                         <div class="reply-meta">
                             <span class="rname">Asanka Sooriyagoda</span>
                             <span class="reply-target">↳ Replying to <strong>Roland Kumara</strong></span>
@@ -1875,7 +1928,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_121_Roland Kumara_avatar.jpg" class="av-lg-img" alt="Roland Kumara">
+                    <img src="Comments/comment_121_Roland Kumara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Roland Kumara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Roland-Kumara/pfbid0afeoUHwU93zgLtAH2vU9KebAJLG7pqMyDsuKdYop3tdy5V8Us4eN3H4xRg7FXp98l" target="_blank" rel="noopener" class="author-link">Roland Kumara</a></div>
                         <div class="ameta">#121 &bull; Parent Comment</div>
@@ -1888,7 +1941,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_122_Anil Jayasuriya_avatar.jpg" class="av-lg-img" alt="Anil Jayasuriya">
+                    <img src="Comments/comment_122_Anil Jayasuriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Anil Jayasuriya">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/anil.jayasuriya.94" target="_blank" rel="noopener" class="author-link">Anil Jayasuriya</a></div>
                         <div class="ameta">#122 &bull; Parent Comment</div>
@@ -1901,7 +1954,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_123_Athula Lihinikaduwa_avatar.jpg" class="av-lg-img" alt="Athula Lihinikaduwa">
+                    <img src="Comments/comment_123_Athula Lihinikaduwa_avatar.jpg" loading="lazy" class="av-lg-img" alt="Athula Lihinikaduwa">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/athula.lihinikaduwa.3" target="_blank" rel="noopener" class="author-link">Athula Lihinikaduwa</a></div>
                         <div class="ameta">#123 &bull; Parent Comment</div>
@@ -1914,7 +1967,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_124_Anton Cool Glaston_avatar.jpg" class="av-lg-img" alt="Anton Cool Glaston">
+                    <img src="Comments/comment_124_Anton Cool Glaston_avatar.jpg" loading="lazy" class="av-lg-img" alt="Anton Cool Glaston">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/antoncool.glaston" target="_blank" rel="noopener" class="author-link">Anton Cool Glaston</a></div>
                         <div class="ameta">#124 &bull; Parent Comment</div>
@@ -1927,7 +1980,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_125_Vijitha Nanda_avatar.jpg" class="av-lg-img" alt="Vijitha Nanda">
+                    <img src="Comments/comment_125_Vijitha Nanda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Vijitha Nanda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/vijitha.nanda.920989" target="_blank" rel="noopener" class="author-link">Vijitha Nanda</a></div>
                         <div class="ameta">#125 &bull; Parent Comment</div>
@@ -1940,7 +1993,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_126_Vijitha Nanda_avatar.jpg" class="av-lg-img" alt="Vijitha Nanda">
+                    <img src="Comments/comment_126_Vijitha Nanda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Vijitha Nanda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/vijitha.nanda.920989" target="_blank" rel="noopener" class="author-link">Vijitha Nanda</a></div>
                         <div class="ameta">#126 &bull; Parent Comment</div>
@@ -1953,7 +2006,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_127_Kavindu Dilshan_avatar.jpg" class="av-lg-img" alt="Kavindu Dilshan">
+                    <img src="Comments/comment_127_Kavindu Dilshan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kavindu Dilshan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dil.kavi.20011105" target="_blank" rel="noopener" class="author-link">Kavindu Dilshan</a></div>
                         <div class="ameta">#127 &bull; Parent Comment</div>
@@ -1966,7 +2019,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_128_Kalpa Nuwan_avatar.jpg" class="av-lg-img" alt="Kalpa Nuwan">
+                    <img src="Comments/comment_128_Kalpa Nuwan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kalpa Nuwan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/hrshani.maduwanthi.9" target="_blank" rel="noopener" class="author-link">Kalpa Nuwan</a></div>
                         <div class="ameta">#128 &bull; Parent Comment</div>
@@ -1979,7 +2032,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_129_Dinesh Aravinda_avatar.jpg" class="av-lg-img" alt="Dinesh Aravinda">
+                    <img src="Comments/comment_129_Dinesh Aravinda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dinesh Aravinda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dinesh.aravinda.90" target="_blank" rel="noopener" class="author-link">Dinesh Aravinda</a></div>
                         <div class="ameta">#129 &bull; Parent Comment</div>
@@ -1992,7 +2045,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_130_Mohamed Asan_avatar.jpg" class="av-lg-img" alt="Mohamed Asan">
+                    <img src="Comments/comment_130_Mohamed Asan_avatar.jpg" loading="lazy" class="av-lg-img" alt="Mohamed Asan">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/mamarketingpvtltd" target="_blank" rel="noopener" class="author-link">Mohamed Asan</a></div>
                         <div class="ameta">#130 &bull; Parent Comment</div>
@@ -2005,7 +2058,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_131_Krishan Bandara_avatar.jpg" class="av-lg-img" alt="Krishan Bandara">
+                    <img src="Comments/comment_131_Krishan Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Krishan Bandara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/profile.php?id=100002438328289" target="_blank" rel="noopener" class="author-link">Krishan Bandara</a></div>
                         <div class="ameta">#131 &bull; Parent Comment</div>
@@ -2018,7 +2071,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_132_Deshabandu Sahitha Gammampila_avatar.jpg" class="av-lg-img" alt="Deshabandu Sahitha Gammampila">
+                    <img src="Comments/comment_132_Deshabandu Sahitha Gammampila_avatar.jpg" loading="lazy" class="av-lg-img" alt="Deshabandu Sahitha Gammampila">
                     <div class="hdr-info">
                         <div class="aname">Deshabandu Sahitha Gammampila</div>
                         <div class="ameta">#132 &bull; Parent Comment</div>
@@ -2031,7 +2084,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_133_Deshabandu Sahitha Gammampila_avatar.jpg" class="av-lg-img" alt="Deshabandu Sahitha Gammampila">
+                    <img src="Comments/comment_133_Deshabandu Sahitha Gammampila_avatar.jpg" loading="lazy" class="av-lg-img" alt="Deshabandu Sahitha Gammampila">
                     <div class="hdr-info">
                         <div class="aname">Deshabandu Sahitha Gammampila</div>
                         <div class="ameta">#133 &bull; Parent Comment</div>
@@ -2044,7 +2097,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_134_Sujith Nilanga_avatar.jpg" class="av-lg-img" alt="Sujith Nilanga">
+                    <img src="Comments/comment_134_Sujith Nilanga_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sujith Nilanga">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/sujith.nilanga.955467" target="_blank" rel="noopener" class="author-link">Sujith Nilanga</a></div>
                         <div class="ameta">#134 &bull; Parent Comment</div>
@@ -2057,7 +2110,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_135_Sudarshan Gunasekera_avatar.jpg" class="av-lg-img" alt="Sudarshan Gunasekera">
+                    <img src="Comments/comment_135_Sudarshan Gunasekera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sudarshan Gunasekera">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/profile.php?id=61564538820885" target="_blank" rel="noopener" class="author-link">Sudarshan Gunasekera</a></div>
                         <div class="ameta">#135 &bull; Parent Comment</div>
@@ -2070,7 +2123,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_136_Ajith Welihinda_avatar.jpg" class="av-lg-img" alt="Ajith Welihinda">
+                    <img src="Comments/comment_136_Ajith Welihinda_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ajith Welihinda">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ajith.welihinda.3" target="_blank" rel="noopener" class="author-link">Ajith Welihinda</a></div>
                         <div class="ameta">#136 &bull; Parent Comment</div>
@@ -2083,7 +2136,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_137_Lalantha Rangana_avatar.jpg" class="av-lg-img" alt="Lalantha Rangana">
+                    <img src="Comments/comment_137_Lalantha Rangana_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lalantha Rangana">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/profile.php?id=61574005022294" target="_blank" rel="noopener" class="author-link">Lalantha Rangana</a></div>
                         <div class="ameta">#137 &bull; Parent Comment</div>
@@ -2096,7 +2149,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_138_Gaminee Wijekoon_avatar.jpg" class="av-lg-img" alt="Gaminee Wijekoon">
+                    <img src="Comments/comment_138_Gaminee Wijekoon_avatar.jpg" loading="lazy" class="av-lg-img" alt="Gaminee Wijekoon">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/gaminee.wijekoon" target="_blank" rel="noopener" class="author-link">Gaminee Wijekoon</a></div>
                         <div class="ameta">#138 &bull; Parent Comment</div>
@@ -2109,7 +2162,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_139_Winston Perera_avatar.jpg" class="av-lg-img" alt="Winston Perera">
+                    <img src="Comments/comment_139_Winston Perera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Winston Perera">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/winston.perera.28848" target="_blank" rel="noopener" class="author-link">Winston Perera</a></div>
                         <div class="ameta">#139 &bull; Parent Comment</div>
@@ -2122,7 +2175,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_140_Ramani Gamalath_avatar.jpg" class="av-lg-img" alt="Ramani Gamalath">
+                    <img src="Comments/comment_140_Ramani Gamalath_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ramani Gamalath">
                     <div class="hdr-info">
                         <div class="aname">Ramani Gamalath</div>
                         <div class="ameta">#140 &bull; Parent Comment</div>
@@ -2135,7 +2188,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_141_Manaka Bandara_avatar.jpg" class="av-lg-img" alt="Manaka Bandara">
+                    <img src="Comments/comment_141_Manaka Bandara_avatar.jpg" loading="lazy" class="av-lg-img" alt="Manaka Bandara">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/manaka.bandara.7" target="_blank" rel="noopener" class="author-link">Manaka Bandara</a></div>
                         <div class="ameta">#141 &bull; Parent Comment</div>
@@ -2148,7 +2201,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_142_Udara Liyanage_avatar.jpg" class="av-lg-img" alt="Udara Liyanage">
+                    <img src="Comments/comment_142_Udara Liyanage_avatar.jpg" loading="lazy" class="av-lg-img" alt="Udara Liyanage">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Udara-Liyanage/pfbid02eBDfYqsDC1YyE6uo9TvN75568eJK1KfYAVmKneXMuPD1AdLSGtKVojqYbHAxGDfSl" target="_blank" rel="noopener" class="author-link">Udara Liyanage</a></div>
                         <div class="ameta">#142 &bull; Parent Comment</div>
@@ -2161,7 +2214,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_143_S Ravi Chandran_avatar.jpg" class="av-lg-img" alt="S Ravi Chandran">
+                    <img src="Comments/comment_143_S Ravi Chandran_avatar.jpg" loading="lazy" class="av-lg-img" alt="S Ravi Chandran">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/S-Ravi-Chandran/pfbid02Le347CGLMaCUgkNoq2WohYheiySMbkYkNMNgLrtS9ASHC9TPm54ENy4KPMJJnvCjl" target="_blank" rel="noopener" class="author-link">S Ravi Chandran</a></div>
                         <div class="ameta">#143 &bull; Parent Comment</div>
@@ -2174,7 +2227,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_144_Lilan Baduge_avatar.jpg" class="av-lg-img" alt="Lilan Baduge">
+                    <img src="Comments/comment_144_Lilan Baduge_avatar.jpg" loading="lazy" class="av-lg-img" alt="Lilan Baduge">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/lilan.baduge" target="_blank" rel="noopener" class="author-link">Lilan Baduge</a></div>
                         <div class="ameta">#144 &bull; Parent Comment</div>
@@ -2187,7 +2240,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_145_Ravi Karunarathne_avatar.jpg" class="av-lg-img" alt="Ravi Karunarathne">
+                    <img src="Comments/comment_145_Ravi Karunarathne_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ravi Karunarathne">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ravi.karunarathne.58" target="_blank" rel="noopener" class="author-link">Ravi Karunarathne</a></div>
                         <div class="ameta">#145 &bull; Parent Comment</div>
@@ -2200,7 +2253,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_146_Sanjeewa Kalansooriya_avatar.jpg" class="av-lg-img" alt="Sanjeewa Kalansooriya">
+                    <img src="Comments/comment_146_Sanjeewa Kalansooriya_avatar.jpg" loading="lazy" class="av-lg-img" alt="Sanjeewa Kalansooriya">
                     <div class="hdr-info">
                         <div class="aname">Sanjeewa Kalansooriya</div>
                         <div class="ameta">#146 &bull; Parent Comment</div>
@@ -2213,7 +2266,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_147_Neranja Paul Tiranagama_avatar.jpg" class="av-lg-img" alt="Neranja Paul Tiranagama">
+                    <img src="Comments/comment_147_Neranja Paul Tiranagama_avatar.jpg" loading="lazy" class="av-lg-img" alt="Neranja Paul Tiranagama">
                     <div class="hdr-info">
                         <div class="aname">Neranja Paul Tiranagama</div>
                         <div class="ameta">#147 &bull; Parent Comment</div>
@@ -2226,7 +2279,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_148_Ashoka Rathnasiri_avatar.jpg" class="av-lg-img" alt="Ashoka Rathnasiri">
+                    <img src="Comments/comment_148_Ashoka Rathnasiri_avatar.jpg" loading="lazy" class="av-lg-img" alt="Ashoka Rathnasiri">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/ashoka.rathnasiri.666027" target="_blank" rel="noopener" class="author-link">Ashoka Rathnasiri</a></div>
                         <div class="ameta">#148 &bull; Parent Comment</div>
@@ -2239,7 +2292,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_149_Nalin Madusanka_avatar.jpg" class="av-lg-img" alt="Nalin Madusanka">
+                    <img src="Comments/comment_149_Nalin Madusanka_avatar.jpg" loading="lazy" class="av-lg-img" alt="Nalin Madusanka">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/people/Nalin-Madusanka/pfbid0DV9WsFHb56PrDJxLqpSxXrXwgwT5Uy2e7uDcpw9pppud9XXSprwaV8EWifJw4tWel" target="_blank" rel="noopener" class="author-link">Nalin Madusanka</a></div>
                         <div class="ameta">#149 &bull; Parent Comment</div>
@@ -2252,7 +2305,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_150_Chandima Indrajith Silva_avatar.jpg" class="av-lg-img" alt="Chandima Indrajith Silva">
+                    <img src="Comments/comment_150_Chandima Indrajith Silva_avatar.jpg" loading="lazy" class="av-lg-img" alt="Chandima Indrajith Silva">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/chindimaindrajith.silva" target="_blank" rel="noopener" class="author-link">Chandima Indrajith Silva</a></div>
                         <div class="ameta">#150 &bull; Parent Comment</div>
@@ -2265,7 +2318,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_151_Dp Perera_avatar.jpg" class="av-lg-img" alt="Dp Perera">
+                    <img src="Comments/comment_151_Dp Perera_avatar.jpg" loading="lazy" class="av-lg-img" alt="Dp Perera">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/dp.perera.143685" target="_blank" rel="noopener" class="author-link">Dp Perera</a></div>
                         <div class="ameta">#151 &bull; Parent Comment</div>
@@ -2278,7 +2331,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_152_Riz MB_avatar.jpg" class="av-lg-img" alt="Riz MB">
+                    <img src="Comments/comment_152_Riz MB_avatar.jpg" loading="lazy" class="av-lg-img" alt="Riz MB">
                     <div class="hdr-info">
                         <div class="aname">Riz MB</div>
                         <div class="ameta">#152 &bull; Parent Comment</div>
@@ -2291,7 +2344,7 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
         
             <div class="thread-card">
                 <div class="card-header">
-                    <img src="Comments/comment_153_Kasun Lakmal_avatar.jpg" class="av-lg-img" alt="Kasun Lakmal">
+                    <img src="Comments/comment_153_Kasun Lakmal_avatar.jpg" loading="lazy" class="av-lg-img" alt="Kasun Lakmal">
                     <div class="hdr-info">
                         <div class="aname"><a href="https://www.facebook.com/gothik.satanika" target="_blank" rel="noopener" class="author-link">Kasun Lakmal</a></div>
                         <div class="ameta">#153 &bull; Parent Comment</div>
@@ -2310,6 +2363,130 @@ Video : Ven Thiththagalle Anandasiri Himi</div>
 </div>
 
 <script>
+var THEME_KEY = 'fb_archive_theme_v1';
+var READ_KEY = 'fb_archive_read_posts_v1';
+var POST_IDX = 21;
+
+function getStoredTheme() {
+    try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
+    } catch (e) {}
+    try {
+        if (window.name && window.name.charAt(0) === '{') {
+            var wn = JSON.parse(window.name);
+            if (wn && (wn.theme === 'dark' || wn.theme === 'light')) return wn.theme;
+        }
+    } catch (e) {}
+    try {
+        var ls = localStorage.getItem(THEME_KEY);
+        if (ls === 'dark' || ls === 'light') return ls;
+    } catch (e) {}
+    return 'light';
+}
+
+function persistTheme(theme) {
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    try {
+        var wn = {};
+        if (window.name && window.name.charAt(0) === '{') {
+            wn = JSON.parse(window.name) || {};
+        }
+        wn.theme = theme;
+        window.name = JSON.stringify(wn);
+    } catch (e) {}
+    try {
+        var backLink = document.getElementById('backCatalogLink');
+        if (backLink) {
+            backLink.setAttribute('href', '../index.html?theme=' + theme + '#post-' + POST_IDX);
+        }
+    } catch (e) {}
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.textContent = '☀️ Light Mode';
+    } else {
+        document.body.classList.remove('dark-mode');
+        var btn = document.getElementById('themeToggleBtn');
+        if (btn) btn.textContent = '🌙 Dark Mode';
+    }
+    persistTheme(theme);
+}
+
+function toggleTheme() {
+    var isDark = document.body.classList.contains('dark-mode');
+    var next = isDark ? 'light' : 'dark';
+    applyTheme(next);
+}
+
+function loadReadMap() {
+    var lsObj = null, wnObj = null;
+    try {
+        var raw = localStorage.getItem(READ_KEY);
+        if (raw) lsObj = JSON.parse(raw);
+    } catch (e) {}
+    try {
+        if (window.name && window.name.charAt(0) === '{') {
+            var wn = JSON.parse(window.name);
+            if (wn && wn.readPosts) wnObj = wn.readPosts;
+        }
+    } catch (e) {}
+    var chosen = lsObj;
+    if (wnObj && (!chosen || (wnObj.updatedAt || 0) >= (chosen.updatedAt || 0))) {
+        chosen = wnObj;
+    }
+    var map = {};
+    if (chosen && Array.isArray(chosen.list)) {
+        chosen.list.forEach(function(id) { map[id] = true; });
+    }
+    return map;
+}
+
+function saveReadMap(map) {
+    var list = Object.keys(map).filter(function(k) { return map[k]; }).map(function(k) { return parseInt(k, 10); });
+    var payload = { list: list, updatedAt: Date.now() };
+    try { localStorage.setItem(READ_KEY, JSON.stringify(payload)); } catch (e) {}
+    try {
+        var wn = {};
+        if (window.name && window.name.charAt(0) === '{') {
+            wn = JSON.parse(window.name) || {};
+        }
+        wn.readPosts = payload;
+        window.name = JSON.stringify(wn);
+    } catch (e) {}
+}
+
+function renderReadHere() {
+    var map = loadReadMap();
+    var isRead = !!map[POST_IDX];
+    var btn = document.getElementById('readToggleBtn');
+    if (btn) {
+        if (isRead) {
+            btn.classList.add('is-read');
+            btn.textContent = '✅ Marked as Read';
+        } else {
+            btn.classList.remove('is-read');
+            btn.textContent = '☐ Mark as Read';
+        }
+    }
+}
+
+function toggleReadHere() {
+    var map = loadReadMap();
+    map[POST_IDX] = !map[POST_IDX];
+    saveReadMap(map);
+    renderReadHere();
+}
+
+(function() {
+    applyTheme(getStoredTheme());
+    renderReadHere();
+})();
+
 function filterComments() {
     var q = document.getElementById('q').value.toLowerCase();
     var cards = document.querySelectorAll('#list .thread-card');
