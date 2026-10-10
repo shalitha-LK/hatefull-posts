@@ -186,7 +186,7 @@
     
         <div class="media-container">
             <h3>📸 Attached High-Resolution Photos (1)</h3>
-            <div class="photo-grid"><a href="photo_01.jpg" target="_blank"><img src="photo_01.jpg" class="grid-photo" alt="Post Photo"></a></div>
+            <div class="photo-grid"><a href="output\Post_192_Lal Sellahannadi\photo_01.jpg" target="_blank"><img src="output\Post_192_Lal Sellahannadi\photo_01.jpg" class="grid-photo" alt="Post Photo"></a></div>
         </div>
 
     <div class="sec-hdr">
@@ -217,9 +217,8 @@ var POST_IDX = 192;
 
 function getStoredTheme() {
     try {
-        var params = new URLSearchParams(window.location.search);
-        var urlTheme = params.get('theme');
-        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
+        var ls = localStorage.getItem(THEME_KEY);
+        if (ls === 'dark' || ls === 'light') return ls;
     } catch (e) {}
     try {
         if (window.name && window.name.charAt(0) === '{') {
@@ -228,8 +227,9 @@ function getStoredTheme() {
         }
     } catch (e) {}
     try {
-        var ls = localStorage.getItem(THEME_KEY);
-        if (ls === 'dark' || ls === 'light') return ls;
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
     } catch (e) {}
     return 'light';
 }
@@ -243,6 +243,13 @@ function persistTheme(theme) {
         }
         wn.theme = theme;
         window.name = JSON.stringify(wn);
+    } catch (e) {}
+    try {
+        if (window.history && window.history.replaceState) {
+            var url = new URL(window.location.href);
+            url.searchParams.set('theme', theme);
+            window.history.replaceState(null, '', url.href);
+        }
     } catch (e) {}
     try {
         var backLink = document.getElementById('backCatalogLink');

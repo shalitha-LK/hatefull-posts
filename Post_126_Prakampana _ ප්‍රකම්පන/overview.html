@@ -11358,9 +11358,8 @@ var POST_IDX = 126;
 
 function getStoredTheme() {
     try {
-        var params = new URLSearchParams(window.location.search);
-        var urlTheme = params.get('theme');
-        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
+        var ls = localStorage.getItem(THEME_KEY);
+        if (ls === 'dark' || ls === 'light') return ls;
     } catch (e) {}
     try {
         if (window.name && window.name.charAt(0) === '{') {
@@ -11369,8 +11368,9 @@ function getStoredTheme() {
         }
     } catch (e) {}
     try {
-        var ls = localStorage.getItem(THEME_KEY);
-        if (ls === 'dark' || ls === 'light') return ls;
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
     } catch (e) {}
     return 'light';
 }
@@ -11384,6 +11384,13 @@ function persistTheme(theme) {
         }
         wn.theme = theme;
         window.name = JSON.stringify(wn);
+    } catch (e) {}
+    try {
+        if (window.history && window.history.replaceState) {
+            var url = new URL(window.location.href);
+            url.searchParams.set('theme', theme);
+            window.history.replaceState(null, '', url.href);
+        }
     } catch (e) {}
     try {
         var backLink = document.getElementById('backCatalogLink');

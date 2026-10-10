@@ -506,7 +506,7 @@
     <div class="container">
         <div class="header">
             <h1>🧘 තිත්තගල්ලෙ හාමුදුරුවන්ට බැනපු Facebook Posts &amp; Reels</h1>
-            <div class="last-updated-badge">🕒 Last Updated: <strong>2026-10-10 05:34:53 PM</strong> (Sri Lanka Time · UTC+05:30)</div>
+            <div class="last-updated-badge">🕒 Last Updated: <strong>2026-10-10 05:45:22 PM</strong> (Sri Lanka Time · UTC+05:30)</div>
             <div class="stats-bar">
                 <div class="stat-card"><div class="stat-val" id="statPosts">257</div><div class="stat-lbl">Archived Posts</div></div>
                 <div class="stat-card"><div class="stat-val" id="statComments">68,070</div><div class="stat-lbl">Total Comments &amp; Replies</div></div>
@@ -10758,9 +10758,8 @@ Credit - THINK BRO</div>
 
         function getStoredTheme() {
             try {
-                var params = new URLSearchParams(window.location.search);
-                var urlTheme = params.get('theme');
-                if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
+                var savedTheme = localStorage.getItem(THEME_KEY);
+                if (savedTheme === 'dark' || savedTheme === 'light') return savedTheme;
             } catch (e) {}
             try {
                 if (window.name && window.name.charAt(0) === '{') {
@@ -10769,8 +10768,9 @@ Credit - THINK BRO</div>
                 }
             } catch (e) {}
             try {
-                var savedTheme = localStorage.getItem(THEME_KEY);
-                if (savedTheme === 'dark' || savedTheme === 'light') return savedTheme;
+                var params = new URLSearchParams(window.location.search);
+                var urlTheme = params.get('theme');
+                if (urlTheme === 'dark' || urlTheme === 'light') return urlTheme;
             } catch (e) {}
             return 'light';
         }
@@ -10784,6 +10784,13 @@ Credit - THINK BRO</div>
                 }
                 wn.theme = theme;
                 window.name = JSON.stringify(wn);
+            } catch (e) {}
+            try {
+                if (window.history && window.history.replaceState) {
+                    var url = new URL(window.location.href);
+                    url.searchParams.set('theme', theme);
+                    window.history.replaceState(null, '', url.href);
+                }
             } catch (e) {}
             try {
                 document.querySelectorAll('.web-view-link').forEach(function(a) {
